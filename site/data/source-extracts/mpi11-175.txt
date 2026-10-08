@@ -1,0 +1,19 @@
+C Bindings for Profiling (https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node175.html)
+citeturn62view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node175.html","lineno":null}); Total lines: 21
+L0: * * *
+L1: # 10.8. C Bindings for Profiling
+L2: 
+L3: Up: cite0†Language Binding Next: cite1†Fortran Bindings for Point-to-Point Communication Previous: cite2†C bindings for Environmental Inquiry L4: 
+L5: ` int MPI_Pcontrol(const int level, ...)
+L6: `
+L7: 
+L8: * * *
+L9: 
+L10: Up: cite0†Language Binding Next: cite1†Fortran Bindings for Point-to-Point Communication Previous: cite2†C bindings for Environmental Inquiry L11: 
+L12: * * *
+L13: 
+L14: Return to cite3†MPI 1.1 Standard Index L15: Return to cite4†MPI-2 Standard Index L16: Return to cite5†MPI Forum Home Page L17: 
+L18: * * *
+L19: MPI-1.1 of June 12, 1995
+L20: HTML Generated on August 6, 1997
+

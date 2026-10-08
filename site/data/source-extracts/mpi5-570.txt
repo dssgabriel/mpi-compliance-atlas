@@ -1,0 +1,45 @@
+Application Binary Interface (ABI) C Bindings (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node570.htm)
+citeturn7view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node570.htm","lineno":null}); Total lines: 46
+L0: * * *
+L1: ## 22.3.14. Application Binary Interface (ABI) C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†Tools / Profiling Interface C Bindings Previous: cite2†Language Bindings C Bindings L4: ` int MPI_Abi_get_fortran_booleans(int logical_size, void *logical_true, void *logical_false, int *is_set)
+L5: ` ` int MPI_Abi_get_fortran_info(MPI_Info *info)
+L6: ` ` int MPI_Abi_get_info(MPI_Info *info)
+L7: ` ` int MPI_Abi_get_version(int *abi_major, int *abi_minor)
+L8: ` ` int MPI_Abi_set_fortran_booleans(int logical_size, void *logical_true, void *logical_false)
+L9: ` ` int MPI_Abi_set_fortran_info(MPI_Info info)
+L10: ` ` (int comm) MPI_Comm_fromint
+L11: ` ` (MPI_Comm comm) MPI_Comm_toint
+L12: ` ` (int errhandler) MPI_Errhandler_fromint
+L13: ` ` (MPI_Errhandler errhandler) MPI_Errhandler_toint
+L14: ` ` (int file) MPI_File_fromint
+L15: ` ` (MPI_File file) MPI_File_toint
+L16: ` ` (int group) MPI_Group_fromint
+L17: ` ` (MPI_Group group) MPI_Group_toint
+L18: ` ` (int info) MPI_Info_fromint
+L19: ` ` (MPI_Info info) MPI_Info_toint
+L20: ` ` (int message) MPI_Message_fromint
+L21: ` ` (MPI_Message message) MPI_Message_toint
+L22: ` ` (int op) MPI_Op_fromint
+L23: ` ` (MPI_Op op) MPI_Op_toint
+L24: ` ` (int request) MPI_Request_fromint
+L25: ` ` (MPI_Request request) MPI_Request_toint
+L26: ` ` (int session) MPI_Session_fromint
+L27: ` ` (MPI_Session session) MPI_Session_toint
+L28: ` ` (int datatype) MPI_Type_fromint
+L29: ` ` (MPI_Datatype datatype) MPI_Type_toint
+L30: ` ` (int win) MPI_Win_fromint
+L31: ` ` (MPI_Win win) MPI_Win_toint
+L32: `
+L33: * * *
+L34: 
+L35: Up: cite0†C Bindings Next: cite1†Tools / Profiling Interface C Bindings Previous: cite2†Language Bindings C Bindings L36: 
+L37: * * *
+L38: 
+L39: Return to cite3†MPI-5.0 Standard Index L40: Return to cite4†MPI Forum Home Page L41: 
+L42: * * *
+L43: 
+L44: (Unofficial) MPI-5.0 of June 9, 2025
+L45: HTML Generated on March 2, 2025
+

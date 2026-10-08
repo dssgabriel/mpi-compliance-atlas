@@ -1,0 +1,47 @@
+Info Keys (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node466.htm)
+citeturn41view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node466.htm","lineno":null}); Total lines: 48
+L0: * * *
+L1: ## 392. Info Keys
+L2: 
+L3: Up: cite0†Defined Values and Handles Next: cite1†Info Values Previous: cite2†Deprecated Prototype Definitions L4: The following info keys are reserved. They are strings.
+L5: access_style
+L6: accumulate_ops
+L7: accumulate_ordering
+L8: alloc_shared_noncontig
+L9: appnum
+L10: arch
+L11: cb_block_size
+L12: cb_buffer_size
+L13: cb_nodes
+L14: chunked_item
+L15: chunked_size
+L16: chunked
+L17: collective_buffering
+L18: file_perm
+L19: filename
+L20: file
+L21: host
+L22: io_node_list
+L23: ip_address
+L24: ip_port
+L25: nb_proc
+L26: no_locks
+L27: num_io_nodes
+L28: path
+L29: same_disp_unit
+L30: same_size
+L31: soft
+L32: striping_factor
+L33: striping_unit
+L34: wdir
+L35: 
+L36: * * *
+L37: 
+L38: Up: cite0†Defined Values and Handles Next: cite1†Info Values Previous: cite2†Deprecated Prototype Definitions L39: * * *
+L40: 
+L41: Return to cite3†MPI-3.1 Standard Index L42: Return to cite4†MPI Forum Home Page L43: 
+L44: * * *
+L45: 
+L46: (Unofficial) MPI-3.1 of June 4, 2015
+L47: HTML Generated on June 4, 2015
+

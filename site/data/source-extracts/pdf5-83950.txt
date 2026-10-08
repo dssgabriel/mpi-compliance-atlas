@@ -1,0 +1,543 @@
+MPI: A Message-Passing Interface Standard (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report.pdf)
+citeturn145view0 [wordlim: 200] Crawled: yesterday; Content type: application/pdf; Number of pages: 1189; Source: open({"ref_id":"turn121view0","lineno":83950}); Total lines: 105180
+L83781@P979: int MPI_Type_create_f90_integer(int r, MPI_Datatype *newtype)
+L83782@P979: int MPI_Type_create_f90_real(int p, int r, MPI_Datatype *newtype)
+L83783@P979: MPI_Datatype MPI_Type_f2c(MPI_Fint datatype)
+L83784@P979: int MPI_Type_match_size(int typeclass, int size, MPI_Datatype *datatype)
+L83785@P979: MPI_Fint MPI_Win_c2f(MPI_Win win)
+L83786@P979: MPI_Win MPI_Win_f2c(MPI_Fint win)
+L83787@P979: A.3.14 Application Binary Interface (ABI) C Bindings
+L83788@P979: int MPI_Abi_get_fortran_booleans(int logical_size, void *logical_true,
+L83789@P979: void *logical_false, int *is_set)
+L83790@P979: int MPI_Abi_get_fortran_info(MPI_Info *info)
+L83791@P979: int MPI_Abi_get_info(MPI_Info *info)
+L83792@P979: int MPI_Abi_get_version(int *abi_major, int *abi_minor)
+L83793@P979: int MPI_Abi_set_fortran_booleans(int logical_size, void *logical_true,
+L83794@P979: void *logical_false)
+L83795@P979: 1
+L83796@P979: 2
+L83797@P979: 3
+L83798@P979: 4
+L83799@P979: 5
+L83800@P979: 6
+L83801@P979: 7
+L83802@P979: 8
+L83803@P979: 9
+L83804@P979: 10
+L83805@P979: 11
+L83806@P979: 12
+L83807@P979: 13
+L83808@P979: 14
+L83809@P979: 15
+L83810@P979: 16
+L83811@P979: 17
+L83812@P979: 18
+L83813@P979: 19
+L83814@P979: 20
+L83815@P979: 21
+L83816@P979: 22
+L83817@P979: 23
+L83818@P979: 24
+L83819@P979: 25
+L83820@P979: 26
+L83821@P979: 27
+L83822@P979: 28
+L83823@P979: 29
+L83824@P979: 30
+L83825@P979: 31
+L83826@P979: 32
+L83827@P979: 33
+L83828@P979: 34
+L83829@P979: 35
+L83830@P979: 36
+L83831@P979: 37
+L83832@P979: 38
+L83833@P979: 39
+L83834@P979: 40
+L83835@P979: 41
+L83836@P979: 42
+L83837@P979: 43
+L83838@P979: 44
+L83839@P979: 45
+L83840@P979: 46
+L83841@P979: 47
+L83842@P979-980: 48929 A.3 C Bindings
+L83843@P980: int MPI_Abi_set_fortran_info(MPI_Info info)
+L83844@P980: MPI_Comm MPI_Comm_fromint(int comm)
+L83845@P980: int MPI_Comm_toint(MPI_Comm comm)
+L83846@P980: MPI_Errhandler MPI_Errhandler_fromint(int errhandler)
+L83847@P980: int MPI_Errhandler_toint(MPI_Errhandler errhandler)
+L83848@P980: MPI_File MPI_File_fromint(int file)
+L83849@P980: int MPI_File_toint(MPI_File file)
+L83850@P980: MPI_Group MPI_Group_fromint(int group)
+L83851@P980: int MPI_Group_toint(MPI_Group group)
+L83852@P980: MPI_Info MPI_Info_fromint(int info)
+L83853@P980: int MPI_Info_toint(MPI_Info info)
+L83854@P980: MPI_Message MPI_Message_fromint(int message)
+L83855@P980: int MPI_Message_toint(MPI_Message message)
+L83856@P980: MPI_Op MPI_Op_fromint(int op)
+L83857@P980: int MPI_Op_toint(MPI_Op op)
+L83858@P980: MPI_Request MPI_Request_fromint(int request)
+L83859@P980: int MPI_Request_toint(MPI_Request request)
+L83860@P980: MPI_Session MPI_Session_fromint(int session)
+L83861@P980: int MPI_Session_toint(MPI_Session session)
+L83862@P980: MPI_Datatype MPI_Type_fromint(int datatype)
+L83863@P980: int MPI_Type_toint(MPI_Datatype datatype)
+L83864@P980: MPI_Win MPI_Win_fromint(int win)
+L83865@P980: int MPI_Win_toint(MPI_Win win)
+L83866@P980: A.3.15 Tools / Profiling Interface C Bindings
+L83867@P980: int MPI_Pcontrol(const int level, . . . )
+L83868@P980: A.3.16 Tools / MPI Tool Information Interface C Bindings
+L83869@P980: int MPI_T_category_changed(int *update_number)
+L83870@P980: int MPI_T_category_get_categories(int cat_index, int len, int indices[])
+L83871@P980: int MPI_T_category_get_cvars(int cat_index, int len, int indices[])
+L83872@P980: int MPI_T_category_get_events(int cat_index, int len, int indices[])
+L83873@P980: int MPI_T_category_get_index(const char *name, int *cat_index)
+L83874@P980: 1
+L83875@P980: 2
+L83876@P980: 3
+L83877@P980: 4
+L83878@P980: 5
+L83879@P980: 6
+L83880@P980: 7
+L83881@P980: 8
+L83882@P980: 9
+L83883@P980: 10
+L83884@P980: 11
+L83885@P980: 12
+L83886@P980: 13
+L83887@P980: 14
+L83888@P980: 15
+L83889@P980: 16
+L83890@P980: 17
+L83891@P980: 18
+L83892@P980: 19
+L83893@P980: 20
+L83894@P980: 21
+L83895@P980: 22
+L83896@P980: 23
+L83897@P980: 24
+L83898@P980: 25
+L83899@P980: 26
+L83900@P980: 27
+L83901@P980: 28
+L83902@P980: 29
+L83903@P980: 30
+L83904@P980: 31
+L83905@P980: 32
+L83906@P980: 33
+L83907@P980: 34
+L83908@P980: 35
+L83909@P980: 36
+L83910@P980: 37
+L83911@P980: 38
+L83912@P980: 39
+L83913@P980: 40
+L83914@P980: 41
+L83915@P980: 42
+L83916@P980: 43
+L83917@P980: 44
+L83918@P980: 45
+L83919@P980: 46
+L83920@P980: 47
+L83921@P980-981: 48Appendix A Language Bindings Summary 930
+L83922@P981: int MPI_T_category_get_info(int cat_index, char *name, int *name_len,
+L83923@P981: char *desc, int *desc_len, int *num_cvars, int *num_pvars,
+L83924@P981: int *num_categories)
+L83925@P981: int MPI_T_category_get_num_events(int cat_index, int *num_events)
+L83926@P981: int MPI_T_category_get_num(int *num_cat)
+L83927@P981: int MPI_T_category_get_pvars(int cat_index, int len, int indices[])
+L83928@P981: int MPI_T_cvar_get_index(const char *name, int *cvar_index)
+L83929@P981: int MPI_T_cvar_get_info(int cvar_index, char *name, int *name_len,
+L83930@P981: int *verbosity, MPI_Datatype *datatype, MPI_T_enum *enumtype,
+L83931@P981: char *desc, int *desc_len, int *bind, int *scope)
+L83932@P981: int MPI_T_cvar_get_num(int *num_cvar)
+L83933@P981: int MPI_T_cvar_handle_alloc(int cvar_index, void *obj_handle,
+L83934@P981: MPI_T_cvar_handle *handle, int *count)
+L83935@P981: int MPI_T_cvar_handle_free(MPI_T_cvar_handle *handle)
+L83936@P981: int MPI_T_cvar_read(MPI_T_cvar_handle handle, void *buf)
+L83937@P981: int MPI_T_cvar_write(MPI_T_cvar_handle handle, const void *buf)
+L83938@P981: int MPI_T_enum_get_info(MPI_T_enum enumtype, int *num, char *name,
+L83939@P981: int *name_len)
+L83940@P981: int MPI_T_enum_get_item(MPI_T_enum enumtype, int index, int *value, char *name,
+L83941@P981: int *name_len)
+L83942@P981: int MPI_T_event_callback_get_info(MPI_T_event_registration event_registration,
+L83943@P981: MPI_T_cb_safety cb_safety, MPI_Info *info_used)
+L83944@P981: int MPI_T_event_callback_set_info(MPI_T_event_registration event_registration,
+L83945@P981: MPI_T_cb_safety cb_safety, MPI_Info info)
+L83946@P981: int MPI_T_event_copy(MPI_T_event_instance event_instance, void *buffer)
+L83947@P981: int MPI_T_event_get_index(const char *name, int *event_index)
+L83948@P981: int MPI_T_event_get_info(int event_index, char *name, int *name_len,
+L83949@P981: int *verbosity, MPI_Datatype array_of_datatypes[],
+L83950@P981: MPI_Aint array_of_displacements[], int *num_elements,
+L83951@P981: MPI_T_enum *enumtype, MPI_Info *info, char *desc, int *desc_len,
+L83952@P981: int *bind)
+L83953@P981: int MPI_T_event_get_num(int *num_events)
+L83954@P981: int MPI_T_event_get_source(MPI_T_event_instance event_instance,
+L83955@P981: int *source_index)
+L83956@P981: int MPI_T_event_get_timestamp(MPI_T_event_instance event_instance,
+L83957@P981: MPI_Count *event_timestamp)
+L83958@P981: int MPI_T_event_handle_alloc(int event_index, void *obj_handle, MPI_Info info,
+L83959@P981: MPI_T_event_registration *event_registration)
+L83960@P981: 1
+L83961@P981: 2
+L83962@P981: 3
+L83963@P981: 4
+L83964@P981: 5
+L83965@P981: 6
+L83966@P981: 7
+L83967@P981: 8
+L83968@P981: 9
+L83969@P981: 10
+L83970@P981: 11
+L83971@P981: 12
+L83972@P981: 13
+L83973@P981: 14
+L83974@P981: 15
+L83975@P981: 16
+L83976@P981: 17
+L83977@P981: 18
+L83978@P981: 19
+L83979@P981: 20
+L83980@P981: 21
+L83981@P981: 22
+L83982@P981: 23
+L83983@P981: 24
+L83984@P981: 25
+L83985@P981: 26
+L83986@P981: 27
+L83987@P981: 28
+L83988@P981: 29
+L83989@P981: 30
+L83990@P981: 31
+L83991@P981: 32
+L83992@P981: 33
+L83993@P981: 34
+L83994@P981: 35
+L83995@P981: 36
+L83996@P981: 37
+L83997@P981: 38
+L83998@P981: 39
+L83999@P981: 40
+L84000@P981: 41
+L84001@P981: 42
+L84002@P981: 43
+L84003@P981: 44
+L84004@P981: 45
+L84005@P981: 46
+L84006@P981: 47
+L84007@P981-982: 48931 A.3 C Bindings
+L84008@P982: int MPI_T_event_handle_free(MPI_T_event_registration event_registration,
+L84009@P982: void *user_data, MPI_T_event_free_cb_function free_cb_function)
+L84010@P982: int MPI_T_event_handle_get_info(MPI_T_event_registration event_registration,
+L84011@P982: MPI_Info *info_used)
+L84012@P982: int MPI_T_event_handle_set_info(MPI_T_event_registration event_registration,
+L84013@P982: MPI_Info info)
+L84014@P982: int MPI_T_event_read(MPI_T_event_instance event_instance, int element_index,
+L84015@P982: void *buffer)
+L84016@P982: int MPI_T_event_register_callback(MPI_T_event_registration event_registration,
+L84017@P982: MPI_T_cb_safety cb_safety, MPI_Info info, void *user_data,
+L84018@P982: MPI_T_event_cb_function event_cb_function)
+L84019@P982: int MPI_T_event_set_dropped_handler(
+L84020@P982: MPI_T_event_registration event_registration,
+L84021@P982: MPI_T_event_dropped_cb_function dropped_cb_function)
+L84022@P982: int MPI_T_finalize(void)
+L84023@P982: int MPI_T_init_thread(int required, int *provided)
+L84024@P982: int MPI_T_pvar_get_index(const char *name, int var_class, int *pvar_index)
+L84025@P982: int MPI_T_pvar_get_info(int pvar_index, char *name, int *name_len,
+L84026@P982: int *verbosity, int *var_class, MPI_Datatype *datatype,
+L84027@P982: MPI_T_enum *enumtype, char *desc, int *desc_len, int *bind,
+L84028@P982: int *readonly, int *continuous, int *atomic)
+L84029@P982: int MPI_T_pvar_get_num(int *num_pvar)
+L84030@P982: int MPI_T_pvar_handle_alloc(MPI_T_pvar_session pe_session, int pvar_index,
+L84031@P982: void *obj_handle, MPI_T_pvar_handle *handle, int *count)
+L84032@P982: int MPI_T_pvar_handle_free(MPI_T_pvar_session pe_session,
+L84033@P982: MPI_T_pvar_handle *handle)
+L84034@P982: int MPI_T_pvar_readreset(MPI_T_pvar_session pe_session,
+L84035@P982: MPI_T_pvar_handle handle, void *buf)
+L84036@P982: int MPI_T_pvar_read(MPI_T_pvar_session pe_session, MPI_T_pvar_handle handle,
+L84037@P982: void *buf)
+L84038@P982: int MPI_T_pvar_reset(MPI_T_pvar_session pe_session, MPI_T_pvar_handle handle)
+L84039@P982: int MPI_T_pvar_session_create(MPI_T_pvar_session *pe_session)
+L84040@P982: int MPI_T_pvar_session_free(MPI_T_pvar_session *pe_session)
+L84041@P982: int MPI_T_pvar_start(MPI_T_pvar_session pe_session, MPI_T_pvar_handle handle)
+L84042@P982: int MPI_T_pvar_stop(MPI_T_pvar_session pe_session, MPI_T_pvar_handle handle)
+L84043@P982: int MPI_T_pvar_write(MPI_T_pvar_session pe_session, MPI_T_pvar_handle handle,
+L84044@P982: const void *buf)
+L84045@P982: int MPI_T_source_get_info(int source_index, char *name, int *name_len,
+L84046@P982: char *desc, int *desc_len, MPI_T_source_order *ordering,
+L84047@P982: 1
+L84048@P982: 2
+L84049@P982: 3
+L84050@P982: 4
+L84051@P982: 5
+L84052@P982: 6
+L84053@P982: 7
+L84054@P982: 8
+L84055@P982: 9
+L84056@P982: 10
+L84057@P982: 11
+L84058@P982: 12
+L84059@P982: 13
+L84060@P982: 14
+L84061@P982: 15
+L84062@P982: 16
+L84063@P982: 17
+L84064@P982: 18
+L84065@P982: 19
+L84066@P982: 20
+L84067@P982: 21
+L84068@P982: 22
+L84069@P982: 23
+L84070@P982: 24
+L84071@P982: 25
+L84072@P982: 26
+L84073@P982: 27
+L84074@P982: 28
+L84075@P982: 29
+L84076@P982: 30
+L84077@P982: 31
+L84078@P982: 32
+L84079@P982: 33
+L84080@P982: 34
+L84081@P982: 35
+L84082@P982: 36
+L84083@P982: 37
+L84084@P982: 38
+L84085@P982: 39
+L84086@P982: 40
+L84087@P982: 41
+L84088@P982: 42
+L84089@P982: 43
+L84090@P982: 44
+L84091@P982: 45
+L84092@P982: 46
+L84093@P982: 47
+L84094@P982-983: 48Appendix A Language Bindings Summary 932
+L84095@P983: MPI_Count *ticks_per_second, MPI_Count *max_ticks,
+L84096@P983: MPI_Info *info)
+L84097@P983: int MPI_T_source_get_num(int *num_sources)
+L84098@P983: int MPI_T_source_get_timestamp(int source_index, MPI_Count *timestamp)
+L84099@P983: A.3.17 Deprecated C Bindings
+L84100@P983: int MPI_Attr_delete(MPI_Comm comm, int keyval)
+L84101@P983: int MPI_Attr_get(MPI_Comm comm, int keyval, void *attribute_val, int *flag)
+L84102@P983: int MPI_Attr_put(MPI_Comm comm, int keyval, void *attribute_val)
+L84103@P983: int MPI_DUP_FN(MPI_Comm oldcomm, int keyval, void *extra_state,
+L84104@P983: void *attribute_val_in, void *attribute_val_out, int *flag)
+L84105@P983: int MPI_Get_elements_x(const MPI_Status *status, MPI_Datatype datatype,
+L84106@P983: MPI_Count *count)
+L84107@P983: int MPI_Info_get_valuelen(MPI_Info info, const char *key, int *valuelen,
+L84108@P983: int *flag)
+L84109@P983: int MPI_Info_get(MPI_Info info, const char *key, int valuelen, char *value,
+L84110@P983: int *flag)
+L84111@P983: int MPI_Keyval_create(MPI_Copy_function *copy_fn,
+L84112@P983: MPI_Delete_function *delete_fn, int *keyval, void *extra_state)
+L84113@P983: int MPI_Keyval_free(int *keyval)
+L84114@P983: int MPI_NULL_COPY_FN(MPI_Comm oldcomm, int keyval, void *extra_state,
+L84115@P983: void *attribute_val_in, void *attribute_val_out, int *flag)
+L84116@P983: int MPI_NULL_DELETE_FN(MPI_Comm comm, int keyval, void *attribute_val,
+L84117@P983: void *extra_state)
+L84118@P983: int MPI_Status_set_elements_x(MPI_Status *status, MPI_Datatype datatype,
+L84119@P983: MPI_Count count)
+L84120@P983: int MPI_Type_get_extent_x(MPI_Datatype datatype, MPI_Count *lb,
+L84121@P983: MPI_Count *extent)
+L84122@P983: int MPI_Type_get_true_extent_x(MPI_Datatype datatype, MPI_Count *true_lb,
+L84123@P983: MPI_Count *true_extent)
+L84124@P983: int MPI_Type_size_x(MPI_Datatype datatype, MPI_Count *size)
+L84125@P983: 1
+L84126@P983: 2
+L84127@P983: 3
+L84128@P983: 4
+L84129@P983: 5
+L84130@P983: 6
+L84131@P983: 7
+L84132@P983: 8
+L84133@P983: 9
+L84134@P983: 10
+L84135@P983: 11
+L84136@P983: 12
+L84137@P983: 13
+L84138@P983: 14
+L84139@P983: 15
+L84140@P983: 16
+L84141@P983: 17
+L84142@P983: 18
+L84143@P983: 19
+L84144@P983: 20
+L84145@P983: 21
+L84146@P983: 22
+L84147@P983: 23
+L84148@P983: 24
+L84149@P983: 25
+L84150@P983: 26
+L84151@P983: 27
+L84152@P983: 28
+L84153@P983: 29
+L84154@P983: 30
+L84155@P983: 31
+L84156@P983: 32
+L84157@P983: 33
+L84158@P983: 34
+L84159@P983: 35
+L84160@P983: 36
+L84161@P983: 37
+L84162@P983: 38
+L84163@P983: 39
+L84164@P983: 40
+L84165@P983: 41
+L84166@P983: 42
+L84167@P983: 43
+L84168@P983: 44
+L84169@P983: 45
+L84170@P983: 46
+L84171@P983: 47
+L84172@P983-984: 48933 A.4 Fortran 2008 Bindings with the mpi_f08 Module
+L84173@P984: A.4 Fortran 2008 Bindings with the mpi_f08 Module
+L84174@P984: A.4.1 Point-to-Point Communication Fortran 2008 Bindings
+L84175@P984: MPI_Bsend(buf, count, datatype, dest, tag, comm, ierror)
+L84176@P984: TYPE(*), DIMENSION(..), INTENT(IN) :: buf
+L84177@P984: INTEGER, INTENT(IN) :: count, dest, tag
+L84178@P984: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L84179@P984: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84180@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84181@P984: MPI_Bsend(buf, count, datatype, dest, tag, comm, ierror) !(_c)
+L84182@P984: TYPE(*), DIMENSION(..), INTENT(IN) :: buf
+L84183@P984: INTEGER(KIND=MPI_COUNT_KIND), INTENT(IN) :: count
+L84184@P984: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L84185@P984: INTEGER, INTENT(IN) :: dest, tag
+L84186@P984: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84187@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84188@P984: MPI_Bsend_init(buf, count, datatype, dest, tag, comm, request, ierror)
+L84189@P984: TYPE(*), DIMENSION(..), INTENT(IN), ASYNCHRONOUS :: buf
+L84190@P984: INTEGER, INTENT(IN) :: count, dest, tag
+L84191@P984: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L84192@P984: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84193@P984: TYPE(MPI_Request), INTENT(OUT) :: request
+L84194@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84195@P984: MPI_Bsend_init(buf, count, datatype, dest, tag, comm, request, ierror) !(_c)
+L84196@P984: TYPE(*), DIMENSION(..), INTENT(IN), ASYNCHRONOUS :: buf
+L84197@P984: INTEGER(KIND=MPI_COUNT_KIND), INTENT(IN) :: count
+L84198@P984: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L84199@P984: INTEGER, INTENT(IN) :: dest, tag
+L84200@P984: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84201@P984: TYPE(MPI_Request), INTENT(OUT) :: request
+L84202@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84203@P984: MPI_Buffer_attach(buffer, size, ierror)
+L84204@P984: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buffer
+L84205@P984: INTEGER, INTENT(IN) :: size
+L84206@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84207@P984: MPI_Buffer_attach(buffer, size, ierror) !(_c)
+L84208@P984: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buffer
+L84209@P984: INTEGER(KIND=MPI_COUNT_KIND), INTENT(IN) :: size
+L84210@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84211@P984: MPI_Buffer_detach(buffer_addr, size, ierror)
+L84212@P984: USE, INTRINSIC :: ISO_C_BINDING, ONLY : C_PTR
+L84213@P984: TYPE(C_PTR), INTENT(OUT) :: buffer_addr
+L84214@P984: INTEGER, INTENT(OUT) :: size
+L84215@P984: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84216@P984: 1
+L84217@P984: 2
+L84218@P984: 3
+L84219@P984: 4
+L84220@P984: 5
+L84221@P984: 6
+L84222@P984: 7
+L84223@P984: 8
+L84224@P984: 9
+L84225@P984: 10
+L84226@P984: 11
+L84227@P984: 12
+L84228@P984: 13
+L84229@P984: 14
+L84230@P984: 15
+L84231@P984: 16
+L84232@P984: 17
+L84233@P984: 18
+L84234@P984: 19
+L84235@P984: 20
+L84236@P984: 21
+L84237@P984: 22
+L84238@P984: 23
+L84239@P984: 24
+L84240@P984: 25
+L84241@P984: 26
+L84242@P984: 27
+L84243@P984: 28
+L84244@P984: 29
+L84245@P984: 30
+L84246@P984: 31
+L84247@P984: 32
+L84248@P984: 33
+L84249@P984: 34
+L84250@P984: 35
+L84251@P984: 36
+L84252@P984: 37
+L84253@P984: 38
+L84254@P984: 39
+L84255@P984: 40
+L84256@P984: 41
+L84257@P984: 42
+L84258@P984: 43
+L84259@P984: 44
+L84260@P984: 45
+L84261@P984: 46
+L84262@P984: 47
+L84263@P984-985: 48Appendix A Language Bindings Summary 934
+L84264@P985: MPI_Buffer_detach(buffer_addr, size, ierror) !(_c)
+L84265@P985: USE, INTRINSIC :: ISO_C_BINDING, ONLY : C_PTR
+L84266@P985: TYPE(C_PTR), INTENT(OUT) :: buffer_addr
+L84267@P985: INTEGER(KIND=MPI_COUNT_KIND), INTENT(OUT) :: size
+L84268@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84269@P985: MPI_Buffer_flush(ierror)
+L84270@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84271@P985: MPI_Buffer_iflush(request, ierror)
+L84272@P985: TYPE(MPI_Request), INTENT(OUT) :: request
+L84273@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84274@P985: MPI_Cancel(request, ierror)
+L84275@P985: TYPE(MPI_Request), INTENT(IN) :: request
+L84276@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84277@P985: MPI_Comm_attach_buffer(comm, buffer, size, ierror)
+L84278@P985: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84279@P985: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buffer
+L84280@P985: INTEGER, INTENT(IN) :: size
+L84281@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84282@P985: MPI_Comm_attach_buffer(comm, buffer, size, ierror) !(_c)
+L84283@P985: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84284@P985: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buffer
+L84285@P985: INTEGER(KIND=MPI_COUNT_KIND), INTENT(IN) :: size
+L84286@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84287@P985: MPI_Comm_detach_buffer(comm, buffer_addr, size, ierror)
+L84288@P985: USE, INTRINSIC :: ISO_C_BINDING, ONLY : C_PTR
+L84289@P985: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84290@P985: TYPE(C_PTR), INTENT(OUT) :: buffer_addr
+L84291@P985: INTEGER, INTENT(OUT) :: size
+L84292@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84293@P985: MPI_Comm_detach_buffer(comm, buffer_addr, size, ierror) !(_c)
+L84294@P985: USE, INTRINSIC :: ISO_C_BINDING, ONLY : C_PTR
+L84295@P985: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84296@P985: TYPE(C_PTR), INTENT(OUT) :: buffer_addr
+L84297@P985: INTEGER(KIND=MPI_COUNT_KIND), INTENT(OUT) :: size
+L84298@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84299@P985: MPI_Comm_flush_buffer(comm, ierror)
+L84300@P985: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84301@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84302@P985: MPI_Comm_iflush_buffer(comm, request, ierror)
+L84303@P985: TYPE(MPI_Comm), INTENT(IN) :: comm
+L84304@P985: TYPE(MPI_Request), INTENT(OUT) :: request
+L84305@P985: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L84306@P985: MPI_Get_count(status, datatype, count, ierror)
+L84307@P985: TYPE(MPI_Status), INTENT(IN) :: status
+L84308@P985: 1
+L84309@P985: 2
+L84310@P985: 3
+L84311@P985: 4
+L84312@P985: 5
+L84313@P985: 6
+L84314@P985: 7
+L84315@P985: 8
+L84316@P985: 9
+L84317@P985: 10
+L84318@P985: 11
+L84319@P985: 12
+L84320@P985: 13
+

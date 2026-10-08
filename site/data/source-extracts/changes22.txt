@@ -1,0 +1,82 @@
+Changes from Version 2.1 to Version 2.2 (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node520.htm)
+citeturn117view0 [wordlim: 200] Crawled: 3 months ago; Content type: text/html; Source: click({"ref_id":"turn24view0","id":517}); Total lines: 85
+L0: * * *
+L1: # 446. Changes from Version 2.1 to Version 2.2
+L2: 
+L3: cite36†Image: Previous cite37†Image: Up cite38†Image: Next L4: Up: cite0†Contents Next: cite1† Changes from Version 2.0 to Version 2.1 Previous: cite2† Changes in MPI-3.0 L5: 
+L6: 1. Section cite3†Named Constants  on page cite3†Named Constants  .
+L7: It is now guaranteed that predefined named constant handles (as other constants) can be used in initialization expressions or assignments, i.e., also before the call to  MPI_INIT.
+L8: 2. Section cite4†Language Binding  on page cite4†Language Binding  ,and Section cite5†C++ Bindings  on page cite5†C++ Bindings  .
+L9: The C++ language bindings have been deprecated and may be removed in a future version of the  MPI specification.
+L10: 3. Section cite6†Message Data  on page cite6†Message Data  .
+L11: MPI_CHAR for printable characters is now defined for C type char (instead of signed char). This change should not have any impact on applications nor on  MPI libraries (except some comment lines), because printable characters could and can be stored in any of the C types char, signed char, and unsigned char, and  MPI_CHAR is not allowed for predefined reduction operations.
+L12: 4. Section cite6†Message Data  on page cite6†Message Data  .
+L13: MPI_(U)INT {8,16,32,64 }_T,  MPI_AINT,  MPI_OFFSET,  MPI_C_BOOL,  MPI_C_COMPLEX,  MPI_C_FLOAT_COMPLEX,  MPI_C_DOUBLE_COMPLEX, and  MPI_C_LONG_DOUBLE_COMPLEX are now valid predefined  MPI datatypes.
+L14: 5. Section cite7†Communication Modes  on page cite7†Communication Modes  ,Section cite8†Communication Initiation  on page cite8†Communication Initiation  ,Section cite9†Persistent Communication Requests  on page cite9†Persistent Communication Requests  , andSection cite10†Introduction and Overview  on page cite10†Introduction and Overview  .
+L15: The read access restriction on the send buffer for blocking, non blocking and collective API has been lifted. It is permitted to access for read the send buffer while the operation is in progress.
+L16: 6. Section cite11†Nonblocking Communication  on page cite11†Nonblocking Communication  .
+L17: The Advice to users for IBSEND and IRSEND was slightly changed.
+L18: 
+L19: 7. Section cite12†Communication Completion  on page cite12†Communication Completion  .
+L20: The advice to free an active request was removed in the Advice to users for  MPI_REQUEST_FREE.
+L21: 
+L22: 8. Section cite13†Non-destructive Test of status  on page cite13†Non-destructive Test of status  .
+L23: MPI_REQUEST_GET_STATUS changed to permit inactive or null requests as input.
+L24: 9. Section cite14†All-to-All Scatter/Gather  on page cite14†All-to-All Scatter/Gather  .
+L25: ``In place'' option is added to  MPI_ALLTOALL,  MPI_ALLTOALLV, and  MPI_ALLTOALLW for intracommunicators.
+L26: 
+L27: 10. Section cite15†Predefined Reduction Operations  on page cite15†Predefined Reduction Operations  .
+L28: Predefined parameterized datatypes (e.g., returned by
+L29: MPI_TYPE_CREATE_F90_REAL) and optional named predefined datatypes (e.g.  MPI_REAL8) have been added to the list of valid datatypes in reduction operations.
+L30: 11. Section cite15†Predefined Reduction Operations  on page cite15†Predefined Reduction Operations  .
+L31: MPI_(U)INT {8,16,32,64 }_T are all considered C integer types for the purposes of the predefined reduction operators.  MPI_AINT and  MPI_OFFSET are considered Fortran integer types.  MPI_C_BOOL is considered a Logical type.  MPI_C_COMPLEX,  MPI_C_FLOAT_COMPLEX,  MPI_C_DOUBLE_COMPLEX, and  MPI_C_LONG_DOUBLE_COMPLEX are considered Complex types.
+L32: 12. Section cite16†Process-Local Reduction  on page cite16†Process-Local Reduction  .
+L33: The local routines  MPI_REDUCE_LOCAL and  MPI_OP_COMMUTATIVE have been added.
+L34: 
+L35: 13. Section cite17† MPI_REDUCE_SCATTER_BLOCK  on page cite17† MPI_REDUCE_SCATTER_BLOCK  .
+L36: The collective function  MPI_REDUCE_SCATTER_BLOCK is added to the  MPI standard.
+L37: 
+L38: 14. Section cite18†Exclusive Scan  on page cite18†Exclusive Scan  .
+L39: Added in place argument to  MPI_EXSCAN.
+L40: 15. Section cite19†Communicator Constructors  on page cite19†Communicator Constructors  , andSection cite20†Inter-Communication  on page cite20†Inter-Communication  .
+L41: Implementations that did not implement  MPI_COMM_CREATE on intercommunicators will need to add that functionality. As the standard described the behavior of this operation on intercommunicators, it is believed that most implementations already provide this functionality. Note also that the C++ binding for both  MPI_COMM_CREATE and  MPI_COMM_SPLIT explicitly allow Intercomms.
+L42: 16. Section cite19†Communicator Constructors  on page cite19†Communicator Constructors  .
+L43: MPI_COMM_CREATE is extended to allow several disjoint subgroups as input if comm is an intracommunicator. If comm is an intercommunicator it was clarified that all processes in the same local group of comm must specify the same value for group.
+L44: 17. Section cite21†Distributed Graph Constructor  on page cite21†Distributed Graph Constructor  .
+L45: New functions for a scalable distributed graph topology interface has been added. In this section, the functions  MPI_DIST_GRAPH_CREATE_ADJACENT and  MPI_DIST_GRAPH_CREATE, the constants  MPI_UNWEIGHTED, and the derived C++ class Distgraphcomm were added.
+L46: 18. Section cite22†Topology Inquiry Functions  on page cite22†Topology Inquiry Functions  .
+L47: For the scalable distributed graph topology interface, the functions  MPI_DIST_GRAPH_NEIGHBORS_COUNT and  MPI_DIST_GRAPH_NEIGHBORS and the constant  MPI_DIST_GRAPH were added.
+L48: 
+L49: 19. Section cite22†Topology Inquiry Functions  on page cite22†Topology Inquiry Functions  .
+L50: Remove ambiguity regarding duplicated neighbors with  MPI_GRAPH_NEIGHBORS and  MPI_GRAPH_NEIGHBORS_COUNT.
+L51: 20. Section cite23†Version Inquiries  on page cite23†Version Inquiries  .
+L52: The subversion number changed from 1 to 2.
+L53: 
+L54: 21. Section cite24†Error Handling  on page cite24†Error Handling  ,Section cite25†Deprecated since MPI-2.2  on page cite25†Deprecated since MPI-2.2  , andAnnex cite26†Prototype Definitions  on page cite26†Prototype Definitions  .
+L55: Changed function pointer typedef names  MPI_ {Comm,File,Win }_errhandler_fn to  MPI_ {Comm,File,Win }_errhandler_function. Deprecated old ``_fn'' names.
+L56: 22. Section cite27†Allowing User Functions at Process Termination  on page cite27†Allowing User Functions at Process Termination  .
+L57: Attribute deletion callbacks on  MPI_COMM_SELF are now called in LIFO order. Implementors must now also register all implementation-internal attribute deletion callbacks on  MPI_COMM_SELF before returning from  MPI_INIT/ MPI_INIT_THREAD.
+L58: 23. Section cite28†Accumulate Functions  on page cite28†Accumulate Functions  .
+L59: The restriction added in  MPI 2.1 that the operation  MPI_REPLACE in  MPI_ACCUMULATE can be used only with predefined datatypes has been removed.  MPI_REPLACE can now be used even with derived datatypes, as it was in  MPI 2.0. Also, a clarification has been made that  MPI_REPLACE can be used only in  MPI_ACCUMULATE, not in collective operations that do reductions, such as  MPI_REDUCE and others.
+L60: 24. Section cite29†Generalized Requests  on page cite29†Generalized Requests  .
+L61: Add ```*`'' to the  query_fn,  free_fn, and  cancel_fn arguments to the C++ binding for  MPI::Grequest::Start() for consistency with the rest of  MPI functions that take function pointer arguments.
+L62: 25. Section cite30†External Data Representation: ``external32''  on page cite30†External Data Representation: ``external32''  , andTable cite30†External Data Representation: ``external32''  on page cite30†External Data Representation: ``external32''  .
+L63: MPI_(U)INT {8,16,32,64 }_T,  MPI_AINT,  MPI_OFFSET,  MPI_C_COMPLEX,  MPI_C_FLOAT_COMPLEX,  MPI_C_DOUBLE_COMPLEX,
+L64: MPI_C_LONG_DOUBLE_COMPLEX, and  MPI_C_BOOL are added as predefined datatypes in the external32 representation.
+L65: 26. Section cite31†Attributes  on page cite31†Attributes  .
+L66: The description was modified that it only describes how an  MPI implementation behaves, but not how  MPI stores attributes internally. The erroneous  MPI-2.1 Example 16.17 was replaced with three new examples cite31†Attributes  , cite31†Attributes  , and cite31†Attributes  on pages cite31†Attributes  -cite31†Attributes  explicitly detailing cross-language attribute behavior. Implementations that matched the behavior of the old example will need to be updated.
+L67: 27. Annex cite32†Defined Constants  on page cite32†Defined Constants  .
+L68: Removed type  MPI::Fint (compare  MPI_Fint in Section cite33†Types  on page cite33†Types  ).
+L69: 28. Annex cite32†Defined Constants  on page cite32†Defined Constants  .Table  Named Predefined Datatypes.
+L70: Added  MPI_(U)INT {8,16,32,64 }_T,  MPI_AINT,  MPI_OFFSET,  MPI_C_BOOL,  MPI_C_FLOAT_COMPLEX,  MPI_C_COMPLEX,  MPI_C_DOUBLE_COMPLEX, and  MPI_C_LONG_DOUBLE_COMPLEX are added as predefined datatypes.
+L71: 
+L72: * * *
+L73: cite39†Image: Previous cite40†Image: Up cite41†Image: Next L74: Up: cite0†Contents Next: cite1† Changes from Version 2.0 to Version 2.1 Previous: cite2† Changes in MPI-3.0 L75: 
+L76: * * *
+L77: 
+L78: Return to cite34†MPI-3.1 Standard Index L79: Return to cite35†MPI Forum Home Page L80: 
+L81: * * *
+L82: 
+L83: (Unofficial) MPI-3.1 of June 4, 2015
+L84: HTML Generated on June 4, 2015
+

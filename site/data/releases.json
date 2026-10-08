@@ -1,0 +1,29 @@
+{
+  "checked": "2026-10-06",
+  "openmpi": {
+    "version": "5.0.10",
+    "tag": "v5.0.10",
+    "repository": "https://github.com/open-mpi/ompi",
+    "release": "https://www.open-mpi.org/software/ompi/v5.0/",
+    "archive": "https://download.open-mpi.org/release/open-mpi/v5.0/openmpi-5.0.10.tar.gz",
+    "archive_root": "openmpi-5.0.10",
+    "manual": "https://docs.open-mpi.org/en/v5.0.10/man-openmpi/man3/index.html"
+  },
+  "mpich": {
+    "version": "5.0.2",
+    "tag": "v5.0.2",
+    "repository": "https://github.com/pmodels/mpich",
+    "release": "https://www.mpich.org/2026/09/28/mpich-5-0-2-released/",
+    "archive": "https://www.mpich.org/static/downloads/5.0.2/mpich-5.0.2.tar.gz",
+    "archive_root": "mpich-5.0.2",
+    "manual": "https://www.mpich.org/static/docs/v5.0.2/"
+  },
+  "mpc": {
+    "version": "4.3.1",
+    "tag": "MPC_4.3.1",
+    "repository": "https://github.com/cea-hpc/mpc",
+    "release": "https://github.com/cea-hpc/mpc/releases/tag/MPC_4.3.1",
+    "archive": "https://github.com/cea-hpc/mpc/archive/refs/tags/MPC_4.3.1.tar.gz",
+    "archive_root": "mpc-MPC_4.3.1"
+  }
+}

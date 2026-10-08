@@ -1,0 +1,37 @@
+Collective Communication C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node384.htm)
+citeturn96view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node384.htm","lineno":0}); Total lines: 41
+L0: * * *
+L1: ## 339. Collective Communication C Bindings
+L2: 
+L3: cite5†Image cite6†Image cite7†Image L4: Up: cite0† C Bindings Next: cite1† Groups, Contexts, Communicators, and Caching C Bindings Previous: cite2† Datatypes C Bindings L5: ` int MPI_Allgather(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, MPI_Comm comm)
+L6: ` ` int MPI_Allgatherv(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int *recvcounts, int *displs, MPI_Datatype recvtype, MPI_Comm comm)
+L7: ` ` int MPI_Allreduce(void* sendbuf, void* recvbuf, int count, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
+L8: ` ` int MPI_Alltoall(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, MPI_Comm comm)
+L9: ` ` int MPI_Alltoallv(void* sendbuf, int *sendcounts, int *sdispls, MPI_Datatype sendtype, void* recvbuf, int *recvcounts, int *rdispls, MPI_Datatype recvtype, MPI_Comm comm)
+L10: ` ` int MPI_Alltoallw(void *sendbuf, int sendcounts[], int sdispls[], MPI_Datatype sendtypes[], void *recvbuf, int recvcounts[], int rdispls[], MPI_Datatype recvtypes[], MPI_Comm comm)
+L11: ` ` int MPI_Barrier(MPI_Comm comm)
+L12: ` ` int MPI_Bcast(void* buffer, int count, MPI_Datatype datatype, int root, MPI_Comm comm )
+L13: ` ` int MPI_Exscan(void *sendbuf, void *recvbuf, int count, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
+L14: ` ` int MPI_Gather(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
+L15: ` ` int MPI_Gatherv(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int *recvcounts, int *displs, MPI_Datatype recvtype, int root, MPI_Comm comm)
+L16: ` ` int MPI_Op_commutative(MPI_Op op, int *commute)
+L17: ` ` int MPI_Op_create(MPI_User_function *function, int commute, MPI_Op *op)
+L18: ` ` int MPI_Reduce(void* sendbuf, void* recvbuf, int count, MPI_Datatype datatype, MPI_Op op, int root, MPI_Comm comm)
+L19: ` ` int MPI_Reduce_local(void* inbuf, void* inoutbuf, int count, MPI_Datatype datatype, MPI_Op op)
+L20: ` ` int MPI_Reduce_scatter(void* sendbuf, void* recvbuf, int *recvcounts, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
+L21: ` ` int MPI_Reduce_scatter_block(void* sendbuf, void* recvbuf, int recvcount, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm)
+L22: ` ` int MPI_Scan(void* sendbuf, void* recvbuf, int count, MPI_Datatype datatype, MPI_Op op, MPI_Comm comm )
+L23: ` ` int MPI_Scatter(void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
+L24: ` ` int MPI_Scatterv(void* sendbuf, int *sendcounts, int *displs, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, int root, MPI_Comm comm)
+L25: ` ` int MPI_op_free( MPI_Op *op)
+L26: `
+L27: * * *
+L28: 
+L29: cite8†Image cite9†Image cite10†Image L30: Up: cite0† C Bindings Next: cite1† Groups, Contexts, Communicators, and Caching C Bindings Previous: cite2† Datatypes C Bindings L31: 
+L32: * * *
+L33: 
+L34: Return to cite3†MPI-2.2 Standard Index L35: Return to cite4†MPI Forum Home Page L36: 
+L37: * * *
+L38: 
+L39: (Unofficial) MPI-2.2 of September 4, 2009
+L40: HTML Generated on September 10, 2009

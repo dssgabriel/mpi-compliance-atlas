@@ -1,0 +1,654 @@
+mpc/CHANGELOG.md at main · cea-hpc/mpc · GitHub (https://github.com/cea-hpc/mpc/blob/main/CHANGELOG.md)
+citeturn31view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"turn24view3","lineno":500}); Total lines: 763
+L23:     * APPLICATION SECURITY
+L24:       * cite9†GitHub Advanced Security Find and fix vulnerabilities L25:       * cite10†Code security Secure your code as you build L26:       * cite11†Secret protection Stop leaks before they start L27: 
+L28:     * EXPLORE
+L29:       * cite12†Why GitHub L38:     * BY COMPANY SIZE
+L39:       * cite18†Enterprises L40:       * cite19†Small and medium teams L41:       * cite20†Startups L42:       * cite21†Nonprofits L43: 
+L44:     * BY USE CASE
+L45:       * cite22†App Modernization L46:       * cite23†DevSecOps L47:       * cite24†DevOps L48:       * cite25†CI/CD L49:       * cite26†View all use cases L50: 
+L51:     * BY INDUSTRY
+L52:       * cite27†Healthcare L53:       * cite28†Financial services L54:       * cite29†Manufacturing L55:       * cite30†Government L56:       * cite31†View all industries L57: 
+L58: cite32†View all solutions L59: 
+L60:   * Resources
+L61:     * EXPLORE BY TOPIC
+L62:       * cite33†AI L63:       * cite34†Software Development L64:       * cite35†DevOps L65:       * cite36†Security L66:       * cite37†View all topics L67: 
+L68:     * EXPLORE BY TYPE
+L69:       * cite38†Customer stories L70:       * cite39†Events & webinars L71:       * cite40†Ebooks & reports L72:       * cite41†Business insights L73:       * cite42†GitHub Skills†skills.github.com L74:     * SUPPORT & SERVICES
+L75:       * cite13†Documentation†docs.github.com L76:       * cite43†Customer support†support.github.com L77:       * cite44†Community forum L78:       * cite45†Trust center L79:       * cite46†Partners L80: 
+L81: cite47†View all resources L82: 
+L83:   * Open Source
+L84: 
+L85:     * COMMUNITY
+L86:       * cite48†GitHub Sponsors Fund open source developers L87:     * PROGRAMS
+L88:       * cite49†Security Lab†securitylab.github.com L89:       * cite50†Maintainer Community†maintainers.github.com L90:       * cite51†Accelerator L91:       * cite52†GitHub Stars†stars.github.com L92:       * cite53†Archive Program†archiveprogram.github.com L93: 
+L94:     * REPOSITORIES
+L95:       * cite54†Topics L96:       * cite55†Trending L97:       * cite56†Collections L98: 
+L99:   * Enterprise
+L100: 
+L101:     * ENTERPRISE SOLUTIONS
+L102:       * cite18†Enterprise platform AI-powered developer platform L103:     * AVAILABLE ADD-ONS
+L104:       * cite9†GitHub Advanced Security Enterprise-grade security features L105:       * cite57†Copilot for Business Enterprise-grade AI features L106:       * cite58†Premium Support Enterprise-grade 24/7 support L107: 
+L108:   * cite59†Pricing L109: 
+L110: Search or jump to...
+L111: # Search code, repositories, users, issues, pull requests...
+L112: 
+L113:  Search
+L114: 
+L115: Clear
+L116: 
+L117: cite60†Search syntax tips†docs.github.com L118: 
+L119: #  Provide feedback
+L120: 
+L121: We read every piece of feedback, and take your input very seriously.
+L122: 
+L123: Include my email address so I can be contacted
+L124: 
+L125: Cancel  Submit feedback
+L126: 
+L127: #  Saved searches
+L128: ## Use saved searches to filter your results more quickly
+L129: 
+L130: Name
+L131: 
+L132: Query
+L133: 
+L134: To see all available qualifiers, see our cite60†documentation†docs.github.com .
+L135: 
+L136: Cancel  Create saved search
+L137: 
+L138: cite1† Sign in  L139: 
+L140: cite61† Sign up  L141: 
+L142:   Appearance settings
+L143: 
+L144: Resetting focus
+L145: 
+L146: You signed in with another tab or window. Reload to refresh your session. You signed out in another tab or window. Reload to refresh your session. You switched accounts on another tab or window. Reload to refresh your session.   Dismiss alert
+L147: {{ message }}
+L148: ###  Uh oh!
+L149: 
+L150: There was an error while loading. Please reload this page.
+L151: 
+L152: cite62† cea-hpc  / cite63†mpc Public
+L153: 
+L154:   * cite64† Notifications  You must be signed in to change notification settings
+L155:   * cite64† Fork 3  L156:   * cite64† Star 13  L157: 
+L158:   * cite63† Code  L159:   * cite65† Issues 0  L160:   * cite66† Pull requests 0  L161:   * cite67† Actions  L162:   * cite68† Projects  L163:   * cite69† Security and quality 0  L164:   * cite70† Insights  L165: 
+L166:   Additional navigation options
+L167:   * cite63† Code  L168:   * cite65† Issues  L169:   * cite66† Pull requests  L170:   * cite67† Actions  L171:   * cite68† Projects  L172:   * cite69† Security and quality  L173:   * cite70† Insights  L174: ## FilesExpand file tree
+L175: 
+L176:  main
+L177: 
+L178: ## Breadcrumbs
+L179: 
+L180:   1. cite71†mpc L181: 
+L182: /
+L183: 
+L184: # CHANGELOG.md
+L185: 
+L186: Copy path
+L187: 
+L188: Blame
+L189: 
+L190: More file actions
+L191: 
+L192: Blame
+L193: 
+L194: More file actions
+L195: 
+L196: ## Latest commit
+L197: 
+L198: ## History
+L199: 
+L200: cite72†History L201: 
+L202: History
+L203: 
+L204: 578 lines (424 loc) · 17.7 KB
+L205: 
+L206:  main
+L207: 
+L208: ## Breadcrumbs
+L209: 
+L210:   1. cite71†mpc L211: 
+L212: /
+L213: 
+L214: # CHANGELOG.md
+L215: 
+L216: Copy path
+L217: 
+L218: Top
+L219: 
+L220: ## File metadata and controls
+L221: 
+L222:   * Preview
+L223: 
+L224:   * Code
+L225: 
+L226:   * Blame
+L227: 
+L228: 578 lines (424 loc) · 17.7 KB
+L229: 
+L230: cite73†Raw L231: 
+L232: Copy raw file
+L233: 
+L234: Download raw file
+L235: 
+L236: Outline
+L237: 
+L238: Edit and raw actions
+L239: # Changelog
+L240: 
+L241: All notable changes to this project will be documented in this file. The format is based on cite74†Keep a Changelog†keepachangelog.com .
+L242: 
+L243: ## [Unreleased]
+L244: 
+L245: ### Added
+L246: 
+L247: ### Changed
+L248: 
+L249: ### Removed
+L250: 
+L251: ### Deprecated
+L252: 
+L253: ### Fixed
+L254: 
+L255: ## cite75†4.3.1 - 2026-04-08
+L256: 
+L257: ### Added
+L258: 
+L259:   * Common
+L260:     * Debug assertion in the mempool to detect bad behavior
+L261:   * LowComm
+L262:     * Support for floating point numbers in atomic operations
+L263: ### Changed
+L264:   * Build
+L265:     * Enable process-mode by default when using `installmpc`
+L266:     * Search SLURM as default launcher in `installmpc` and fallback to Hydra if not found
+L267:   * Chore
+L268:     * Default branch to main (devel and master will not be updated)
+L269:     * Refactor Documentation and deployment through GitHub pages
+L270:   * LowComm
+L271:     * Avoid warnings in CPP by changing header inclusion rules
+L272:     * Improve selection of the network devices to initialize
+L273:     * Generate and use unique tags for internal communications (avoiding incorrect matches)
+L274:   * MPCRUN
+L275:     * Optimize launching time by removing one `mpc_print_config` invocation
+L276:   * Pthread
+L277:     * Avoid redefinition of standard libc symbols in process-mode
+L278: ### Fixed
+L279:   * Build
+L280:     * Export missing build necessary files in the archive
+L281:   * Common
+L282:     * Set visibility attributes of user main to default
+L283:   * Fortran
+L284:     * Non standard code generation
+L285:     * Properly convert MPI NULL handles and indexes from C
+L286:   * MPI
+L287:     * Active Message handling in Thread-Based
+L288:     * Unpacking of user created datatypes
+L289:     * Deadlock in `MPI_Waitall` in Thread-Based
+L290:     * Possible double frees in Window creation and freeing
+L291:     * Add missing qualifiers and Fortran constants to the exported API
+L292:   * Low Comm
+L293:     * Multinic devices initialization
+L294:     * Interface capabilities initialization
+L295:     * Deadlock in backend releasing
+L296:     * Deadlock in flush operation with no pending communications
+L297:     * Potential error in PTL finalization in multithreaded context
+L298:     * Rendezvous Active Message user headers not reaching the target
+L299:     * Release the PTL backend in the right order
+L300:   * Memory related potential bugs in MPI, Low Comm, Common and Config
+L301: ## cite76†4.3.0 - 2025-11-18
+L302: ### Added
+L303:   * Accelerators
+L304:     * Support CUDA
+L305:     * Support HIP
+L306:   * Build
+L307:     * Add release with debug information optimization option (`--relwithdebinfo`)
+L308:   * Low Comm / RED-SEA Project
+L309:     * Refactoring LCP module to better support suit protocols evolutions
+L310:     * Support for implementing protocols on top of rails (active message)
+L311:     * Support for multirail and fragmentation
+L312:     * Extension of rail API to support stream-like data transfers (tcp and ptl only)
+L313:     * Component-based transport with static loading
+L314:   * MPI
+L315:     * Support Gather Allgather Bcast topological collectives
+L316:     * Support for MPI Tools interface
+L317: ### Changed
+L318: 
+L319:   * Compilers
+L320:     * Activate privatization only if the underlying compiler is capable
+L321:   * OMP
+L322:     * Enhancing support of OpenMP task and interactions with MPI
+L323:   * MPCRUN
+L324:     * Change default count for resource request
+L325: 
+L326: ### Removed
+L327: 
+L328:   * Low Comm
+L329:     * Remove deprecated Portals compatibility layer
+L330:   * Threads
+L331:     * Remove NG scheduler used for research purposes
+L332: 
+L333: ### Deprecated
+L334: 
+L335:   * Threads
+L336:     * Workshare support (needs GCC 7.3 to work)
+L337: ### Fixed
+L338:   * Build
+L339:     * Add support for GCC 13, 14, 15 and C23
+L340:     * Fix --enable-debug-mem by correctly depending on libasan
+L341:   * Compilers
+L342:     * Fix compilers wrong error code propagation
+L343:     * Fix wrong linking option with fortran in process mode
+L344:   * Launch
+L345:     * Fix PMIx inter-node intra-node initialization
+L346:     * Add missing calls to PMIx_Finalize
+L347:     * Fix wrong termination with PMIx on abortion
+L348:   * Low Comm
+L349:     * Fix PTL RMA completion system
+L350:     * Fix PTL RMA Flush operations
+L351:     * Fix LCP atomics
+L352:   * MPI
+L353:     * Fix Exscan algorithm selection
+L354:     * Fix Pack and Unpack capabilities
+L355:     * Fix MPI_Self path
+L356:     * Accept NULL as bypass for MPI_T query functions
+L357:     * Fix persistent communications request initialization
+L358:   * Plenty of small bug fixes in all parts of MPC
+L359: ## cite77†4.2.0 - 2023-06-13
+L360: ### Added
+L361: 
+L362:   * COMPILER new wrappers for mpicc++ and mpif90 (privatization)
+L363:   * SESSIONS adding sessions support
+L364:   * OMP
+L365:     * Added fibers to OpenMP tasks
+L366:     * Fix OMP Tool support
+L367:     * Added interoperation between MPC-MPI / MPC-OpenMP(tasks) for the « loss of thread issue »
+L368:     * Refactored OpenMP task runtime (memory management, dependencies, tasks priorities)
+L369:   * MPI
+L370:     * adding message queue
+L371:     * new pairwise alltoall algorithm
+L372:   * CONFIG add intracomm collective communications config switch
+L373: ### Changed
+L374: 
+L375:   * UPGRADE upgrade to autopriv@0.8.0 then to autopriv@0.9.1
+L376:   * INFRASTRUCTURE moving communicator attributes to lowcomm
+L377:   * PMIX detection and execution improvements
+L378: ### Fixed
+L379:   * fix ompt
+L380:   * fix allocation on tree initialization
+L381:   * fix mpirun return code
+L382:   * fix --without-rocm
+L383:   * fix nbc thread segfault
+L384:   * fix --disable-mpc-alloc
+L385:   * fix long arguments
+L386:   * Clean of the RDMA
+L387:   * Removal of RDMA control messages
+L388:   * Fixes on communicator pruning in thread-based
+L389:   * fix shm
+L390:   * fix MPI_PRIV
+L391:   * free in topological communicators
+L392:   * elements scattering in topological scatter
+L393:   * --autokilll
+L394:   * lib dependencies path
+L395:   * output color
+L396:   * portals and PMIX
+L397:   * MPI_STATUS
+L398: ## cite78†4.1.0 - 2021-08-03
+L399: 
+L400: ### Added
+L401: 
+L402:   * Config
+L403:     * Add new configuration system inside MPC (only at runtime)
+L404:   * Low Comm
+L405:     * Add libfabric support (OFI)
+L406:     * Active Message engine based on libffi
+L407:   * MPCRUN
+L408:     * `PRRTE` implement support for the PMIx standard runtime.
+L409:   * MPI
+L410:     * MPI 4.0 Split topology support
+L411:     * Topological collectives support
+L412:   * OMP
+L413:     * Add OMP 5.0 memory management support (includes HWLOC 2+ support)
+L414:   * Threads
+L415:     * Workshare support
+L416: ### Changed
+L417: 
+L418:   * Build
+L419:     * Autopriv dependency has been renamed to mpc-compiler-additions
+L420:     * Move to HWLOC 2+
+L421:     * Move to mpc-compiler-additions 0.7.0 with GCC 10.2.0
+L422:     * Expose MPC's modularity in PKGCONFIG / CMAKE
+L423:   * Low Comm
+L424:     * Improved DNS resolution for TCP
+L425:   * MPI
+L426:     * MPIT rewrite mirroring the new configuration system
+L427:     * Full communicator / Group system rewrite
+L428:     * Collective factorization and rewrite
+L429:   * OMP
+L430:     * OMPT improvements
+L431: ### Fixed
+L432: 
+L433:   * MPI
+L434:     * Bugfix on persistent collectives
+L435:   * General bugfixes and documentation
+L436: 
+L437: ## cite79†4.0.0 - 2020-12-16
+L438: 
+L439: This is a BETA release
+L440: 
+L441: For this release MPC has undergone a massive refactoring. It is in some aspects not compatible with previous versions of MPC. It should bring several enhancements in terms of installation process and modularity. One should not expect binary compatibility with a previous version of MPC. Due to the massive changes, this changelog cannot be fully exhaustive.
+L442: ### Modularity
+L443: 
+L444: MPC is now modular and comes in several components:
+L445:   * `lowcomm` : component handling and providing the networks interfaces
+L446:   * `threads` : component handling and providing the user-level thread scheduler
+L447:   * `mpi` : component handling and providing the MPI standard API
+L448:   * `mpiio` : component handling and providing the IO part of the MPI standard API
+L449:   * `openmp` : component handling and providing the OpenMP standard API
+L450:   * `fortran` : component handling and providing the Fortran interface for the above parallel programming APIs
+L451:   * ... and other internal components
+L452: Such aforementioned components can be enabled and disabled using `--enable/disable-XX` as mpc-options in the installation script, or through variants in the new Spack building recipe. Note that some components are dependent and cannot be installed if the dependencies are disabled (e.g., `mpiio` depends on `mpi`, and cannot be installed if `mpi` is disabled).
+L453: ### Added
+L454: 
+L455:   * PMIX: PMIX is now supported through `--with-pmix`
+L456:   * PRIV: Support for new GCCs (using now external autopriv) up to 10.2.0 (using `--gcc-version=X.X.X`)
+L457:   * STATUS: the `mpc_status` command can be used to print current MPC configuration
+L458:   * BUILD: once installed with `./installmpc` MPC can be reconfigured with `./reconfigure` in the build directory. MPC is now longer in an `mpcframework` subdirectory
+L459: ### Changed
+L460:   * BUILD: Installation process compatible with Spack to manage package dependencies
+L461:   * BUILD: MPC now relies on autotools as its build system
+L462:   * BUILD: It is possible to directly call `./configure` to use MPC in a modular way
+L463:   * DEPS: dependencies can be downloaded on demand, a `light` version is a version not providing the dependencies. `./installmpc --download-missing-deps` can be used to retrieve the dependencies for a given configuration. Conversely a `full` version includes all dependencies for the default configuration
+L464:   * COMM: communicator management was fully rewritten. The MPI_Comm is now a pointer (instead of an integer)
+L465:   * MPCRUN: mpcrun has been fully rewritten
+L466:   * MPIIO: MPI-IO support (ROMIO) is now integrated in MPC
+L467:   * FORTRAN: the Fortran interface is now external and optional (MPC_Fortran)
+L468: ### Deprecated
+L469: 
+L470:   * mpcrun: several options from `mpcrun` were deprecated they should now be no-op
+L471:   * installmpc: several options from `./installmpc` were deprecated they should now be no-op
+L472: ### Removed
+L473: 
+L474:   * mpc_compiler_manager: the `mpc_compiler_manager` command is no longer provided. MPC is now compiled against a single compiler
+L475:   * mpc_icc and compiler specific wrappers: MPC now provides only `mpc_{cc,cxx,f77}` and `mpi{cc,cxx,f77}` wrappers
+L476:   * PRIV: all privatization has been externalized in autopriv, including, compilers, plugins, TLS library and privatized getopt
+L477: ### Fixed
+L478: 
+L479:   * COMM: Default communicator attributes were fixed (APP_NUM, MPI_IO, MPI_HOST)
+L480:   * COLL: fixed several collectives
+L481:   * COMM: Major fixes in communicator management (free, creation and reuse)
+L482:   * MISC: less contention on large SMP (various optimizations)
+L483:   * MISC: various fixes in the lowcomm and MPI layers
+L484: 
+L485: ## cite80†3.4.0 - 2020-04-27
+L486: ### Added
+L487: 
+L488:   * AM: Integration of custom Active Message relying on gRPC approach
+L489:   * NET: Support of MPI HW-enabled operations through Portals4 driver
+L490:   * MISC: Addition of this Changelog file
+L491:   * MISC: New doc structure through Markdown
+L492: 
+L493: ### Changed
+L494: 
+L495:   * OMP: Improved OMPT support
+L496:   * PRIV: MPC default privatizing compiler is now GCC 7.3.0
+L497: ### Fixed
+L498: 
+L499:   * MPI: Optimizations and corrections of nonblocking collectives
+L500:   * MPI: Bug fix on virtual topologies (MPI_Cart...)
+L501:   * OMP: Bug fix on tasks with dependencies
+L502:   * MISC: Many other small optimizations and bug fixes
+L503: 
+L504: ## cite81†3.3.1 - 2019-06-03
+L505: 
+L506: ### Changed
+L507: 
+L508:   * MISC: General source-code cleanup
+L509:   * MPI: Message latency optimization
+L510:   * MPI: Message progress with copy engine
+L511: 
+L512: ### Fixed
+L513: 
+L514:   * MPI: wrappers (mpirun) bugfix
+L515:   * MPI: NBCs, Collectives and Communicators bugfixes
+L516: ## cite82†3.3.0 - 2018-12-18
+L517: 
+L518: ### Added
+L519: 
+L520:   * MPI: C/R support (Shmem, TCP & IB handlings)
+L521:   * MPI: Shared-memory shortcut set for intra-node communications
+L522:   * OMP: Support for OMP_PLACES
+L523:   * PRIV: GCC 7.2.0 compatibility (not set as default)
+L524:   * BUILD: Spack recipes for MPC, and patched GCC
+L525:   * BUILD: Docker recipes for CentOS/Debian
+L526:   * RUN: New mpcrun options related to placement debugging
+L527: ### Changed
+L528: 
+L529:   * MPI: Collective algorithms optimizations
+L530:   * MPI: NBC communication progress improvements
+L531:   * NET: Full rewrite for the Portals 4 driver (only process-mode)
+L532: 
+L533: ### Fixed
+L534: 
+L535:   * OMP: Tasking bug fixes
+L536:   * OMP: OMPT Stabilization
+L537:   * BUILD: Fix for older Autotools
+L538:   * MISC: Process-mode performance optimizations
+L539:   * PRIV: mpc_compiler_manager optimizations and Fortran bug fixes
+L540:   * BUILD: Improve installmpc procedure when GCC is not required
+L541:   * MISC: Various bug fixes
+L542:   * MISC: Documentation
+L543: ## cite83†3.2.0 - 2017-07-04
+L544: ### Added
+L545:   * MPI: Support for MPI RMA (3.1)
+L546:   * MPI: MPI-T Support
+L547:   * MPI: Fortran 2008 modules
+L548:   * OMP: Support for the GOMP ABI
+L549:   * OMP: Support for OMP tasks with dependencies
+L550:   * OMP: OMPT Support
+L551:   * PRIV: Support for privatized CUDA contexts and privatization of Cuda programs using a dedicated compiler wrappers (mpc_nvcc)
+L552:   * PRIV: On the fly Fortran module generation
+L553:   * PRIV: Initial support for ARM
+L554:   * BUILD: Add a process mode for the installation (–mpc-process-mode)
+L555:   * BUILD: Add an “mpc_cleaner” command
+L556: ### Changed
+L557: 
+L558:   * MPI: Shared-memory optimization of collectives
+L559:   * PRIV: Update to GCC 6.2 as the default privatizing compiler
+L560:   * PRIV: Enhance compiler manager and install management
+L561: 
+L562: ### Removed
+L563: 
+L564:   * MISC: For now TBB has been disabled by default
+L565: 
+L566: ### Fixed
+L567: 
+L568:   * MPI: Stabilization of the NBCs
+L569:   * MPI: Several bug-fixes
+L570:   * OMP: Several bug-fixes
+L571:   * PRIV: Fix support for optimized TLS with icc
+L572:   * PRIV: Several bug-fixes
+L573: 
+L574: ## cite84†3.1.0 - 2016-06-27
+L575: ### Added
+L576: 
+L577:   * PRIV: Rewrite of the TLS/HLS support
+L578:   * PRIV: Support for all linker level optimizations
+L579:   * PRIV: Definition of new C and C++ keywords
+L580:   * PRIV: Outlining of the exTLS library separating TLS from MPC
+L581:   * PRIV: Full support for global variable privatization in C
+L582:   * PRIV: Support for dynamic initializers in C to handle some TLS edge cases
+L583:   * PRIV: New compiler manager (from command line)
+L584: 
+L585: ## cite85†3.0.0 - 2016-02-18
+L586: ### Added
+L587:   * MPI: Integration of ROMIO and MPI-IO
+L588:   * MPI: Integration of Non-Blocking Collectives (NBC) (excluding IO)
+L589:   * MPI: Add Fortran90 support (.mod)
+L590:   * MPI: Support for heterogeneous data-types in collectives
+L591:   * BUILD: Add support for a library mode for embedding inside another MPI runtime
+L592:   * MISC: Internal implementation of asynchronous IO for old libc (AIO threads are launched with small stacks)
+L593:   * NET: Generic Multi-rail support with gates (from XML configuration file)
+L594:   * NET: Support for Portals 4
+L595:   * NET: Support for SHM
+L596:   * NET: Add low-level RDMA (for IB and Portals) and implement emulated calls
+L597: ### Changed
+L598: 
+L599:   * MPI: Various improvements on data-types and collectives
+L600:   * MPI: Request management in the MPI interface was optimized
+L601:   * PRIV: Support for a privatized version of Getopt
+L602:   * NET: Addition of a generic device detection engine with distance matrix (HWLOC-based)
+L603:   * NET: Improved topological polling in Infiniband (from device detection)
+L604:   * NET: Outline of a « low-level » communication interface (cont. p2p messages and RDMA)
+L605: ### Fixed
+L606: 
+L607:   * MPI: Collectives on inter-communicators and IN_PLACE related fixes
+L608:   * MPI: Fixes on MPI topologies
+L609:   * MPI: Various Bugfixes
+L610:   * OMP: Fixes in the Intel OpenMP interface
+L611:   * OMP: Corrections on topology support
+L612: 
+L613: ## cite86†2.5.2 - 2015-01-20
+L614: ### Added
+L615: 
+L616:   * MPI: Extended data-type support (up to MPI 3.0)
+L617:   * MPI: Optimized data-types (flattening and reuse)
+L618:   * MPI: Extended Generic Request and extended generic request class support
+L619:   * MPI: External32 data-representation support
+L620:   * MPI: MPI_Info support
+L621:   * OMP: Add support for Intel(r) OpenMP ABI (run OpenMP applications compiled with ICC)
+L622: 
+L623: ### Fixed
+L624: 
+L625:   * MPI: Several fixes to the Fortran interface
+L626:   * MPI: Various bugfixes
+L627: 
+L628: ## cite87†2.5.1 L629: ### Added
+L630: 
+L631:   * BUILD: New build system
+L632:   * ARCH: Xeon-Phi Support
+L633:   * ARCH: Cross compilation support
+L634: 
+L635: ### Changed
+L636: 
+L637:   * OMP: optimizations
+L638: 
+L639: ### Fixed
+L640: 
+L641:   * MISC: Various Bugfixes
+L642: 
+L643: ## cite88†2.5.0 - 2014-01-30
+L644: 
+L645: ### Added
+L646: 
+L647:   * PRIV: Add Patched GCC 4.8.0 with privatization of global objects
+L648: 
+L649: ### Changed
+L650: 
+L651:   * MPI: Performance optimizations
+L652:   * OMP: New runtime (NUMA optimizations)
+L653:   * OMP: Performance optimizations
+L654: 
+L655: ### Fixed
+L656: 
+L657:   * Many bug fixes
+L658: 
+L659: ## cite89†2.4.1 - 2012-12-21
+L660: ### Added
+L661: 
+L662:   * ALLOC: Custom memory allocator embedded into mpcframework
+L663: 
+L664: ### Changed
+L665: 
+L666:   * MISC: Performance optimizations
+L667: 
+L668: ### Fixed
+L669: 
+L670:   * many small bug fixes
+L671: 
+L672: ## cite90†2.4.0 - 2012-09-25
+L673: 
+L674: ### Added
+L675: 
+L676:   * NET: Collaborative polling
+L677: 
+L678: ### Changed
+L679: 
+L680:   * PRIV: automatic privatization improvements
+L681:   * MISC: "Performance optimizations"
+L682: 
+L683: ### Fixed
+L684: 
+L685:   * many small fixes
+L686: 
+L687: ## cite91†2.3.1 - 2011-12-09
+L688: 
+L689: ### Fixed
+L690: 
+L691:   * PRIV: Bug fixes in HLS support
+L692: 
+L693: ## cite92†2.3.0 - 2011-11-23
+L694: ### Added
+L695: 
+L696:   * PRIV: HLS (Hierarchical Local Storage) support
+L697:   * RUN: Hydra launcher
+L698: 
+L699: ### Fixed
+L700: 
+L701:   * MPI: programming model
+L702:   * OMP: programming model
+L703:   * BUILD: installation process
+L704: 
+L705: ## cite93†2.2.0 - 2011-06-14
+L706: 
+L707: ### Added
+L708: 
+L709:   * PRIV: Extended TLS support
+L710: 
+L711: ### Changed
+L712: 
+L713:   * NET: New InfiniBand support
+L714: 
+L715: ### Fixed
+L716: 
+L717:   * MPI: Programming model
+L718:   * OMP: Programming model
+L719:   * BUILD: installation process
+L720: 
+L721: ## cite94†2.1.0 - 2011-04-29
+L722: 
+L723: ### Added
+L724: 
+L725:   * SHM module (shared memory communications between processes)
+L726: ### Fixed
+L727: 
+L728:   * MPI: Programming model
+L729:   * OMP: Programming model
+L730:   * BUILD: Installation process
+L731: 
+L732: ## cite95†1.1.0†france.paratools.com L733: 
+L734: ### Added
+L735: 
+L736:   * MPI: MPI-compliant API (MPI 1.3)
+L737:   * MPI: MPI_Cancel support
+L738:   * MPI: MPI_THREAD_MULTIPLE support
+L739:   * OMP: First OpeMP support (OpenMP 1.3)
+L740:   * NET: Full Infiniband support
+L741:   * DBG: Debugger support with a patched version of GDB
+L742: 
+L743: ### Fixed
+L744: 
+L745:   * many small bug fixes
+L746: 
+L747: ## Footer
+L748: 
+L749: cite96†  © 2026 GitHub, Inc.
+L750: ### Footer navigation
+L751: 
+L752:   * cite97†Terms†docs.github.com L753:   * cite98†Privacy†docs.github.com L754:   * cite99†Security L755:   * cite100†Status†www.githubstatus.com L756:   * cite101†Community†github.community L757:   * cite102†Docs†docs.github.com L758:   * cite103†Contact†support.github.com L759:   * Manage cookies
+L760:   * Do not share my personal information
+L761: 
+L762:   You can’t perform that action at this time.
+

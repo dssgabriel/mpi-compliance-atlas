@@ -1,0 +1,530 @@
+MPI: A Message-Passing Interface Standard (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report.pdf)
+citeturn159view0 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 868; Source: open({"ref_id":"turn148view0","lineno":62100}); Total lines: 74411
+L61873@P736: MPI_Datatype origin_datatype, int target_rank,
+L61874@P736: MPI_Aint target_disp, int target_count,
+L61875@P736: MPI_Datatype target_datatype, MPI_Win win)
+L61876@P736: int MPI_Get_accumulate(const void *origin_addr, int origin_count,
+L61877@P736: MPI_Datatype origin_datatype, void *result_addr,
+L61878@P736: 1
+L61926@P737: int result_count, MPI_Datatype result_datatype,
+L61927@P737: int target_rank, MPI_Aint target_disp, int target_count,
+L61928@P737: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+L61929@P737: int MPI_Put(const void *origin_addr, int origin_count,
+L61930@P737: MPI_Datatype origin_datatype, int target_rank,
+L61931@P737: MPI_Aint target_disp, int target_count,
+L61932@P737: MPI_Datatype target_datatype, MPI_Win win)
+L61933@P737: int MPI_Raccumulate(const void *origin_addr, int origin_count,
+L61934@P737: MPI_Datatype origin_datatype, int target_rank,
+L61935@P737: MPI_Aint target_disp, int target_count,
+L61936@P737: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win,
+L61937@P737: MPI_Request *request)
+L61938@P737: int MPI_Rget(void *origin_addr, int origin_count,
+L61939@P737: MPI_Datatype origin_datatype, int target_rank,
+L61940@P737: MPI_Aint target_disp, int target_count,
+L61941@P737: MPI_Datatype target_datatype, MPI_Win win,
+L61942@P737: MPI_Request *request)
+L61943@P737: int MPI_Rget_accumulate(const void *origin_addr, int origin_count,
+L61944@P737: MPI_Datatype origin_datatype, void *result_addr,
+L61945@P737: int result_count, MPI_Datatype result_datatype,
+L61946@P737: int target_rank, MPI_Aint target_disp, int target_count,
+L61947@P737: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win,
+L61948@P737: MPI_Request *request)
+L61949@P737: int MPI_Rput(const void *origin_addr, int origin_count,
+L61950@P737: MPI_Datatype origin_datatype, int target_rank,
+L61951@P737: MPI_Aint target_disp, int target_count,
+L61952@P737: MPI_Datatype target_datatype, MPI_Win win,
+L61953@P737: MPI_Request *request)
+L61954@P737: int MPI_Win_allocate(MPI_Aint size, int disp_unit, MPI_Info info,
+L61955@P737: MPI_Comm comm, void *baseptr, MPI_Win *win)
+L61956@P737: int MPI_Win_allocate_shared(MPI_Aint size, int disp_unit, MPI_Info info,
+L61957@P737: MPI_Comm comm, void *baseptr, MPI_Win *win)
+L61958@P737: int MPI_Win_attach(MPI_Win win, void *base, MPI_Aint size)
+L61959@P737: int MPI_Win_complete(MPI_Win win)
+L61960@P737: int MPI_Win_create(void *base, MPI_Aint size, int disp_unit, MPI_Info info,
+L61961@P737: MPI_Comm comm, MPI_Win *win)
+L61962@P737: int MPI_Win_create_dynamic(MPI_Info info, MPI_Comm comm, MPI_Win *win)
+L61963@P737: int MPI_Win_detach(MPI_Win win, const void *base)
+L61964@P737: int MPI_Win_fence(int assert, MPI_Win win)
+L61965@P737: int MPI_Win_flush(int rank, MPI_Win win)
+L61966@P737: 1
+L61967@P737: 2
+L61968@P737: 3
+L61969@P737: 4
+L61970@P737: 5
+L61971@P737: 6
+L61972@P737: 7
+L61973@P737: 8
+L61974@P737: 9
+L61975@P737: 10
+L61976@P737: 11
+L61977@P737: 12
+L61978@P737: 13
+L61979@P737: 14
+L61980@P737: 15
+L61981@P737: 16
+L61982@P737: 17
+L61983@P737: 18
+L61984@P737: 19
+L61985@P737: 20
+L61986@P737: 21
+L61987@P737: 22
+L61988@P737: 23
+L61989@P737: 24
+L61990@P737: 25
+L61991@P737: 26
+L61992@P737: 27
+L61993@P737: 28
+L61994@P737: 29
+L61995@P737: 30
+L61996@P737: 31
+L61997@P737: 32
+L61998@P737: 33
+L61999@P737: 34
+L62000@P737: 35
+L62001@P737: 36
+L62002@P737: 37
+L62003@P737: 38
+L62004@P737: 39
+L62005@P737: 40
+L62006@P737: 41
+L62007@P737: 42
+L62008@P737: 43
+L62009@P737: 44
+L62010@P737: 45
+L62011@P737: 46
+L62012@P737: 47
+L62013@P737-738: 48A.2. C BINDINGS 707
+L62014@P738: int MPI_Win_flush_all(MPI_Win win)
+L62015@P738: int MPI_Win_flush_local(int rank, MPI_Win win)
+L62016@P738: int MPI_Win_flush_local_all(MPI_Win win)
+L62017@P738: int MPI_Win_free(MPI_Win *win)
+L62018@P738: int MPI_Win_get_group(MPI_Win win, MPI_Group *group)
+L62019@P738: int MPI_Win_get_info(MPI_Win win, MPI_Info *info_used)
+L62020@P738: int MPI_Win_lock(int lock_type, int rank, int assert, MPI_Win win)
+L62021@P738: int MPI_Win_lock_all(int assert, MPI_Win win)
+L62022@P738: int MPI_Win_post(MPI_Group group, int assert, MPI_Win win)
+L62023@P738: int MPI_Win_set_info(MPI_Win win, MPI_Info info)
+L62024@P738: int MPI_Win_shared_query(MPI_Win win, int rank, MPI_Aint *size,
+L62025@P738: int *disp_unit, void *baseptr)
+L62026@P738: int MPI_Win_start(MPI_Group group, int assert, MPI_Win win)
+L62027@P738: int MPI_Win_sync(MPI_Win win)
+L62028@P738: int MPI_Win_test(MPI_Win win, int *flag)
+L62029@P738: int MPI_Win_unlock(int rank, MPI_Win win)
+L62030@P738: int MPI_Win_unlock_all(MPI_Win win)
+L62031@P738: int MPI_Win_wait(MPI_Win win)
+L62032@P738: A.2.10 External Interfaces C Bindings
+L62033@P738: int MPI_Grequest_complete(MPI_Request request)
+L62034@P738: int MPI_Grequest_start(MPI_Grequest_query_function *query_fn,
+L62035@P738: MPI_Grequest_free_function *free_fn,
+L62036@P738: MPI_Grequest_cancel_function *cancel_fn, void *extra_state,
+L62037@P738: MPI_Request *request)
+L62038@P738: int MPI_Init_thread(int *argc, char ***argv, int required, int *provided)
+L62039@P738: int MPI_Is_thread_main(int *flag)
+L62040@P738: int MPI_Query_thread(int *provided)
+L62041@P738: int MPI_Status_set_cancelled(MPI_Status *status, int flag)
+L62042@P738: int MPI_Status_set_elements(MPI_Status *status, MPI_Datatype datatype,
+L62043@P738: int count)
+L62044@P738: int MPI_Status_set_elements_x(MPI_Status *status, MPI_Datatype datatype,
+L62045@P738: MPI_Count count)
+L62046@P738: 1
+L62047@P738: 2
+L62048@P738: 3
+L62049@P738: 4
+L62050@P738: 5
+L62051@P738: 6
+L62052@P738: 7
+L62053@P738: 8
+L62054@P738: 9
+L62055@P738: 10
+L62056@P738: 11
+L62057@P738: 12
+L62058@P738: 13
+L62059@P738: 14
+L62060@P738: 15
+L62061@P738: 16
+L62062@P738: 17
+L62063@P738: 18
+L62064@P738: 19
+L62065@P738: 20
+L62066@P738: 21
+L62067@P738: 22
+L62068@P738: 23
+L62069@P738: 24
+L62070@P738: 25
+L62071@P738: 26
+L62072@P738: 27
+L62073@P738: 28
+L62074@P738: 29
+L62075@P738: 30
+L62076@P738: 31
+L62077@P738: 32
+L62078@P738: 33
+L62079@P738: 34
+L62080@P738: 35
+L62081@P738: 36
+L62082@P738: 37
+L62083@P738: 38
+L62084@P738: 39
+L62085@P738: 40
+L62086@P738: 41
+L62087@P738: 42
+L62088@P738: 43
+L62089@P738: 44
+L62090@P738: 45
+L62091@P738: 46
+L62092@P738: 47
+L62093@P738-739: 48708 ANNEX A. LANGUAGE BINDINGS SUMMARY
+L62094@P739: A.2.11 I/O C Bindings
+L62095@P739: int MPI_CONVERSION_FN_NULL(void *userbuf, MPI_Datatype datatype, int count,
+L62096@P739: void *filebuf, MPI_Offset position, void *extra_state)
+L62097@P739: int MPI_File_close(MPI_File *fh)
+L62098@P739: int MPI_File_delete(const char *filename, MPI_Info info)
+L62099@P739: int MPI_File_get_amode(MPI_File fh, int *amode)
+L62100@P739: int MPI_File_get_atomicity(MPI_File fh, int *flag)
+L62101@P739: int MPI_File_get_byte_offset(MPI_File fh, MPI_Offset offset,
+L62102@P739: MPI_Offset *disp)
+L62103@P739: int MPI_File_get_group(MPI_File fh, MPI_Group *group)
+L62104@P739: int MPI_File_get_info(MPI_File fh, MPI_Info *info_used)
+L62105@P739: int MPI_File_get_position(MPI_File fh, MPI_Offset *offset)
+L62106@P739: int MPI_File_get_position_shared(MPI_File fh, MPI_Offset *offset)
+L62107@P739: int MPI_File_get_size(MPI_File fh, MPI_Offset *size)
+L62108@P739: int MPI_File_get_type_extent(MPI_File fh, MPI_Datatype datatype,
+L62109@P739: MPI_Aint *extent)
+L62110@P739: int MPI_File_get_view(MPI_File fh, MPI_Offset *disp, MPI_Datatype *etype,
+L62111@P739: MPI_Datatype *filetype, char *datarep)
+L62112@P739: int MPI_File_iread(MPI_File fh, void *buf, int count,
+L62113@P739: MPI_Datatype datatype, MPI_Request *request)
+L62114@P739: int MPI_File_iread_all(MPI_File fh, void *buf, int count,
+L62115@P739: MPI_Datatype datatype, MPI_Request *request)
+L62116@P739: int MPI_File_iread_at(MPI_File fh, MPI_Offset offset, void *buf, int count,
+L62117@P739: MPI_Datatype datatype, MPI_Request *request)
+L62118@P739: int MPI_File_iread_at_all(MPI_File fh, MPI_Offset offset, void *buf,
+L62119@P739: int count, MPI_Datatype datatype, MPI_Request *request)
+L62120@P739: int MPI_File_iread_shared(MPI_File fh, void *buf, int count,
+L62121@P739: MPI_Datatype datatype, MPI_Request *request)
+L62122@P739: int MPI_File_iwrite(MPI_File fh, const void *buf, int count,
+L62123@P739: MPI_Datatype datatype, MPI_Request *request)
+L62124@P739: int MPI_File_iwrite_all(MPI_File fh, const void *buf, int count,
+L62125@P739: MPI_Datatype datatype, MPI_Request *request)
+L62126@P739: int MPI_File_iwrite_at(MPI_File fh, MPI_Offset offset, const void *buf,
+L62127@P739: int count, MPI_Datatype datatype, MPI_Request *request)
+L62128@P739: int MPI_File_iwrite_at_all(MPI_File fh, MPI_Offset offset, const void *buf,
+L62129@P739: int count, MPI_Datatype datatype, MPI_Request *request)
+L62130@P739: 1
+L62131@P739: 2
+L62132@P739: 3
+L62133@P739: 4
+L62134@P739: 5
+L62135@P739: 6
+L62136@P739: 7
+L62137@P739: 8
+L62138@P739: 9
+L62139@P739: 10
+L62140@P739: 11
+L62141@P739: 12
+L62142@P739: 13
+L62143@P739: 14
+L62144@P739: 15
+L62145@P739: 16
+L62146@P739: 17
+L62147@P739: 18
+L62148@P739: 19
+L62149@P739: 20
+L62150@P739: 21
+L62151@P739: 22
+L62152@P739: 23
+L62153@P739: 24
+L62154@P739: 25
+L62155@P739: 26
+L62156@P739: 27
+L62157@P739: 28
+L62158@P739: 29
+L62159@P739: 30
+L62160@P739: 31
+L62161@P739: 32
+L62162@P739: 33
+L62163@P739: 34
+L62164@P739: 35
+L62165@P739: 36
+L62166@P739: 37
+L62167@P739: 38
+L62168@P739: 39
+L62169@P739: 40
+L62170@P739: 41
+L62171@P739: 42
+L62172@P739: 43
+L62173@P739: 44
+L62174@P739: 45
+L62175@P739: 46
+L62176@P739: 47
+L62177@P739-740: 48A.2. C BINDINGS 709
+L62178@P740: int MPI_File_iwrite_shared(MPI_File fh, const void *buf, int count,
+L62179@P740: MPI_Datatype datatype, MPI_Request *request)
+L62180@P740: int MPI_File_open(MPI_Comm comm, const char *filename, int amode,
+L62181@P740: MPI_Info info, MPI_File *fh)
+L62182@P740: int MPI_File_preallocate(MPI_File fh, MPI_Offset size)
+L62183@P740: int MPI_File_read(MPI_File fh, void *buf, int count, MPI_Datatype datatype,
+L62184@P740: MPI_Status *status)
+L62185@P740: int MPI_File_read_all(MPI_File fh, void *buf, int count,
+L62186@P740: MPI_Datatype datatype, MPI_Status *status)
+L62187@P740: int MPI_File_read_all_begin(MPI_File fh, void *buf, int count,
+L62188@P740: MPI_Datatype datatype)
+L62189@P740: int MPI_File_read_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L62190@P740: int MPI_File_read_at(MPI_File fh, MPI_Offset offset, void *buf, int count,
+L62191@P740: MPI_Datatype datatype, MPI_Status *status)
+L62192@P740: int MPI_File_read_at_all(MPI_File fh, MPI_Offset offset, void *buf,
+L62193@P740: int count, MPI_Datatype datatype, MPI_Status *status)
+L62194@P740: int MPI_File_read_at_all_begin(MPI_File fh, MPI_Offset offset, void *buf,
+L62195@P740: int count, MPI_Datatype datatype)
+L62196@P740: int MPI_File_read_at_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L62197@P740: int MPI_File_read_ordered(MPI_File fh, void *buf, int count,
+L62198@P740: MPI_Datatype datatype, MPI_Status *status)
+L62199@P740: int MPI_File_read_ordered_begin(MPI_File fh, void *buf, int count,
+L62200@P740: MPI_Datatype datatype)
+L62201@P740: int MPI_File_read_ordered_end(MPI_File fh, void *buf, MPI_Status *status)
+L62202@P740: int MPI_File_read_shared(MPI_File fh, void *buf, int count,
+L62203@P740: MPI_Datatype datatype, MPI_Status *status)
+L62204@P740: int MPI_File_seek(MPI_File fh, MPI_Offset offset, int whence)
+L62205@P740: int MPI_File_seek_shared(MPI_File fh, MPI_Offset offset, int whence)
+L62206@P740: int MPI_File_set_atomicity(MPI_File fh, int flag)
+L62207@P740: int MPI_File_set_info(MPI_File fh, MPI_Info info)
+L62208@P740: int MPI_File_set_size(MPI_File fh, MPI_Offset size)
+L62209@P740: int MPI_File_set_view(MPI_File fh, MPI_Offset disp, MPI_Datatype etype,
+L62210@P740: MPI_Datatype filetype, const char *datarep, MPI_Info info)
+L62211@P740: int MPI_File_sync(MPI_File fh)
+L62212@P740: int MPI_File_write(MPI_File fh, const void *buf, int count,
+L62213@P740: MPI_Datatype datatype, MPI_Status *status)
+L62214@P740: 1
+L62215@P740: 2
+L62216@P740: 3
+L62217@P740: 4
+L62218@P740: 5
+L62219@P740: 6
+L62220@P740: 7
+L62221@P740: 8
+L62222@P740: 9
+L62223@P740: 10
+L62224@P740: 11
+L62225@P740: 12
+L62226@P740: 13
+L62227@P740: 14
+L62228@P740: 15
+L62229@P740: 16
+L62230@P740: 17
+L62231@P740: 18
+L62232@P740: 19
+L62233@P740: 20
+L62234@P740: 21
+L62235@P740: 22
+L62236@P740: 23
+L62237@P740: 24
+L62238@P740: 25
+L62239@P740: 26
+L62240@P740: 27
+L62241@P740: 28
+L62242@P740: 29
+L62243@P740: 30
+L62244@P740: 31
+L62245@P740: 32
+L62246@P740: 33
+L62247@P740: 34
+L62248@P740: 35
+L62249@P740: 36
+L62250@P740: 37
+L62251@P740: 38
+L62252@P740: 39
+L62253@P740: 40
+L62254@P740: 41
+L62255@P740: 42
+L62256@P740: 43
+L62257@P740: 44
+L62258@P740: 45
+L62259@P740: 46
+L62260@P740: 47
+L62261@P740-741: 48710 ANNEX A. LANGUAGE BINDINGS SUMMARY
+L62262@P741: int MPI_File_write_all(MPI_File fh, const void *buf, int count,
+L62263@P741: MPI_Datatype datatype, MPI_Status *status)
+L62264@P741: int MPI_File_write_all_begin(MPI_File fh, const void *buf, int count,
+L62265@P741: MPI_Datatype datatype)
+L62266@P741: int MPI_File_write_all_end(MPI_File fh, const void *buf,
+L62267@P741: MPI_Status *status)
+L62268@P741: int MPI_File_write_at(MPI_File fh, MPI_Offset offset, const void *buf,
+L62269@P741: int count, MPI_Datatype datatype, MPI_Status *status)
+L62270@P741: int MPI_File_write_at_all(MPI_File fh, MPI_Offset offset, const void *buf,
+L62271@P741: int count, MPI_Datatype datatype, MPI_Status *status)
+L62272@P741: int MPI_File_write_at_all_begin(MPI_File fh, MPI_Offset offset,
+L62273@P741: const void *buf, int count, MPI_Datatype datatype)
+L62274@P741: int MPI_File_write_at_all_end(MPI_File fh, const void *buf,
+L62275@P741: MPI_Status *status)
+L62276@P741: int MPI_File_write_ordered(MPI_File fh, const void *buf, int count,
+L62277@P741: MPI_Datatype datatype, MPI_Status *status)
+L62278@P741: int MPI_File_write_ordered_begin(MPI_File fh, const void *buf, int count,
+L62279@P741: MPI_Datatype datatype)
+L62280@P741: int MPI_File_write_ordered_end(MPI_File fh, const void *buf,
+L62281@P741: MPI_Status *status)
+L62282@P741: int MPI_File_write_shared(MPI_File fh, const void *buf, int count,
+L62283@P741: MPI_Datatype datatype, MPI_Status *status)
+L62284@P741: int MPI_Register_datarep(const char *datarep,
+L62285@P741: MPI_Datarep_conversion_function *read_conversion_fn,
+L62286@P741: MPI_Datarep_conversion_function *write_conversion_fn,
+L62287@P741: MPI_Datarep_extent_function *dtype_file_extent_fn,
+L62288@P741: void *extra_state)
+L62289@P741: A.2.12 Language Bindings C Bindings
+L62290@P741: int MPI_Status_f082f(MPI_F08_status *f08_status, MPI_Fint *f_status)
+L62291@P741: int MPI_Status_f2f08(MPI_Fint *f_status, MPI_F08_status *f08_status)
+L62292@P741: int MPI_Type_create_f90_complex(int p, int r, MPI_Datatype *newtype)
+L62293@P741: int MPI_Type_create_f90_integer(int r, MPI_Datatype *newtype)
+L62294@P741: int MPI_Type_create_f90_real(int p, int r, MPI_Datatype *newtype)
+L62295@P741: int MPI_Type_match_size(int typeclass, int size, MPI_Datatype *datatype)
+L62296@P741: MPI_Fint MPI_Comm_c2f(MPI_Comm comm)
+L62297@P741: MPI_Comm MPI_Comm_f2c(MPI_Fint comm)
+L62298@P741: 1
+L62299@P741: 2
+L62300@P741: 3
+L62301@P741: 4
+L62302@P741: 5
+L62303@P741: 6
+L62304@P741: 7
+L62305@P741: 8
+L62306@P741: 9
+L62307@P741: 10
+L62308@P741: 11
+L62309@P741: 12
+L62310@P741: 13
+L62311@P741: 14
+L62312@P741: 15
+L62313@P741: 16
+L62314@P741: 17
+L62315@P741: 18
+L62316@P741: 19
+L62317@P741: 20
+L62318@P741: 21
+L62319@P741: 22
+L62320@P741: 23
+L62321@P741: 24
+L62322@P741: 25
+L62323@P741: 26
+L62324@P741: 27
+L62325@P741: 28
+L62326@P741: 29
+L62327@P741: 30
+L62328@P741: 31
+L62329@P741: 32
+L62330@P741: 33
+L62331@P741: 34
+L62332@P741: 35
+L62333@P741: 36
+L62334@P741: 37
+L62335@P741: 38
+L62336@P741: 39
+L62337@P741: 40
+L62338@P741: 41
+L62339@P741: 42
+L62340@P741: 43
+L62341@P741: 44
+L62342@P741: 45
+L62343@P741: 46
+L62344@P741: 47
+L62345@P741-742: 48A.2. C BINDINGS 711
+L62346@P742: MPI_Fint MPI_Errhandler_c2f(MPI_Errhandler errhandler)
+L62347@P742: MPI_Errhandler MPI_Errhandler_f2c(MPI_Fint errhandler)
+L62348@P742: MPI_Fint MPI_File_c2f(MPI_File file)
+L62349@P742: MPI_File MPI_File_f2c(MPI_Fint file)
+L62350@P742: MPI_Fint MPI_Group_c2f(MPI_Group group)
+L62351@P742: MPI_Group MPI_Group_f2c(MPI_Fint group)
+L62352@P742: MPI_Fint MPI_Info_c2f(MPI_Info info)
+L62353@P742: MPI_Info MPI_Info_f2c(MPI_Fint info)
+L62354@P742: MPI_Fint MPI_Message_c2f(MPI_Message message)
+L62355@P742: MPI_Message MPI_Message_f2c(MPI_Fint message)
+L62356@P742: MPI_Fint MPI_Op_c2f(MPI_Op op)
+L62357@P742: MPI_Op MPI_Op_f2c(MPI_Fint op)
+L62358@P742: MPI_Fint MPI_Request_c2f(MPI_Request request)
+L62359@P742: MPI_Request MPI_Request_f2c(MPI_Fint request)
+L62360@P742: int MPI_Status_c2f(const MPI_Status *c_status, MPI_Fint *f_status)
+L62361@P742: int MPI_Status_c2f08(const MPI_Status *c_status,
+L62362@P742: MPI_F08_status *f08_status)
+L62363@P742: int MPI_Status_f082c(const MPI_F08_status *f08_status,
+L62364@P742: MPI_Status *c_status)
+L62365@P742: int MPI_Status_f2c(const MPI_Fint *f_status, MPI_Status *c_status)
+L62366@P742: MPI_Fint MPI_Type_c2f(MPI_Datatype datatype)
+L62367@P742: MPI_Datatype MPI_Type_f2c(MPI_Fint datatype)
+L62368@P742: MPI_Fint MPI_Win_c2f(MPI_Win win)
+L62369@P742: MPI_Win MPI_Win_f2c(MPI_Fint win)
+L62370@P742: A.2.13 Tools / Profiling Interface C Bindings
+L62371@P742: int MPI_Pcontrol(const int level, ...)
+L62372@P742: A.2.14 Tools / MPI Tool Information Interface C Bindings
+L62373@P742: int MPI_T_category_changed(int *stamp)
+L62374@P742: int MPI_T_category_get_categories(int cat_index, int len, int indices[])
+L62375@P742: int MPI_T_category_get_cvars(int cat_index, int len, int indices[])
+L62376@P742: 1
+L62377@P742: 2
+L62378@P742: 3
+L62379@P742: 4
+L62380@P742: 5
+L62381@P742: 6
+L62382@P742: 7
+L62383@P742: 8
+L62384@P742: 9
+L62385@P742: 10
+L62386@P742: 11
+L62387@P742: 12
+L62388@P742: 13
+L62389@P742: 14
+L62390@P742: 15
+L62391@P742: 16
+L62392@P742: 17
+L62393@P742: 18
+L62394@P742: 19
+L62395@P742: 20
+L62396@P742: 21
+L62397@P742: 22
+L62398@P742: 23
+L62399@P742: 24
+L62400@P742: 25
+L62401@P742: 26
+L62402@P742: 27
+L62403@P742: 28
+L62404@P742: 29
+L62405@P742: 30
+L62406@P742: 31
+L62407@P742: 32
+L62408@P742: 33
+L62409@P742: 34
+L62410@P742: 35
+L62411@P742: 36
+L62412@P742: 37
+L62413@P742: 38
+L62414@P742: 39
+L62415@P742: 40
+L62416@P742: 41
+L62417@P742: 42
+L62418@P742: 43
+L62419@P742: 44
+L62420@P742: 45
+L62421@P742: 46
+L62422@P742: 47
+L62423@P742-743: 48712 ANNEX A. LANGUAGE BINDINGS SUMMARY
+L62424@P743: int MPI_T_category_get_index(const char *name, int *cat_index)
+L62425@P743: int MPI_T_category_get_info(int cat_index, char *name, int *name_len,
+L62426@P743: char *desc, int *desc_len, int *num_cvars, int *num_pvars,
+L62427@P743: int *num_categories)
+L62428@P743: int MPI_T_category_get_num(int *num_cat)
+L62429@P743: int MPI_T_category_get_pvars(int cat_index, int len, int indices[])
+L62430@P743: int MPI_T_cvar_get_index(const char *name, int *cvar_index)
+L62431@P743: int MPI_T_cvar_get_info(int cvar_index, char *name, int *name_len,
+L62432@P743: int *verbosity, MPI_Datatype *datatype, MPI_T_enum *enumtype,
+L62433@P743: char *desc, int *desc_len, int *bind, int *scope)
+L62434@P743: int MPI_T_cvar_get_num(int *num_cvar)
+L62435@P743: int MPI_T_cvar_handle_alloc(int cvar_index, void *obj_handle,
+L62436@P743: MPI_T_cvar_handle *handle, int *count)
+L62437@P743: int MPI_T_cvar_handle_free(MPI_T_cvar_handle *handle)
+L62438@P743: int MPI_T_cvar_read(MPI_T_cvar_handle handle, void* buf)
+L62439@P743: int MPI_T_cvar_write(MPI_T_cvar_handle handle, const void* buf)
+L62440@P743: int MPI_T_enum_get_info(MPI_T_enum enumtype, int *num, char *name,
+L62441@P743: int *name_len)
+L62442@P743: int MPI_T_enum_get_item(MPI_T_enum enumtype, int index, int *value,
+L62443@P743: char *name, int *name_len)
+L62444@P743: int MPI_T_finalize(void)
+L62445@P743: int MPI_T_init_thread(int required, int *provided)
+L62446@P743: int MPI_T_pvar_get_index(const char *name, int var_class, int *pvar_index)
+

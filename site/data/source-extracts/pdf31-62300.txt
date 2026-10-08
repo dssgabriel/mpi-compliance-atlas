@@ -1,0 +1,533 @@
+MPI: A Message-Passing Interface Standard (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report.pdf)
+citeturn156view0 [wordlim: 200] Crawled: today; Content type: application/pdf; Number of pages: 868; Source: open({"ref_id":"turn148view0","lineno":62300}); Total lines: 74411
+L62124@P739: int MPI_File_iwrite_all(MPI_File fh, const void *buf, int count,
+L62125@P739: MPI_Datatype datatype, MPI_Request *request)
+L62126@P739: int MPI_File_iwrite_at(MPI_File fh, MPI_Offset offset, const void *buf,
+L62127@P739: int count, MPI_Datatype datatype, MPI_Request *request)
+L62128@P739: int MPI_File_iwrite_at_all(MPI_File fh, MPI_Offset offset, const void *buf,
+L62129@P739: int count, MPI_Datatype datatype, MPI_Request *request)
+L62166@P739: 37
+L62167@P739: 38
+L62168@P739: 39
+L62169@P739: 40
+L62170@P739: 41
+L62171@P739: 42
+L62172@P739: 43
+L62173@P739: 44
+L62174@P739: 45
+L62175@P739: 46
+L62176@P739: 47
+L62177@P739-740: 48A.2. C BINDINGS 709
+L62178@P740: int MPI_File_iwrite_shared(MPI_File fh, const void *buf, int count,
+L62179@P740: MPI_Datatype datatype, MPI_Request *request)
+L62180@P740: int MPI_File_open(MPI_Comm comm, const char *filename, int amode,
+L62181@P740: MPI_Info info, MPI_File *fh)
+L62182@P740: int MPI_File_preallocate(MPI_File fh, MPI_Offset size)
+L62183@P740: int MPI_File_read(MPI_File fh, void *buf, int count, MPI_Datatype datatype,
+L62184@P740: MPI_Status *status)
+L62185@P740: int MPI_File_read_all(MPI_File fh, void *buf, int count,
+L62186@P740: MPI_Datatype datatype, MPI_Status *status)
+L62187@P740: int MPI_File_read_all_begin(MPI_File fh, void *buf, int count,
+L62188@P740: MPI_Datatype datatype)
+L62189@P740: int MPI_File_read_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L62190@P740: int MPI_File_read_at(MPI_File fh, MPI_Offset offset, void *buf, int count,
+L62191@P740: MPI_Datatype datatype, MPI_Status *status)
+L62192@P740: int MPI_File_read_at_all(MPI_File fh, MPI_Offset offset, void *buf,
+L62193@P740: int count, MPI_Datatype datatype, MPI_Status *status)
+L62194@P740: int MPI_File_read_at_all_begin(MPI_File fh, MPI_Offset offset, void *buf,
+L62195@P740: int count, MPI_Datatype datatype)
+L62196@P740: int MPI_File_read_at_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L62197@P740: int MPI_File_read_ordered(MPI_File fh, void *buf, int count,
+L62198@P740: MPI_Datatype datatype, MPI_Status *status)
+L62199@P740: int MPI_File_read_ordered_begin(MPI_File fh, void *buf, int count,
+L62200@P740: MPI_Datatype datatype)
+L62201@P740: int MPI_File_read_ordered_end(MPI_File fh, void *buf, MPI_Status *status)
+L62202@P740: int MPI_File_read_shared(MPI_File fh, void *buf, int count,
+L62203@P740: MPI_Datatype datatype, MPI_Status *status)
+L62204@P740: int MPI_File_seek(MPI_File fh, MPI_Offset offset, int whence)
+L62205@P740: int MPI_File_seek_shared(MPI_File fh, MPI_Offset offset, int whence)
+L62206@P740: int MPI_File_set_atomicity(MPI_File fh, int flag)
+L62207@P740: int MPI_File_set_info(MPI_File fh, MPI_Info info)
+L62208@P740: int MPI_File_set_size(MPI_File fh, MPI_Offset size)
+L62209@P740: int MPI_File_set_view(MPI_File fh, MPI_Offset disp, MPI_Datatype etype,
+L62210@P740: MPI_Datatype filetype, const char *datarep, MPI_Info info)
+L62211@P740: int MPI_File_sync(MPI_File fh)
+L62212@P740: int MPI_File_write(MPI_File fh, const void *buf, int count,
+L62213@P740: MPI_Datatype datatype, MPI_Status *status)
+L62214@P740: 1
+L62215@P740: 2
+L62216@P740: 3
+L62217@P740: 4
+L62218@P740: 5
+L62219@P740: 6
+L62220@P740: 7
+L62221@P740: 8
+L62222@P740: 9
+L62223@P740: 10
+L62224@P740: 11
+L62225@P740: 12
+L62226@P740: 13
+L62227@P740: 14
+L62228@P740: 15
+L62229@P740: 16
+L62230@P740: 17
+L62231@P740: 18
+L62232@P740: 19
+L62233@P740: 20
+L62234@P740: 21
+L62235@P740: 22
+L62236@P740: 23
+L62237@P740: 24
+L62238@P740: 25
+L62239@P740: 26
+L62240@P740: 27
+L62241@P740: 28
+L62242@P740: 29
+L62243@P740: 30
+L62244@P740: 31
+L62245@P740: 32
+L62246@P740: 33
+L62247@P740: 34
+L62248@P740: 35
+L62249@P740: 36
+L62250@P740: 37
+L62251@P740: 38
+L62252@P740: 39
+L62253@P740: 40
+L62254@P740: 41
+L62255@P740: 42
+L62256@P740: 43
+L62257@P740: 44
+L62258@P740: 45
+L62259@P740: 46
+L62260@P740: 47
+L62261@P740-741: 48710 ANNEX A. LANGUAGE BINDINGS SUMMARY
+L62262@P741: int MPI_File_write_all(MPI_File fh, const void *buf, int count,
+L62263@P741: MPI_Datatype datatype, MPI_Status *status)
+L62264@P741: int MPI_File_write_all_begin(MPI_File fh, const void *buf, int count,
+L62265@P741: MPI_Datatype datatype)
+L62266@P741: int MPI_File_write_all_end(MPI_File fh, const void *buf,
+L62267@P741: MPI_Status *status)
+L62268@P741: int MPI_File_write_at(MPI_File fh, MPI_Offset offset, const void *buf,
+L62269@P741: int count, MPI_Datatype datatype, MPI_Status *status)
+L62270@P741: int MPI_File_write_at_all(MPI_File fh, MPI_Offset offset, const void *buf,
+L62271@P741: int count, MPI_Datatype datatype, MPI_Status *status)
+L62272@P741: int MPI_File_write_at_all_begin(MPI_File fh, MPI_Offset offset,
+L62273@P741: const void *buf, int count, MPI_Datatype datatype)
+L62274@P741: int MPI_File_write_at_all_end(MPI_File fh, const void *buf,
+L62275@P741: MPI_Status *status)
+L62276@P741: int MPI_File_write_ordered(MPI_File fh, const void *buf, int count,
+L62277@P741: MPI_Datatype datatype, MPI_Status *status)
+L62278@P741: int MPI_File_write_ordered_begin(MPI_File fh, const void *buf, int count,
+L62279@P741: MPI_Datatype datatype)
+L62280@P741: int MPI_File_write_ordered_end(MPI_File fh, const void *buf,
+L62281@P741: MPI_Status *status)
+L62282@P741: int MPI_File_write_shared(MPI_File fh, const void *buf, int count,
+L62283@P741: MPI_Datatype datatype, MPI_Status *status)
+L62284@P741: int MPI_Register_datarep(const char *datarep,
+L62285@P741: MPI_Datarep_conversion_function *read_conversion_fn,
+L62286@P741: MPI_Datarep_conversion_function *write_conversion_fn,
+L62287@P741: MPI_Datarep_extent_function *dtype_file_extent_fn,
+L62288@P741: void *extra_state)
+L62289@P741: A.2.12 Language Bindings C Bindings
+L62290@P741: int MPI_Status_f082f(MPI_F08_status *f08_status, MPI_Fint *f_status)
+L62291@P741: int MPI_Status_f2f08(MPI_Fint *f_status, MPI_F08_status *f08_status)
+L62292@P741: int MPI_Type_create_f90_complex(int p, int r, MPI_Datatype *newtype)
+L62293@P741: int MPI_Type_create_f90_integer(int r, MPI_Datatype *newtype)
+L62294@P741: int MPI_Type_create_f90_real(int p, int r, MPI_Datatype *newtype)
+L62295@P741: int MPI_Type_match_size(int typeclass, int size, MPI_Datatype *datatype)
+L62296@P741: MPI_Fint MPI_Comm_c2f(MPI_Comm comm)
+L62297@P741: MPI_Comm MPI_Comm_f2c(MPI_Fint comm)
+L62298@P741: 1
+L62299@P741: 2
+L62300@P741: 3
+L62301@P741: 4
+L62302@P741: 5
+L62303@P741: 6
+L62304@P741: 7
+L62305@P741: 8
+L62306@P741: 9
+L62307@P741: 10
+L62308@P741: 11
+L62309@P741: 12
+L62310@P741: 13
+L62311@P741: 14
+L62312@P741: 15
+L62313@P741: 16
+L62314@P741: 17
+L62315@P741: 18
+L62316@P741: 19
+L62317@P741: 20
+L62318@P741: 21
+L62319@P741: 22
+L62320@P741: 23
+L62321@P741: 24
+L62322@P741: 25
+L62323@P741: 26
+L62324@P741: 27
+L62325@P741: 28
+L62326@P741: 29
+L62327@P741: 30
+L62328@P741: 31
+L62329@P741: 32
+L62330@P741: 33
+L62331@P741: 34
+L62332@P741: 35
+L62333@P741: 36
+L62334@P741: 37
+L62335@P741: 38
+L62336@P741: 39
+L62337@P741: 40
+L62338@P741: 41
+L62339@P741: 42
+L62340@P741: 43
+L62341@P741: 44
+L62342@P741: 45
+L62343@P741: 46
+L62344@P741: 47
+L62345@P741-742: 48A.2. C BINDINGS 711
+L62346@P742: MPI_Fint MPI_Errhandler_c2f(MPI_Errhandler errhandler)
+L62347@P742: MPI_Errhandler MPI_Errhandler_f2c(MPI_Fint errhandler)
+L62348@P742: MPI_Fint MPI_File_c2f(MPI_File file)
+L62349@P742: MPI_File MPI_File_f2c(MPI_Fint file)
+L62350@P742: MPI_Fint MPI_Group_c2f(MPI_Group group)
+L62351@P742: MPI_Group MPI_Group_f2c(MPI_Fint group)
+L62352@P742: MPI_Fint MPI_Info_c2f(MPI_Info info)
+L62353@P742: MPI_Info MPI_Info_f2c(MPI_Fint info)
+L62354@P742: MPI_Fint MPI_Message_c2f(MPI_Message message)
+L62355@P742: MPI_Message MPI_Message_f2c(MPI_Fint message)
+L62356@P742: MPI_Fint MPI_Op_c2f(MPI_Op op)
+L62357@P742: MPI_Op MPI_Op_f2c(MPI_Fint op)
+L62358@P742: MPI_Fint MPI_Request_c2f(MPI_Request request)
+L62359@P742: MPI_Request MPI_Request_f2c(MPI_Fint request)
+L62360@P742: int MPI_Status_c2f(const MPI_Status *c_status, MPI_Fint *f_status)
+L62361@P742: int MPI_Status_c2f08(const MPI_Status *c_status,
+L62362@P742: MPI_F08_status *f08_status)
+L62363@P742: int MPI_Status_f082c(const MPI_F08_status *f08_status,
+L62364@P742: MPI_Status *c_status)
+L62365@P742: int MPI_Status_f2c(const MPI_Fint *f_status, MPI_Status *c_status)
+L62366@P742: MPI_Fint MPI_Type_c2f(MPI_Datatype datatype)
+L62367@P742: MPI_Datatype MPI_Type_f2c(MPI_Fint datatype)
+L62368@P742: MPI_Fint MPI_Win_c2f(MPI_Win win)
+L62369@P742: MPI_Win MPI_Win_f2c(MPI_Fint win)
+L62370@P742: A.2.13 Tools / Profiling Interface C Bindings
+L62371@P742: int MPI_Pcontrol(const int level, ...)
+L62372@P742: A.2.14 Tools / MPI Tool Information Interface C Bindings
+L62373@P742: int MPI_T_category_changed(int *stamp)
+L62374@P742: int MPI_T_category_get_categories(int cat_index, int len, int indices[])
+L62375@P742: int MPI_T_category_get_cvars(int cat_index, int len, int indices[])
+L62376@P742: 1
+L62377@P742: 2
+L62378@P742: 3
+L62379@P742: 4
+L62380@P742: 5
+L62381@P742: 6
+L62382@P742: 7
+L62383@P742: 8
+L62384@P742: 9
+L62385@P742: 10
+L62386@P742: 11
+L62387@P742: 12
+L62388@P742: 13
+L62389@P742: 14
+L62390@P742: 15
+L62391@P742: 16
+L62392@P742: 17
+L62393@P742: 18
+L62394@P742: 19
+L62395@P742: 20
+L62396@P742: 21
+L62397@P742: 22
+L62398@P742: 23
+L62399@P742: 24
+L62400@P742: 25
+L62401@P742: 26
+L62402@P742: 27
+L62403@P742: 28
+L62404@P742: 29
+L62405@P742: 30
+L62406@P742: 31
+L62407@P742: 32
+L62408@P742: 33
+L62409@P742: 34
+L62410@P742: 35
+L62411@P742: 36
+L62412@P742: 37
+L62413@P742: 38
+L62414@P742: 39
+L62415@P742: 40
+L62416@P742: 41
+L62417@P742: 42
+L62418@P742: 43
+L62419@P742: 44
+L62420@P742: 45
+L62421@P742: 46
+L62422@P742: 47
+L62423@P742-743: 48712 ANNEX A. LANGUAGE BINDINGS SUMMARY
+L62424@P743: int MPI_T_category_get_index(const char *name, int *cat_index)
+L62425@P743: int MPI_T_category_get_info(int cat_index, char *name, int *name_len,
+L62426@P743: char *desc, int *desc_len, int *num_cvars, int *num_pvars,
+L62427@P743: int *num_categories)
+L62428@P743: int MPI_T_category_get_num(int *num_cat)
+L62429@P743: int MPI_T_category_get_pvars(int cat_index, int len, int indices[])
+L62430@P743: int MPI_T_cvar_get_index(const char *name, int *cvar_index)
+L62431@P743: int MPI_T_cvar_get_info(int cvar_index, char *name, int *name_len,
+L62432@P743: int *verbosity, MPI_Datatype *datatype, MPI_T_enum *enumtype,
+L62433@P743: char *desc, int *desc_len, int *bind, int *scope)
+L62434@P743: int MPI_T_cvar_get_num(int *num_cvar)
+L62435@P743: int MPI_T_cvar_handle_alloc(int cvar_index, void *obj_handle,
+L62436@P743: MPI_T_cvar_handle *handle, int *count)
+L62437@P743: int MPI_T_cvar_handle_free(MPI_T_cvar_handle *handle)
+L62438@P743: int MPI_T_cvar_read(MPI_T_cvar_handle handle, void* buf)
+L62439@P743: int MPI_T_cvar_write(MPI_T_cvar_handle handle, const void* buf)
+L62440@P743: int MPI_T_enum_get_info(MPI_T_enum enumtype, int *num, char *name,
+L62441@P743: int *name_len)
+L62442@P743: int MPI_T_enum_get_item(MPI_T_enum enumtype, int index, int *value,
+L62443@P743: char *name, int *name_len)
+L62444@P743: int MPI_T_finalize(void)
+L62445@P743: int MPI_T_init_thread(int required, int *provided)
+L62446@P743: int MPI_T_pvar_get_index(const char *name, int var_class, int *pvar_index)
+L62447@P743: int MPI_T_pvar_get_info(int pvar_index, char *name, int *name_len,
+L62448@P743: int *verbosity, int *var_class, MPI_Datatype *datatype,
+L62449@P743: MPI_T_enum *enumtype, char *desc, int *desc_len, int *bind,
+L62450@P743: int *readonly, int *continuous, int *atomic)
+L62451@P743: int MPI_T_pvar_get_num(int *num_pvar)
+L62452@P743: int MPI_T_pvar_handle_alloc(MPI_T_pvar_session session, int pvar_index,
+L62453@P743: void *obj_handle, MPI_T_pvar_handle *handle, int *count)
+L62454@P743: int MPI_T_pvar_handle_free(MPI_T_pvar_session session,
+L62455@P743: MPI_T_pvar_handle *handle)
+L62456@P743: int MPI_T_pvar_read(MPI_T_pvar_session session, MPI_T_pvar_handle handle,
+L62457@P743: void* buf)
+L62458@P743: int MPI_T_pvar_readreset(MPI_T_pvar_session session,
+L62459@P743: MPI_T_pvar_handle handle, void* buf)
+L62460@P743: 1
+L62461@P743: 2
+L62462@P743: 3
+L62463@P743: 4
+L62464@P743: 5
+L62465@P743: 6
+L62466@P743: 7
+L62467@P743: 8
+L62468@P743: 9
+L62469@P743: 10
+L62470@P743: 11
+L62471@P743: 12
+L62472@P743: 13
+L62473@P743: 14
+L62474@P743: 15
+L62475@P743: 16
+L62476@P743: 17
+L62477@P743: 18
+L62478@P743: 19
+L62479@P743: 20
+L62480@P743: 21
+L62481@P743: 22
+L62482@P743: 23
+L62483@P743: 24
+L62484@P743: 25
+L62485@P743: 26
+L62486@P743: 27
+L62487@P743: 28
+L62488@P743: 29
+L62489@P743: 30
+L62490@P743: 31
+L62491@P743: 32
+L62492@P743: 33
+L62493@P743: 34
+L62494@P743: 35
+L62495@P743: 36
+L62496@P743: 37
+L62497@P743: 38
+L62498@P743: 39
+L62499@P743: 40
+L62500@P743: 41
+L62501@P743: 42
+L62502@P743: 43
+L62503@P743: 44
+L62504@P743: 45
+L62505@P743: 46
+L62506@P743: 47
+L62507@P743-744: 48A.2. C BINDINGS 713
+L62508@P744: int MPI_T_pvar_reset(MPI_T_pvar_session session, MPI_T_pvar_handle handle)
+L62509@P744: int MPI_T_pvar_session_create(MPI_T_pvar_session *session)
+L62510@P744: int MPI_T_pvar_session_free(MPI_T_pvar_session *session)
+L62511@P744: int MPI_T_pvar_start(MPI_T_pvar_session session, MPI_T_pvar_handle handle)
+L62512@P744: int MPI_T_pvar_stop(MPI_T_pvar_session session, MPI_T_pvar_handle handle)
+L62513@P744: int MPI_T_pvar_write(MPI_T_pvar_session session, MPI_T_pvar_handle handle,
+L62514@P744: const void* buf)
+L62515@P744: A.2.15 Deprecated C Bindings
+L62516@P744: int MPI_Attr_delete(MPI_Comm comm, int keyval)
+L62517@P744: int MPI_Attr_get(MPI_Comm comm, int keyval, void *attribute_val, int *flag)
+L62518@P744: int MPI_Attr_put(MPI_Comm comm, int keyval, void* attribute_val)
+L62519@P744: int MPI_DUP_FN(MPI_Comm oldcomm, int keyval, void *extra_state,
+L62520@P744: void *attribute_val_in, void *attribute_val_out, int *flag)
+L62521@P744: int MPI_Keyval_create(MPI_Copy_function *copy_fn,
+L62522@P744: MPI_Delete_function *delete_fn, int *keyval,
+L62523@P744: void* extra_state)
+L62524@P744: int MPI_Keyval_free(int *keyval)
+L62525@P744: int MPI_NULL_COPY_FN(MPI_Comm oldcomm, int keyval, void *extra_state,
+L62526@P744: void *attribute_val_in, void *attribute_val_out, int *flag)
+L62527@P744: int MPI_NULL_DELETE_FN(MPI_Comm comm, int keyval, void *attribute_val,
+L62528@P744: void *extra_state)
+L62529@P744: 1
+L62530@P744: 2
+L62531@P744: 3
+L62532@P744: 4
+L62533@P744: 5
+L62534@P744: 6
+L62535@P744: 7
+L62536@P744: 8
+L62537@P744: 9
+L62538@P744: 10
+L62539@P744: 11
+L62540@P744: 12
+L62541@P744: 13
+L62542@P744: 14
+L62543@P744: 15
+L62544@P744: 16
+L62545@P744: 17
+L62546@P744: 18
+L62547@P744: 19
+L62548@P744: 20
+L62549@P744: 21
+L62550@P744: 22
+L62551@P744: 23
+L62552@P744: 24
+L62553@P744: 25
+L62554@P744: 26
+L62555@P744: 27
+L62556@P744: 28
+L62557@P744: 29
+L62558@P744: 30
+L62559@P744: 31
+L62560@P744: 32
+L62561@P744: 33
+L62562@P744: 34
+L62563@P744: 35
+L62564@P744: 36
+L62565@P744: 37
+L62566@P744: 38
+L62567@P744: 39
+L62568@P744: 40
+L62569@P744: 41
+L62570@P744: 42
+L62571@P744: 43
+L62572@P744: 44
+L62573@P744: 45
+L62574@P744: 46
+L62575@P744: 47
+L62576@P744-745: 48714 ANNEX A. LANGUAGE BINDINGS SUMMARY
+L62577@P745: A.3 Fortran 2008 Bindings with the mpi_f08 Module
+L62578@P745: A.3.1 Point-to-Point Communication Fortran 2008 Bindings
+L62579@P745: MPI_Bsend(buf, count, datatype, dest, tag, comm, ierror)
+L62580@P745: TYPE(*), DIMENSION(..), INTENT(IN) :: buf
+L62581@P745: INTEGER, INTENT(IN) :: count, dest, tag
+L62582@P745: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L62583@P745: TYPE(MPI_Comm), INTENT(IN) :: comm
+L62584@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62585@P745: MPI_Bsend_init(buf, count, datatype, dest, tag, comm, request, ierror)
+L62586@P745: TYPE(*), DIMENSION(..), INTENT(IN), ASYNCHRONOUS :: buf
+L62587@P745: INTEGER, INTENT(IN) :: count, dest, tag
+L62588@P745: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L62589@P745: TYPE(MPI_Comm), INTENT(IN) :: comm
+L62590@P745: TYPE(MPI_Request), INTENT(OUT) :: request
+L62591@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62592@P745: MPI_Buffer_attach(buffer, size, ierror)
+L62593@P745: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buffer
+L62594@P745: INTEGER, INTENT(IN) :: size
+L62595@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62596@P745: MPI_Buffer_detach(buffer_addr, size, ierror)
+L62597@P745: USE, INTRINSIC :: ISO_C_BINDING, ONLY : C_PTR
+L62598@P745: TYPE(C_PTR), INTENT(OUT) :: buffer_addr
+L62599@P745: INTEGER, INTENT(OUT) :: size
+L62600@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62601@P745: MPI_Cancel(request, ierror)
+L62602@P745: TYPE(MPI_Request), INTENT(IN) :: request
+L62603@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62604@P745: MPI_Get_count(status, datatype, count, ierror)
+L62605@P745: TYPE(MPI_Status), INTENT(IN) :: status
+L62606@P745: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L62607@P745: INTEGER, INTENT(OUT) :: count
+L62608@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62609@P745: MPI_Ibsend(buf, count, datatype, dest, tag, comm, request, ierror)
+L62610@P745: TYPE(*), DIMENSION(..), INTENT(IN), ASYNCHRONOUS :: buf
+L62611@P745: INTEGER, INTENT(IN) :: count, dest, tag
+L62612@P745: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L62613@P745: TYPE(MPI_Comm), INTENT(IN) :: comm
+L62614@P745: TYPE(MPI_Request), INTENT(OUT) :: request
+L62615@P745: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62616@P745: MPI_Improbe(source, tag, comm, flag, message, status, ierror)
+L62617@P745: INTEGER, INTENT(IN) :: source, tag
+L62618@P745: TYPE(MPI_Comm), INTENT(IN) :: comm
+L62619@P745: 1
+L62620@P745: 2
+L62621@P745: 3
+L62622@P745: 4
+L62623@P745: 5
+L62624@P745: 6
+L62625@P745: 7
+L62626@P745: 8
+L62627@P745: 9
+L62628@P745: 10
+L62629@P745: 11
+L62630@P745: 12
+L62631@P745: 13
+L62632@P745: 14
+L62633@P745: 15
+L62634@P745: 16
+L62635@P745: 17
+L62636@P745: 18
+L62637@P745: 19
+L62638@P745: 20
+L62639@P745: 21
+L62640@P745: 22
+L62641@P745: 23
+L62642@P745: 24
+L62643@P745: 25
+L62644@P745: 26
+L62645@P745: 27
+L62646@P745: 28
+L62647@P745: 29
+L62648@P745: 30
+L62649@P745: 31
+L62650@P745: 32
+L62651@P745: 33
+L62652@P745: 34
+L62653@P745: 35
+L62654@P745: 36
+L62655@P745: 37
+L62656@P745: 38
+L62657@P745: 39
+L62658@P745: 40
+L62659@P745: 41
+L62660@P745: 42
+L62661@P745: 43
+L62662@P745: 44
+L62663@P745: 45
+L62664@P745: 46
+L62665@P745: 47
+L62666@P745-746: 48A.3. FORTRAN 2008 BINDINGS WITH THE MPI_F08 MODULE 715
+L62667@P746: LOGICAL, INTENT(OUT) :: flag
+L62668@P746: TYPE(MPI_Message), INTENT(OUT) :: message
+L62669@P746: TYPE(MPI_Status) :: status
+L62670@P746: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62671@P746: MPI_Imrecv(buf, count, datatype, message, request, ierror)
+L62672@P746: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buf
+L62673@P746: INTEGER, INTENT(IN) :: count
+L62674@P746: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L62675@P746: TYPE(MPI_Message), INTENT(INOUT) :: message
+L62676@P746: TYPE(MPI_Request), INTENT(OUT) :: request
+L62677@P746: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62678@P746: MPI_Iprobe(source, tag, comm, flag, status, ierror)
+L62679@P746: INTEGER, INTENT(IN) :: source, tag
+L62680@P746: TYPE(MPI_Comm), INTENT(IN) :: comm
+L62681@P746: LOGICAL, INTENT(OUT) :: flag
+L62682@P746: TYPE(MPI_Status) :: status
+L62683@P746: INTEGER, OPTIONAL, INTENT(OUT) :: ierror
+L62684@P746: MPI_Irecv(buf, count, datatype, source, tag, comm, request, ierror)
+L62685@P746: TYPE(*), DIMENSION(..), ASYNCHRONOUS :: buf
+L62686@P746: INTEGER, INTENT(IN) :: count, source, tag
+L62687@P746: TYPE(MPI_Datatype), INTENT(IN) :: datatype
+L62688@P746: TYPE(MPI_Comm), INTENT(IN) :: comm
+L62689@P746: TYPE(MPI_Request), INTENT(OUT) :: request
+

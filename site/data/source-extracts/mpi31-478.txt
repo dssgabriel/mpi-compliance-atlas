@@ -1,0 +1,24 @@
+External Interfaces C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node478.htm)
+citeturn101view0 [wordlim: 200] Crawled: 7 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node478.htm","lineno":0}); Total lines: 28
+L0: * * *
+L1: ## 404. External Interfaces C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† I/O C Bindings Previous: cite2† One-Sided Communications C Bindings L5: ` int MPI_Grequest_complete(MPI_Request request)
+L6: ` ` int MPI_Grequest_start(MPI_Grequest_query_function *query_fn, MPI_Grequest_free_function *free_fn, MPI_Grequest_cancel_function *cancel_fn, void *extra_state, MPI_Request *request)
+L7: ` ` int MPI_Init_thread(int *argc, char ***argv, int required, int *provided)
+L8: ` ` int MPI_Is_thread_main(int *flag)
+L9: ` ` int MPI_Query_thread(int *provided)
+L10: ` ` int MPI_Status_set_cancelled(MPI_Status *status, int flag)
+L11: ` ` int MPI_Status_set_elements(MPI_Status *status, MPI_Datatype datatype, int count)
+L12: ` ` int MPI_Status_set_elements_x(MPI_Status *status, MPI_Datatype datatype, MPI_Count count)
+L13: `
+L14: * * *
+L15: 
+L16: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L17: Up: cite0† C Bindings Next: cite1† I/O C Bindings Previous: cite2† One-Sided Communications C Bindings L18: 
+L19: * * *
+L20: 
+L21: Return to cite3†MPI-3.1 Standard Index L22: Return to cite4†MPI Forum Home Page L23: 
+L24: * * *
+L25: 
+L26: (Unofficial) MPI-3.1 of June 4, 2015
+L27: HTML Generated on June 4, 2015

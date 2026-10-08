@@ -1,0 +1,23 @@
+Partitioned Communication C Bindings (https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report/node538.htm)
+citeturn115view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: click({"ref_id":"turn3view3","id":538}); Total lines: 24
+L0: * * *
+L1: ## 21.3.2. Partitioned Communication C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†Datatypes C Bindings Previous: cite2†Point-to-Point Communication C Bindings L4: ` int MPI_Parrived(MPI_Request request, int partition, int *flag)
+L5: ` ` int MPI_Pready(int partition, MPI_Request request)
+L6: ` ` int MPI_Pready_list(int length, const int array_of_partitions[], MPI_Request request)
+L7: ` ` int MPI_Pready_range(int partition_low, int partition_high, MPI_Request request)
+L8: ` ` int MPI_Precv_init(void *buf, int partitions, MPI_Count count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Info info, MPI_Request *request)
+L9: ` ` int MPI_Psend_init(const void *buf, int partitions, MPI_Count count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Info info, MPI_Request *request)
+L10: `
+L11: * * *
+L12: 
+L13: Up: cite0†C Bindings Next: cite1†Datatypes C Bindings Previous: cite2†Point-to-Point Communication C Bindings L14: 
+L15: * * *
+L16: 
+L17: Return to cite3†MPI-4.1 Standard Index L18: Return to cite4†MPI Forum Home Page L19: 
+L20: * * *
+L21: 
+L22: (Unofficial) MPI-4.1 of November 2, 2023
+L23: HTML Generated on November 19, 2023
+

@@ -1,0 +1,52 @@
+One-Sided Communications C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node477.htm)
+citeturn97view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node477.htm","lineno":0}); Total lines: 54
+L0: * * *
+L1: ## 403. One-Sided Communications C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†External Interfaces C Bindings Previous: cite2†Process Creation and Management C Bindings L4: ` int MPI_Accumulate(const void *origin_addr, int origin_count, MPI_Datatype origin_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+L5: ` ` int MPI_Compare_and_swap(const void *origin_addr, const void *compare_addr, void *result_addr, MPI_Datatype datatype, int target_rank, MPI_Aint target_disp, MPI_Win win)
+L6: ` ` int MPI_Fetch_and_op(const void *origin_addr, void *result_addr, MPI_Datatype datatype, int target_rank, MPI_Aint target_disp, MPI_Op op, MPI_Win win)
+L7: ` ` int MPI_Get(void *origin_addr, int origin_count, MPI_Datatype origin_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Win win)
+L8: ` ` int MPI_Get_accumulate(const void *origin_addr, int origin_count, MPI_Datatype origin_datatype, void *result_addr, int result_count, MPI_Datatype result_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+L9: ` ` int MPI_Put(const void *origin_addr, int origin_count, MPI_Datatype origin_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Win win)
+L10: ` ` int MPI_Raccumulate(const void *origin_addr, int origin_count, MPI_Datatype origin_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Op op, MPI_Win win, MPI_Request *request)
+L11: ` ` int MPI_Rget(void *origin_addr, int origin_count, MPI_Datatype origin_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Win win, MPI_Request *request)
+L12: ` ` int MPI_Rget_accumulate(const void *origin_addr, int origin_count, MPI_Datatype origin_datatype, void *result_addr, int result_count, MPI_Datatype result_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Op op, MPI_Win win, MPI_Request *request)
+L13: ` ` int MPI_Rput(const void *origin_addr, int origin_count, MPI_Datatype origin_datatype, int target_rank, MPI_Aint target_disp, int target_count, MPI_Datatype target_datatype, MPI_Win win, MPI_Request *request)
+L14: ` ` int MPI_Win_allocate(MPI_Aint size, int disp_unit, MPI_Info info, MPI_Comm comm, void *baseptr, MPI_Win *win)
+L15: ` ` int MPI_Win_allocate_shared(MPI_Aint size, int disp_unit, MPI_Info info, MPI_Comm comm, void *baseptr, MPI_Win *win)
+L16: ` ` int MPI_Win_attach(MPI_Win win, void *base, MPI_Aint size)
+L17: ` ` int MPI_Win_complete(MPI_Win win)
+L18: ` ` int MPI_Win_create(void *base, MPI_Aint size, int disp_unit, MPI_Info info, MPI_Comm comm, MPI_Win *win)
+L19: ` ` int MPI_Win_create_dynamic(MPI_Info info, MPI_Comm comm, MPI_Win *win)
+L20: ` ` int MPI_Win_detach(MPI_Win win, const void *base)
+L21: ` ` int MPI_Win_fence(int assert, MPI_Win win)
+L22: ` ` int MPI_Win_flush(int rank, MPI_Win win)
+L23: ` ` int MPI_Win_flush_all(MPI_Win win)
+L24: ` ` int MPI_Win_flush_local(int rank, MPI_Win win)
+L25: ` ` int MPI_Win_flush_local_all(MPI_Win win)
+L26: ` ` int MPI_Win_free(MPI_Win *win)
+L27: ` ` int MPI_Win_get_group(MPI_Win win, MPI_Group *group)
+L28: ` ` int MPI_Win_get_info(MPI_Win win, MPI_Info *info_used)
+L29: ` ` int MPI_Win_lock(int lock_type, int rank, int assert, MPI_Win win)
+L30: ` ` int MPI_Win_lock_all(int assert, MPI_Win win)
+L31: ` ` int MPI_Win_post(MPI_Group group, int assert, MPI_Win win)
+L32: ` ` int MPI_Win_set_info(MPI_Win win, MPI_Info info)
+L33: ` ` int MPI_Win_shared_query(MPI_Win win, int rank, MPI_Aint *size, int *disp_unit, void *baseptr)
+L34: ` ` int MPI_Win_start(MPI_Group group, int assert, MPI_Win win)
+L35: ` ` int MPI_Win_sync(MPI_Win win)
+L36: ` ` int MPI_Win_test(MPI_Win win, int *flag)
+L37: ` ` int MPI_Win_unlock(int rank, MPI_Win win)
+L38: ` ` int MPI_Win_unlock_all(MPI_Win win)
+L39: ` ` int MPI_Win_wait(MPI_Win win)
+L40: `
+L41: * * *
+L42: 
+L43: Up: cite0†C Bindings Next: cite1†External Interfaces C Bindings Previous: cite2†Process Creation and Management C Bindings L44: 
+L45: * * *
+L46: 
+L47: Return to cite3†MPI-3.1 Standard Index L48: Return to cite4†MPI Forum Home Page L49: 
+L50: * * *
+L51: 
+L52: (Unofficial) MPI-3.1 of June 4, 2015
+L53: HTML Generated on June 4, 2015

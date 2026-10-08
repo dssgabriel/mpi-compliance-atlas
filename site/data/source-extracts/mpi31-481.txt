@@ -1,0 +1,19 @@
+Tools / Profiling Interface C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node481.htm)
+citeturn86view0 [wordlim: 200] Crawled: 3 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node481.htm","lineno":0}); Total lines: 22
+L0: * * *
+L1: ## 407. Tools / Profiling Interface C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† Tools / MPI Tool Information Interface C Bindings Previous: cite2† Language Bindings C Bindings L5: 
+L6: ` int MPI_Pcontrol(const int level, ...)
+L7: `
+L8: 
+L9: * * *
+L10: 
+L11: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L12: Up: cite0† C Bindings Next: cite1† Tools / MPI Tool Information Interface C Bindings Previous: cite2† Language Bindings C Bindings L13: 
+L14: * * *
+L15: Return to cite3†MPI-3.1 Standard Index L16: Return to cite4†MPI Forum Home Page L17: 
+L18: * * *
+L19: 
+L20: (Unofficial) MPI-3.1 of June 4, 2015
+L21: HTML Generated on June 4, 2015
+

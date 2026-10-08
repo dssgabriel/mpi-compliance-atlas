@@ -1,0 +1,18 @@
+Profiling Interface C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node394.htm)
+citeturn73view0 [wordlim: 200] Crawled: 4 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node394.htm","lineno":0}); Total lines: 22
+L0: * * *
+L1: ## 349. Profiling Interface C Bindings
+L2: 
+L3: cite5†Image cite6†Image cite7†Image L4: Up: cite0† C Bindings Next: cite1† Deprecated C Bindings Previous: cite2† Language Bindings C Bindings L5: 
+L6: ` int MPI_Pcontrol(const int level, ...)
+L7: `
+L8: 
+L9: * * *
+L10: 
+L11: cite8†Image cite9†Image cite10†Image L12: Up: cite0† C Bindings Next: cite1† Deprecated C Bindings Previous: cite2† Language Bindings C Bindings L13: 
+L14: * * *
+L15: 
+L16: Return to cite3†MPI-2.2 Standard Index L17: Return to cite4†MPI Forum Home Page L18: 
+L19: * * *
+L20: (Unofficial) MPI-2.2 of September 4, 2009
+L21: HTML Generated on September 10, 2009

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="213" height="158" viewBox="0 0 213 158" role="img" aria-labelledby="title description">
+  <title id="title">MPI Forum logo</title>
+  <desc id="description">Three overlapping blue parallelograms, recreated as vector artwork from the MPI Forum logo.</desc>
+  <metadata>Reference: https://github.com/mpi-forum/mpi-forum.github.io/blob/master/images/mpi-forum-icon.jpg. Vector recreation from the 213 by 158 pixel JPEG; the white background is omitted.</metadata>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.1"/>
+      <feOffset dx="1.2" dy="1.7"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <path fill="#00356f" filter="url(#shadow)" d="M103.5 6.2 208.5 8.5 174.8 108.4 69.7 106.1Z"/>
+  <path fill="#0056a9" filter="url(#shadow)" d="M70.3 29.4 175.4 31.7 141.6 131.5 36.6 129.2Z"/>
+  <path fill="#007aeb" filter="url(#shadow)" d="M37.2 52.6 142.3 54.9 108.6 154.7 3.5 152.4Z"/>
+</svg>

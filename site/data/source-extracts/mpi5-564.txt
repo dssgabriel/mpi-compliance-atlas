@@ -1,0 +1,26 @@
+The Info Object C Bindings (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node564.htm)
+citeturn10view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node564.htm","lineno":null}); Total lines: 27
+L0: * * *
+L1: ## 22.3.8. The Info Object C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†Process Creation and Management C Bindings Previous: cite2†MPI Environmental Management C Bindings L4: ` int MPI_Info_create_env(int argc, char *argv[], MPI_Info *info)
+L5: ` ` int MPI_Info_create(MPI_Info *info)
+L6: ` ` int MPI_Info_delete(MPI_Info info, const char *key)
+L7: ` ` int MPI_Info_dup(MPI_Info info, MPI_Info *newinfo)
+L8: ` ` int MPI_Info_free(MPI_Info *info)
+L9: ` ` int MPI_Info_get_nkeys(MPI_Info info, int *nkeys)
+L10: ` ` int MPI_Info_get_nthkey(MPI_Info info, int n, char *key)
+L11: ` ` int MPI_Info_get_string(MPI_Info info, const char *key, int *buflen, char *value, int *flag)
+L12: ` ` int MPI_Info_set(MPI_Info info, const char *key, const char *value)
+L13: `
+L14: * * *
+L15: 
+L16: Up: cite0†C Bindings Next: cite1†Process Creation and Management C Bindings Previous: cite2†MPI Environmental Management C Bindings L17: 
+L18: * * *
+L19: 
+L20: Return to cite3†MPI-5.0 Standard Index L21: Return to cite4†MPI Forum Home Page L22: 
+L23: * * *
+L24: 
+L25: (Unofficial) MPI-5.0 of June 9, 2025
+L26: HTML Generated on March 2, 2025
+

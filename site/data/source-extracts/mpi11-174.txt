@@ -1,0 +1,30 @@
+C bindings for Environmental Inquiry (https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node174.html)
+citeturn40view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node174.html","lineno":null}); Total lines: 34
+L0: * * *
+L1: # 10.7. C bindings for Environmental Inquiry
+L2: 
+L3: cite6†Image cite7†Image cite8†Image L4: Up: cite0† Language Binding Next: cite1† C Bindings for Profiling Previous: cite2† C Bindings for Process Topologies L5: ` int MPI_Get_processor_name(char *name, int *resultlen)
+L6: ` ` int MPI_Errhandler_create(MPI_Handler_function *function, MPI_Errhandler *errhandler)
+L7: ` ` int MPI_Errhandler_set(MPI_Comm comm, MPI_Errhandler errhandler)
+L8: ` ` int MPI_Errhandler_get(MPI_Comm comm, MPI_Errhandler *errhandler)
+L9: ` ` int MPI_Errhandler_free(MPI_Errhandler *errhandler)
+L10: ` ` int MPI_Error_string(int errorcode, char *string, int *resultlen)
+L11: ` ` int MPI_Error_class(int errorcode, int *errorclass)
+L12: ` ` int double MPI_Wtime(void)
+L13: ` ` int double MPI_Wtick(void)
+L14: ` ` int MPI_Init(int *argc, char ***argv)
+L15: ` ` int MPI_Finalize(void)
+L16: ` ` int MPI_Initialized(int *flag)
+L17: ` ` int MPI_Abort(MPI_Comm comm, int errorcode)
+L18: `
+L19: * * *
+L20: 
+L21: cite9†Image cite10†Image cite11†Image L22: Up: cite0† Language Binding Next: cite1† C Bindings for Profiling Previous: cite2† C Bindings for Process Topologies L23: 
+L24: * * *
+L25: 
+L26: Return to cite3†MPI 1.1 Standard Index L27: Return to cite4†MPI-2 Standard Index L28: Return to cite5†MPI Forum Home Page L29: 
+L30: * * *
+L31: 
+L32: MPI-1.1 of June 12, 1995
+L33: HTML Generated on August 6, 1997
+

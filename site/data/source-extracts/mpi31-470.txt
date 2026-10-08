@@ -1,0 +1,49 @@
+Datatypes C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node470.htm)
+citeturn106view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node470.htm","lineno":0}); Total lines: 53
+L0: * * *
+L1: ## 396. Datatypes C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† Collective Communication C Bindings Previous: cite2† Point-to-Point Communication C Bindings L5: ` MPI_Aint MPI_Aint_add(MPI_Aint base, MPI_Aint disp)
+L6: ` ` MPI_Aint MPI_Aint_diff(MPI_Aint addr1, MPI_Aint addr2)
+L7: ` ` int MPI_Get_address(const void *location, MPI_Aint *address)
+L8: ` ` int MPI_Get_elements(const MPI_Status *status, MPI_Datatype datatype, int *count)
+L9: ` ` int MPI_Get_elements_x(const MPI_Status *status, MPI_Datatype datatype, MPI_Count *count)
+L10: ` ` int MPI_Pack(const void* inbuf, int incount, MPI_Datatype datatype, void *outbuf, int outsize, int *position, MPI_Comm comm)
+L11: ` ` int MPI_Pack_external(const char datarep[], const void *inbuf, int incount, MPI_Datatype datatype, void *outbuf, MPI_Aint outsize, MPI_Aint *position)
+L12: ` ` int MPI_Pack_external_size(const char datarep[], int incount, MPI_Datatype datatype, MPI_Aint *size)
+L13: ` ` int MPI_Pack_size(int incount, MPI_Datatype datatype, MPI_Comm comm, int *size)
+L14: ` ` int MPI_Type_commit(MPI_Datatype *datatype)
+L15: ` ` int MPI_Type_contiguous(int count, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L16: ` ` int MPI_Type_create_darray(int size, int rank, int ndims, const int array_of_gsizes[], const int array_of_distribs[], const int array_of_dargs[], const int array_of_psizes[], int order, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L17: ` ` int MPI_Type_create_hindexed(int count, const int array_of_blocklengths[], const MPI_Aint array_of_displacements[], MPI_Datatype oldtype, MPI_Datatype *newtype)
+L18: ` ` int MPI_Type_create_hindexed_block(int count, int blocklength, const MPI_Aint array_of_displacements[], MPI_Datatype oldtype, MPI_Datatype *newtype)
+L19: ` ` int MPI_Type_create_hvector(int count, int blocklength, MPI_Aint stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L20: ` ` int MPI_Type_create_indexed_block(int count, int blocklength, const int array_of_displacements[], MPI_Datatype oldtype, MPI_Datatype *newtype)
+L21: ` ` int MPI_Type_create_resized(MPI_Datatype oldtype, MPI_Aint lb, MPI_Aint extent, MPI_Datatype *newtype)
+L22: ` ` int MPI_Type_create_struct(int count, const int array_of_blocklengths[], const MPI_Aint array_of_displacements[], const MPI_Datatype array_of_types[], MPI_Datatype *newtype)
+L23: ` ` int MPI_Type_create_subarray(int ndims, const int array_of_sizes[], const int array_of_subsizes[], const int array_of_starts[], int order, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L24: ` ` int MPI_Type_dup(MPI_Datatype oldtype, MPI_Datatype *newtype)
+L25: ` ` int MPI_Type_free(MPI_Datatype *datatype)
+L26: ` ` int MPI_Type_get_contents(MPI_Datatype datatype, int max_integers, int max_addresses, int max_datatypes, int array_of_integers[], MPI_Aint array_of_addresses[], MPI_Datatype array_of_datatypes[])
+L27: ` ` int MPI_Type_get_envelope(MPI_Datatype datatype, int *num_integers, int *num_addresses, int *num_datatypes, int *combiner)
+L28: ` ` int MPI_Type_get_extent(MPI_Datatype datatype, MPI_Aint *lb, MPI_Aint *extent)
+L29: ` ` int MPI_Type_get_extent_x(MPI_Datatype datatype, MPI_Count *lb, MPI_Count *extent)
+L30: ` ` int MPI_Type_get_true_extent(MPI_Datatype datatype, MPI_Aint *true_lb, MPI_Aint *true_extent)
+L31: ` ` int MPI_Type_get_true_extent_x(MPI_Datatype datatype, MPI_Count *true_lb, MPI_Count *true_extent)
+L32: ` ` int MPI_Type_indexed(int count, const int array_of_blocklengths[], const int array_of_displacements[], MPI_Datatype oldtype, MPI_Datatype *newtype)
+L33: ` ` int MPI_Type_size(MPI_Datatype datatype, int *size)
+L34: ` ` int MPI_Type_size_x(MPI_Datatype datatype, MPI_Count *size)
+L35: ` ` int MPI_Type_vector(int count, int blocklength, int stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L36: ` ` int MPI_Unpack(const void* inbuf, int insize, int *position, void *outbuf, int outcount, MPI_Datatype datatype, MPI_Comm comm)
+L37: ` ` int MPI_Unpack_external(const char datarep[], const void *inbuf, MPI_Aint insize, MPI_Aint *position, void *outbuf, int outcount, MPI_Datatype datatype)
+L38: `
+L39: * * *
+L40: 
+L41: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L42: Up: cite0† C Bindings Next: cite1† Collective Communication C Bindings Previous: cite2† Point-to-Point Communication C Bindings L43: 
+L44: * * *
+L45: 
+L46: Return to cite3†MPI-3.1 Standard Index L47: Return to cite4†MPI Forum Home Page L48: 
+L49: * * *
+L50: 
+L51: (Unofficial) MPI-3.1 of June 4, 2015
+L52: HTML Generated on June 4, 2015

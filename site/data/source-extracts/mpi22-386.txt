@@ -1,0 +1,36 @@
+Process Topologies C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node386.htm)
+citeturn87view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node386.htm","lineno":0}); Total lines: 38
+L0: * * *
+L1: ## 341. Process Topologies C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†MPI Environmenta Management C Bindings Previous: cite2†Groups, Contexts, Communicators, and Caching C Bindings L4: ` int MPI_Cart_coords(MPI_Comm comm, int rank, int maxdims, int *coords)
+L5: ` ` int MPI_Cart_create(MPI_Comm comm_old, int ndims, int *dims, int *periods, int reorder, MPI_Comm *comm_cart)
+L6: ` ` int MPI_Cart_get(MPI_Comm comm, int maxdims, int *dims, int *periods, int *coords)
+L7: ` ` int MPI_Cart_map(MPI_Comm comm, int ndims, int *dims, int *periods, int *newrank)
+L8: ` ` int MPI_Cart_rank(MPI_Comm comm, int *coords, int *rank)
+L9: ` ` int MPI_Cart_shift(MPI_Comm comm, int direction, int disp, int *rank_source, int *rank_dest)
+L10: ` ` int MPI_Cart_sub(MPI_Comm comm, int *remain_dims, MPI_Comm *newcomm)
+L11: ` ` int MPI_Cartdim_get(MPI_Comm comm, int *ndims)
+L12: ` ` int MPI_Dims_create(int nnodes, int ndims, int *dims)
+L13: ` ` int MPI_Dist_graph_create(MPI_Comm comm_old, int n, int sources[], int degrees[], int destinations[], int weights[], MPI_Info info, int reorder, MPI_Comm *comm_dist_graph)
+L14: ` ` int MPI_Dist_graph_create_adjacent(MPI_Comm comm_old, int indegree, int sources[], int sourceweights[], int outdegree, int destinations[], int destweights[], MPI_Info info, int reorder, MPI_Comm *comm_dist_graph)
+L15: ` ` int MPI_Dist_graph_neighbors(MPI_Comm comm, int maxindegree, int sources[], int sourceweights[], int maxoutdegree, int destinations[], int destweights[])
+L16: ` ` int MPI_Dist_graph_neighbors_count(MPI_Comm comm, int *indegree, int *outdegree, int *weighted)
+L17: ` ` int MPI_Graph_create(MPI_Comm comm_old, int nnodes, int *index, int *edges, int reorder, MPI_Comm *comm_graph)
+L18: ` ` int MPI_Graph_get(MPI_Comm comm, int maxindex, int maxedges, int *index, int *edges)
+L19: ` ` int MPI_Graph_map(MPI_Comm comm, int nnodes, int *index, int *edges, int *newrank)
+L20: ` ` int MPI_Graph_neighbors(MPI_Comm comm, int rank, int maxneighbors, int *neighbors)
+L21: ` ` int MPI_Graph_neighbors_count(MPI_Comm comm, int rank, int *nneighbors)
+L22: ` ` int MPI_Graphdims_get(MPI_Comm comm, int *nnodes, int *nedges)
+L23: ` ` int MPI_Topo_test(MPI_Comm comm, int *status)
+L24: `
+L25: * * *
+L26: 
+L27: Up: cite0†C Bindings Next: cite1†MPI Environmenta Management C Bindings Previous: cite2†Groups, Contexts, Communicators, and Caching C Bindings L28: 
+L29: * * *
+L30: 
+L31: Return to cite3†MPI-2.2 Standard Index L32: Return to cite4†MPI Forum Home Page L33: 
+L34: * * *
+L35: 
+L36: (Unofficial) MPI-2.2 of September 4, 2009
+L37: HTML Generated on September 10, 2009

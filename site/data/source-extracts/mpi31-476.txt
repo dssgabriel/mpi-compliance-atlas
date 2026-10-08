@@ -1,0 +1,28 @@
+Process Creation and Management C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node476.htm)
+citeturn79view0 [wordlim: 200] Crawled: 6 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node476.htm","lineno":0}); Total lines: 32
+L0: * * *
+L1: ## 402. Process Creation and Management C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† One-Sided Communications C Bindings Previous: cite2† The Info Object C Bindings L5: ` int MPI_Close_port(const char *port_name)
+L6: ` ` int MPI_Comm_accept(const char *port_name, MPI_Info info, int root, MPI_Comm comm, MPI_Comm *newcomm)
+L7: ` ` int MPI_Comm_connect(const char *port_name, MPI_Info info, int root, MPI_Comm comm, MPI_Comm *newcomm)
+L8: ` ` int MPI_Comm_disconnect(MPI_Comm *comm)
+L9: ` ` int MPI_Comm_get_parent(MPI_Comm *parent)
+L10: ` ` int MPI_Comm_join(int fd, MPI_Comm *intercomm)
+L11: ` ` int MPI_Comm_spawn(const char *command, char *argv[], int maxprocs, MPI_Info info, int root, MPI_Comm comm, MPI_Comm *intercomm, int array_of_errcodes[])
+L12: ` ` int MPI_Comm_spawn_multiple(int count, char *array_of_commands[], char **array_of_argv[], const int array_of_maxprocs[], const MPI_Info array_of_info[], int root, MPI_Comm comm, MPI_Comm *intercomm, int array_of_errcodes[])
+L13: ` ` int MPI_Lookup_name(const char *service_name, MPI_Info info, char *port_name)
+L14: ` ` int MPI_Open_port(MPI_Info info, char *port_name)
+L15: ` ` int MPI_Publish_name(const char *service_name, MPI_Info info, const char *port_name)
+L16: ` ` int MPI_Unpublish_name(const char *service_name, MPI_Info info, const char *port_name)
+L17: `
+L18: * * *
+L19: 
+L20: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L21: Up: cite0† C Bindings Next: cite1† One-Sided Communications C Bindings Previous: cite2† The Info Object C Bindings L22: 
+L23: * * *
+L24: 
+L25: Return to cite3†MPI-3.1 Standard Index L26: Return to cite4†MPI Forum Home Page L27: 
+L28: * * *
+L29: 
+L30: (Unofficial) MPI-3.1 of June 4, 2015
+L31: HTML Generated on June 4, 2015

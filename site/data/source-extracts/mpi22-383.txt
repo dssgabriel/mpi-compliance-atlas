@@ -1,0 +1,42 @@
+Datatypes C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node383.htm)
+citeturn74view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node383.htm","lineno":0}); Total lines: 46
+L0: * * *
+L1: ## 338. Datatypes C Bindings
+L2: 
+L3: cite5†Image cite6†Image cite7†Image L4: Up: cite0† C Bindings Next: cite1† Collective Communication C Bindings Previous: cite2† Point-to-Point Communication C Bindings L5: ` int MPI_Get_address(void *location, MPI_Aint *address)
+L6: ` ` int MPI_Get_elements(MPI_Status *status, MPI_Datatype datatype, int *count)
+L7: ` ` int MPI_Pack(void* inbuf, int incount, MPI_Datatype datatype, void *outbuf, int outsize, int *position, MPI_Comm comm)
+L8: ` ` int MPI_Pack_external(char *datarep, void *inbuf, int incount, MPI_Datatype datatype, void *outbuf, MPI_Aint outsize, MPI_Aint *position)
+L9: ` ` int MPI_Pack_external_size(char *datarep, int incount, MPI_Datatype datatype, MPI_Aint *size)
+L10: ` ` int MPI_Pack_size(int incount, MPI_Datatype datatype, MPI_Comm comm, int *size)
+L11: ` ` int MPI_Type_commit(MPI_Datatype *datatype)
+L12: ` ` int MPI_Type_contiguous(int count, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L13: ` ` int MPI_Type_create_darray(int size, int rank, int ndims, int array_of_gsizes[], int array_of_distribs[], int array_of_dargs[], int array_of_psizes[], int order, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L14: ` ` int MPI_Type_create_hindexed(int count, int array_of_blocklengths[], MPI_Aint array_of_displacements[], MPI_Datatype oldtype, MPI_Datatype *newtype)
+L15: ` ` int MPI_Type_create_hvector(int count, int blocklength, MPI_Aint stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L16: ` ` int MPI_Type_create_indexed_block(int count, int blocklength, int array_of_displacements[], MPI_Datatype oldtype, MPI_Datatype *newtype)
+L17: ` ` int MPI_Type_create_resized(MPI_Datatype oldtype, MPI_Aint lb, MPI_Aint extent, MPI_Datatype *newtype)
+L18: ` ` int MPI_Type_create_struct(int count, int array_of_blocklengths[], MPI_Aint array_of_displacements[], MPI_Datatype array_of_types[], MPI_Datatype *newtype)
+L19: ` ` int MPI_Type_create_subarray(int ndims, int array_of_sizes[], int array_of_subsizes[], int array_of_starts[], int order, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L20: ` ` int MPI_Type_dup(MPI_Datatype type, MPI_Datatype *newtype)
+L21: ` ` int MPI_Type_free(MPI_Datatype *datatype)
+L22: ` ` int MPI_Type_get_contents(MPI_Datatype datatype, int max_integers, int max_addresses, int max_datatypes, int array_of_integers[], MPI_Aint array_of_addresses[], MPI_Datatype array_of_datatypes[])
+L23: ` ` int MPI_Type_get_envelope(MPI_Datatype datatype, int *num_integers, int *num_addresses, int *num_datatypes, int *combiner)
+L24: ` ` int MPI_Type_get_extent(MPI_Datatype datatype, MPI_Aint *lb, MPI_Aint *extent)
+L25: ` ` int MPI_Type_get_true_extent(MPI_Datatype datatype, MPI_Aint *true_lb, MPI_Aint *true_extent)
+L26: ` ` int MPI_Type_indexed(int count, int *array_of_blocklengths, int *array_of_displacements, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L27: ` ` int MPI_Type_size(MPI_Datatype datatype, int *size)
+L28: ` ` int MPI_Type_vector(int count, int blocklength, int stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L29: ` ` int MPI_Unpack(void* inbuf, int insize, int *position, void *outbuf, int outcount, MPI_Datatype datatype, MPI_Comm comm)
+L30: ` ` int MPI_Unpack_external(char *datarep, void *inbuf, MPI_Aint insize, MPI_Aint *position, void *outbuf, int outcount, MPI_Datatype datatype)
+L31: `
+L32: * * *
+L33: 
+L34: cite8†Image cite9†Image cite10†Image L35: Up: cite0† C Bindings Next: cite1† Collective Communication C Bindings Previous: cite2† Point-to-Point Communication C Bindings L36: 
+L37: * * *
+L38: 
+L39: Return to cite3†MPI-2.2 Standard Index L40: Return to cite4†MPI Forum Home Page L41: 
+L42: * * *
+L43: 
+L44: (Unofficial) MPI-2.2 of September 4, 2009
+L45: HTML Generated on September 10, 2009

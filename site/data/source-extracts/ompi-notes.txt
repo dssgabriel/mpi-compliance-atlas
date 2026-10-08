@@ -1,0 +1,159 @@
+3.6. MPI Functionality and Features — Open MPI 5.0.x documentation (https://docs.open-mpi.org/en/v5.0.x/release-notes/mpi.html)
+citeturn163view0 [wordlim: 200] Crawled: 4 days ago; Content type: text/html; Source: open({"ref_id":"turn108view0","lineno":0}); Total lines: 163
+L0: cite0†Open MPI L1: 
+L2: [Input: Search docs] [Input] [Input]
+L3: 
+L4: cite0†Open MPI L5: 
+L6: # 3.6. MPI Functionality and Featurescite1† L7: ## 3.6.1. MPI Standard conformancecite2† L8: 
+L9: In the Open MPI v5.0.x series, all MPI-3.1 functionality is supported. Some MPI-4.0 functionality is supported.
+L10: 
+L11: As such, `MPI_VERSION` is set to 3 and `MPI_SUBVERSION` is set to 1.
+L12: 
+L13: For historical reference:
+L14: 
+L15: MPI standards conformance  | Introduced in Open MPI version
+L16: --- | ---
+L17: MPI-2.0  | Open MPI v1.2
+L18: MPI-2.1  | Open MPI v1.3
+L19: MPI-3.0  | Open MPI v1.8
+L20: MPI-3.1  | Open MPI v2.0
+L21: ### 3.6.1.1. MPI-4.0 partial compliancecite3† L22: 
+L23: In the Open MPI v5.0.x series, only partial MPI-4.0 functionality is supported. This section contains a list of features added for the release.
+L24: 
+L25:   * Added support for MPI Sessions.
+L26: 
+L27:   * Added partitioned communication using persistent sends and persistent receives.
+L28: 
+L29:   * Added persistent collectives to the `MPI_` namespace (they were previously available via the `MPIX_` prefix).
+L30: 
+L31:   * Added support for cite4†MPI_Isendrecv() and its variants.
+L32:   * Added support for cite5†MPI_Comm_idup_with_info() .
+L33: 
+L34:   * Added support for cite6†MPI_Info_get_string() .
+L35: 
+L36:   * Added support for `initial_error_handler` info key and the `MPI_ERRORS_ABORT` infrastructure.
+L37: 
+L38:   * Added support for `mpi_minimum_memory_alignment` info key.
+L39: 
+L40:   * Added support for `MPI_COMM_TYPE_HW_GUIDED` and `MPI_COMM_TYPE_HW_UNGUIDED`.
+L41: 
+L42:   * Added support for cite7†MPI_Info_create_env() .
+L43: 
+L44:   * Added error handling for “unbound” errors to `MPI_COMM_SELF`.
+L45:   * Added `MPI_F_STATUS_SIZE`, `MPI_F_SOURCE`, `MPI_F_TAG`, and `MPI_F_ERROR`.
+L46: 
+L47:   * Made cite8†MPI_Comm_get_info() , cite9†MPI_File_get_info() , and cite10†MPI_Win_get_info() MPI-4.0 compliant.
+L48: 
+L49:   * Info keys that are not understood by Open MPI will be silently ignored and dropped on communicators, files, and windows.
+L50: 
+L51:   * Deprecated cite11†MPI_Sizeof() .
+L52: 
+L53:   * Deprecated cite12†MPI_Cancel() on send requests.
+L54: 
+L55:   * Deprecated cite13†MPI_Info_get() and cite14†MPI_Info_get_valuelen() .
+L56: ## 3.6.2. Removed MPI APIscite15† L57: 
+L58: Note that starting with Open MPI v4.0.0, prototypes for several legacy MPI-1 symbols that were deleted in the MPI-3.0 specification are no longer available by default in `mpi.h`. Specifically, several MPI-1 symbols were deprecated in the 1996 publishing of the MPI-2.0 specification. These deprecated symbols were eventually removed from the MPI-3.0 specification in 2012.
+L59: 
+L60: The symbols that now no longer appear by default in Open MPI’s `mpi.h` are:
+L61:   * `MPI_Address` (replaced by `MPI_Get_address`)
+L62: 
+L63:   * `MPI_Errhandler_create` (replaced by `MPI_Comm_create_errhandler`)
+L64: 
+L65:   * `MPI_Errhandler_get` (replaced by `MPI_Comm_get_errhandler`)
+L66: 
+L67:   * `MPI_Errhandler_set` (replaced by `MPI_Comm_set_errhandler`)
+L68: 
+L69:   * `MPI_Type_extent` (replaced by `MPI_Type_get_extent`)
+L70: 
+L71:   * `MPI_Type_hindexed` (replaced by `MPI_Type_create_hindexed`)
+L72: 
+L73:   * `MPI_Type_hvector` (replaced by `MPI_Type_create_hvector`)
+L74: 
+L75:   * `MPI_Type_lb` (replaced by `MPI_Type_get_extent`)
+L76:   * `MPI_Type_struct` (replaced by `MPI_Type_create_struct`)
+L77: 
+L78:   * `MPI_Type_ub` (replaced by `MPI_Type_get_extent`)
+L79: 
+L80:   * `MPI_LB` (replaced by `MPI_Type_create_resized`)
+L81: 
+L82:   * `MPI_UB` (replaced by `MPI_Type_create_resized`)
+L83: 
+L84:   * `MPI_COMBINER_HINDEXED_INTEGER`
+L85: 
+L86:   * `MPI_COMBINER_HVECTOR_INTEGER`
+L87: 
+L88:   * `MPI_COMBINER_STRUCT_INTEGER`
+L89: 
+L90:   * `MPI_Handler_function` (replaced by `MPI_Comm_errhandler_function`)
+L91: Although these symbols are no longer prototyped in `mpi.h`, they are still present in the MPI library in Open MPI v5.0.x. This enables legacy MPI applications to link and run successfully with Open MPI v5.0.x, even though they will fail to compile.
+L92: 
+L93: Warning
+L94: 
+L95: Future releases of Open MPI beyond the v5.0.x series may remove these symbols altogether.
+L96: 
+L97: Warning
+L98: The Open MPI team STRONGLY encourages all MPI application developers to stop using these constructs that were first deprecated over 20 years ago, and finally removed from the MPI specification in MPI-3.0 (in 2012).
+L99: 
+L100: Important
+L101: 
+L102: cite16†The “Removed MPI constructs” section contains examples of how to update legacy MPI applications using these deleted symbols to use the “new” symbols.
+L103: All that being said, if you are unable to immediately update your application to stop using these legacy MPI-1 symbols, you can re-enable them in `mpi.h` by configuring Open MPI with the `--enable-mpi1-compatibility` flag.
+L104: ## 3.6.3. Other MPI featurescite17† L105: 
+L106:   * Rank reordering support is available using the TreeMatch library. It is activated for the graph and `dist_graph` communicator topologies.
+L107:   * When using MPI deprecated functions, some compilers will emit warnings. For example:
+L108: 
+L109:     shell$ cat deprecated_example.c
+L110:     #include <mpi.h>
+L111:     void foo(void) {
+L112:         MPI_Datatype type;
+L113:         MPI_Type_struct(1, NULL, NULL, NULL, &type);
+L114:     }
+L115:     shell$ mpicc -c deprecated_example.c
+L116:     deprecated_example.c: In function 'foo':
+L117:     deprecated_example.c:4: warning: 'MPI_Type_struct' is deprecated (declared at /opt/openmpi/include/mpi.h:1522)
+L118:     shell$
+L119:   * `MPI_THREAD_MULTIPLE` is supported with some exceptions.
+L120: 
+L121: The following PMLs support `MPI_THREAD_MULTIPLE`:
+L122: 
+L123:     1. `cm`, when used with the following MTLs:
+L124: 
+L125:       1. `ofi` (Libfabric)
+L126: 
+L127:       2. `portals4`
+L128: 
+L129:     2. `ob1`, when used with the following BTLs:
+L130: 
+L131:       1. `self`
+L132: 
+L133:       2. `sm`
+L134: 
+L135:       3. `smcuda`
+L136: 
+L137:       4. `tcp`
+L138: 
+L139:       5. `ugni`
+L140: 
+L141:       6. `usnic`
+L142: 
+L143:     3. `ucx`
+L144: 
+L145: Currently, MPI File operations are not thread safe even if MPI is initialized for `MPI_THREAD_MULTIPLE` support.
+L146:   * `MPI_REAL16` and `MPI_COMPLEX32` are only supported on platforms where a portable C datatype can be found that matches the Fortran type `REAL*16`, both in size and bit representation.
+L147:   * The “libompitrace” library is bundled in Open MPI and is installed by default (it can be disabled via the `--disable-libompitrace` flag). This library provides a simplistic tracing of select MPI function calls via the MPI profiling interface. Linking it in to your application via (e.g., via `-lompitrace`) will automatically output to stderr when some MPI functions are invoked:
+L148: 
+L149:     shell$ cd examples/
+L150:     shell$ mpicc hello_c.c -o hello_c -lompitrace
+L151:     shell$ mpirun -n 1 hello_c
+L152:     MPI_INIT: argc 1
+L153:     Hello, world, I am 0 of 1
+L154:     MPI_BARRIER[0]: comm MPI_COMM_WORLD
+L155:     MPI_FINALIZE[0]
+L156:     shell$
+L157: Keep in mind that the output from the trace library is going to `stderr`, so it may output in a slightly different order than the `stdout` from your application.
+L158: 
+L159: This library is being offered as a “proof of concept” / convenience from Open MPI. If there is interest, it is trivially easy to extend it to printf for other MPI functions. Pull requests on github.com would be greatly appreciated.
+L160: 
+L161: * * *
+L162: Built with cite18†Sphinx†www.sphinx-doc.org using a cite19†theme†github.com provided by cite20†Read the Docs†readthedocs.org .
+

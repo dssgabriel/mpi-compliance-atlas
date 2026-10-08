@@ -1,0 +1,24 @@
+Changes in <font face="sans-serif"> MPI-5.0</font> (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node611.htm)
+citeturn28view0 [wordlim: 200] Crawled: 3 days ago; Content type: text/html; Source: open({"ref_id":"turn6view3","lineno":0}); Total lines: 25
+L0: * * *
+L1: ## 23.1.2. Changes in MPI-5.0
+L2: 
+L3: Up: cite0†Changes from Version 4.1 to Version 5.0 Next: cite1†Changes from Version 4.0 to Version 4.1 Previous: cite2†Fixes to Errata in Previous Versions of MPI L4: 
+L5: 1. Fixed-size Fortran logical datatypes were added to Section cite3†Message Data , Section cite4†Predefined Reduction Operations , Table cite5†14 , Section cite6†Additional Support for Fortran Numeric Intrinsic Types , and Appendix Section cite7†Language Bindings Summary .
+L6: 2. Section cite8†Group Constructors on page cite8†Group Constructors .
+L7: A restriction on the provenance of the process set name supplied to MPI_GROUP_FROM_SESSION_PSET was removed.
+L8: 3. Chapter cite9†Application Binary Interface (ABI) was added, which defines new functions, MPI_ABI_GET_VERSION and MPI_ABI_GET_INFO, the layout of the MPI status object, and the type of MPI object handles (e.g. MPI_Comm). Extensive changes and additions were made in Section cite10†Defined Constants to define literal values for many MPI constants. In Chapter cite11†The Info Object , MPI_MAX_INFO_KEY was modified by one to be consistent with other constants.
+L9: MPI_ABI_GET_VERSION and MPI_ABI_GET_INFO were added to Table cite12†9 .
+L10: 4. Section cite13†Fortran Type Registration was added to define new functions, MPI_ABI_SET_FORTRAN_INFO, MPI_ABI_GET_FORTRAN_INFO, and MPI_ABI_SET_FORTRAN_BOOLEANS, along with the associated info keys and an error code MPI_ERR_ABI, in order to expose Fortran environment settings to the MPI library. Section cite14†The MPI ABI Fortran Modules and Shared Library and Section cite15†The Status Object were added to define basic properties of the MPI Fortran ABI.
+L11: Section cite16†Handle Serialization was added to obviate the need for MPI_Fint.
+L12: * * *
+L13: 
+L14: Up: cite0†Changes from Version 4.1 to Version 5.0 Next: cite1†Changes from Version 4.0 to Version 4.1 Previous: cite2†Fixes to Errata in Previous Versions of MPI L15: 
+L16: * * *
+L17: 
+L18: Return to cite17†MPI-5.0 Standard Index L19: Return to cite18†MPI Forum Home Page L20: 
+L21: * * *
+L22: 
+L23: (Unofficial) MPI-5.0 of June 9, 2025
+L24: HTML Generated on March 2, 2025
+

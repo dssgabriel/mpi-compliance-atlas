@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+site/data/downloads/
+site/data/refreshed-snapshots.tmp
+.openai/
+.DS_Store
+core
+core.*

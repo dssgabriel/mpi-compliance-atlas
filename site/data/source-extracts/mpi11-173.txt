@@ -1,0 +1,33 @@
+C Bindings for Process Topologies (https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node173.html)
+citeturn36view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node173.html","lineno":null}); Total lines: 35
+L0: * * *
+L1: # 10.6. C Bindings for Process Topologies
+L2: 
+L3: Up: cite0†Language Binding Next: cite1†C bindings for Environmental Inquiry Previous: cite2†C Bindings for Groups, Contexts, and Communicators L4: ` int MPI_Cart_create(MPI_Comm comm_old, int ndims, int *dims, int *periods, int reorder, MPI_Comm *comm_cart)
+L5: ` ` int MPI_Dims_create(int nnodes, int ndims, int *dims)
+L6: ` ` int MPI_Graph_create(MPI_Comm comm_old, int nnodes, int *index, int *edges, int reorder, MPI_Comm *comm_graph)
+L7: ` ` int MPI_Topo_test(MPI_Comm comm, int *status)
+L8: ` ` int MPI_Graphdims_get(MPI_Comm comm, int *nnodes, int *nedges)
+L9: ` ` int MPI_Graph_get(MPI_Comm comm, int maxindex, int maxedges, int *index, int *edges)
+L10: ` ` int MPI_Cartdim_get(MPI_Comm comm, int *ndims)
+L11: ` ` int MPI_Cart_get(MPI_Comm comm, int maxdims, int *dims, int *periods, int *coords)
+L12: ` ` int MPI_Cart_rank(MPI_Comm comm, int *coords, int *rank)
+L13: ` ` int MPI_Cart_coords(MPI_Comm comm, int rank, int maxdims, int *coords)
+L14: ` ` int MPI_Graph_neighbors_count(MPI_Comm comm, int rank, int *nneighbors)
+L15: ` ` int MPI_Graph_neighbors(MPI_Comm comm, int rank, int maxneighbors, int *neighbors)
+L16: ` ` int MPI_Cart_shift(MPI_Comm comm, int direction, int disp, int *rank_source, int *rank_dest)
+L17: ` ` int MPI_Cart_sub(MPI_Comm comm, int *remain_dims, MPI_Comm *newcomm)
+L18: ` ` int MPI_Cart_map(MPI_Comm comm, int ndims, int *dims, int *periods, int *newrank)
+L19: ` ` int MPI_Graph_map(MPI_Comm comm, int nnodes, int *index, int *edges, int *newrank)
+L20: `
+L21: * * *
+L22: 
+L23: Up: cite0†Language Binding Next: cite1†C bindings for Environmental Inquiry Previous: cite2†C Bindings for Groups, Contexts, and Communicators L24: 
+L25: * * *
+L26: 
+L27: Return to cite3†MPI 1.1 Standard Index L28: Return to cite4†MPI-2 Standard Index L29: Return to cite5†MPI Forum Home Page L30: 
+L31: * * *
+L32: 
+L33: MPI-1.1 of June 12, 1995
+L34: HTML Generated on August 6, 1997
+

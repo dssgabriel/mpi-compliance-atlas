@@ -1,0 +1,47 @@
+C Bindings for Groups, Contexts, and Communicators (https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node172.html)
+citeturn58view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/node172.html","lineno":null}); Total lines: 49
+L0: * * *
+L1: # 10.5. C Bindings for Groups, Contexts, and Communicators
+L2: 
+L3: Up: cite0†Language Binding Next: cite1†C Bindings for Process Topologies Previous: cite2†C Bindings for Collective Communication L4: ` int MPI_Group_size(MPI_Group group, int *size)
+L5: ` ` int MPI_Group_rank(MPI_Group group, int *rank)
+L6: ` ` int MPI_Group_translate_ranks (MPI_Group group1, int n, int *ranks1, MPI_Group group2, int *ranks2)
+L7: ` ` int MPI_Group_compare(MPI_Group group1,MPI_Group group2, int *result)
+L8: ` ` int MPI_Comm_group(MPI_Comm comm, MPI_Group *group)
+L9: ` ` int MPI_Group_union(MPI_Group group1, MPI_Group group2, MPI_Group *newgroup)
+L10: ` ` int MPI_Group_intersection(MPI_Group group1, MPI_Group group2, MPI_Group *newgroup)
+L11: ` ` int MPI_Group_difference(MPI_Group group1, MPI_Group group2, MPI_Group *newgroup)
+L12: ` ` int MPI_Group_incl(MPI_Group group, int n, int *ranks, MPI_Group *newgroup)
+L13: ` ` int MPI_Group_excl(MPI_Group group, int n, int *ranks, MPI_Group *newgroup)
+L14: ` ` int MPI_Group_range_incl(MPI_Group group, int n, int ranges[][3], MPI_Group *newgroup)
+L15: ` ` int MPI_Group_range_excl(MPI_Group group, int n, int ranges[][3], MPI_Group *newgroup)
+L16: ` ` int MPI_Group_free(MPI_Group *group)
+L17: ` ` int MPI_Comm_size(MPI_Comm comm, int *size)
+L18: ` ` int MPI_Comm_rank(MPI_Comm comm, int *rank)
+L19: ` ` int MPI_Comm_compare(MPI_Comm comm1,MPI_Comm comm2, int *result)
+L20: ` ` int MPI_Comm_dup(MPI_Comm comm, MPI_Comm *newcomm)
+L21: ` ` int MPI_Comm_create(MPI_Comm comm, MPI_Group group, MPI_Comm *newcomm)
+L22: ` ` int MPI_Comm_split(MPI_Comm comm, int color, int key, MPI_Comm *newcomm)
+L23: ` ` int MPI_Comm_free(MPI_Comm *comm)
+L24: ` ` int MPI_Comm_test_inter(MPI_Comm comm, int *flag)
+L25: ` ` int MPI_Comm_remote_size(MPI_Comm comm, int *size)
+L26: ` ` int MPI_Comm_remote_group(MPI_Comm comm, MPI_Group *group)
+L27: ` ` int MPI_Intercomm_create(MPI_Comm local_comm, int local_leader, MPI_Comm peer_comm, int remote_leader, int tag, MPI_Comm *newintercomm)
+L28: ` ` int MPI_Intercomm_merge(MPI_Comm intercomm, int high, MPI_Comm *newintracomm)
+L29: ` ` int MPI_Keyval_create(MPI_Copy_function *copy_fn, MPI_Delete_function *delete_fn, int *keyval, void* extra_state)
+L30: ` ` int MPI_Keyval_free(int *keyval)
+L31: ` ` int MPI_Attr_put(MPI_Comm comm, int keyval, void* attribute_val)
+L32: ` ` int MPI_Attr_get(MPI_Comm comm, int keyval, void* attribute_val, int *flag)
+L33: ` ` int MPI_Attr_delete(MPI_Comm comm, int keyval)
+L34: `
+L35: * * *
+L36: 
+L37: Up: cite0†Language Binding Next: cite1†C Bindings for Process Topologies Previous: cite2†C Bindings for Collective Communication L38: 
+L39: * * *
+L40: 
+L41: Return to cite3†MPI 1.1 Standard Index L42: Return to cite4†MPI-2 Standard Index L43: Return to cite5†MPI Forum Home Page L44: 
+L45: * * *
+L46: 
+L47: MPI-1.1 of June 12, 1995
+L48: HTML Generated on August 6, 1997
+

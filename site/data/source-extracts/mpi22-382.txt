@@ -1,0 +1,52 @@
+Point-to-Point Communication C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node382.htm)
+citeturn78view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node382.htm","lineno":0}); Total lines: 54
+L0: * * *
+L1: ## 337. Point-to-Point Communication C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†Datatypes C Bindings Previous: cite0†C Bindings L4: ` int MPI_Bsend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)
+L5: ` ` int MPI_Bsend_init(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L6: ` ` int MPI_Buffer_attach(void* buffer, int size)
+L7: ` ` int MPI_Buffer_detach(void* buffer_addr, int* size)
+L8: ` ` int MPI_Cancel(MPI_Request *request)
+L9: ` ` int MPI_Get_count(MPI_Status *status, MPI_Datatype datatype, int *count)
+L10: ` ` int MPI_Ibsend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L11: ` ` int MPI_Iprobe(int source, int tag, MPI_Comm comm, int *flag, MPI_Status *status)
+L12: ` ` int MPI_Irecv(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request *request)
+L13: ` ` int MPI_Irsend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L14: ` ` int MPI_Isend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L15: ` ` int MPI_Issend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L16: ` ` int MPI_Probe(int source, int tag, MPI_Comm comm, MPI_Status *status)
+L17: ` ` int MPI_Recv(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Status *status)
+L18: ` ` int MPI_Recv_init(void* buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request *request)
+L19: ` ` int MPI_Request_free(MPI_Request *request)
+L20: ` ` int MPI_Request_get_status(MPI_Request request, int *flag, MPI_Status *status)
+L21: ` ` int MPI_Rsend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)
+L22: ` ` int MPI_Rsend_init(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L23: ` ` int MPI_Send(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)
+L24: ` ` int MPI_Send_init(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L25: ` ` int MPI_Sendrecv(void *sendbuf, int sendcount, MPI_Datatype sendtype, int dest, int sendtag, void *recvbuf, int recvcount, MPI_Datatype recvtype, int source, int recvtag, MPI_Comm comm, MPI_Status *status)
+L26: ` ` int MPI_Sendrecv_replace(void* buf, int count, MPI_Datatype datatype, int dest, int sendtag, int source, int recvtag, MPI_Comm comm, MPI_Status *status)
+L27: ` ` int MPI_Ssend(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)
+L28: ` ` int MPI_Ssend_init(void* buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L29: ` ` int MPI_Start(MPI_Request *request)
+L30: ` ` int MPI_Startall(int count, MPI_Request *array_of_requests)
+L31: ` ` int MPI_Test(MPI_Request *request, int *flag, MPI_Status *status)
+L32: ` ` int MPI_Test_cancelled(MPI_Status *status, int *flag)
+L33: ` ` int MPI_Testall(int count, MPI_Request *array_of_requests, int *flag, MPI_Status *array_of_statuses)
+L34: ` ` int MPI_Testany(int count, MPI_Request *array_of_requests, int *index, int *flag, MPI_Status *status)
+L35: ` ` int MPI_Testsome(int incount, MPI_Request *array_of_requests, int *outcount, int *array_of_indices, MPI_Status *array_of_statuses)
+L36: ` ` int MPI_Wait(MPI_Request *request, MPI_Status *status)
+L37: ` ` int MPI_Waitall(int count, MPI_Request *array_of_requests, MPI_Status *array_of_statuses)
+L38: ` ` int MPI_Waitany(int count, MPI_Request *array_of_requests, int *index, MPI_Status *status)
+L39: ` ` int MPI_Waitsome(int incount, MPI_Request *array_of_requests, int *outcount, int *array_of_indices, MPI_Status *array_of_statuses)
+L40: `
+L41: * * *
+L42: 
+L43: Up: cite0†C Bindings Next: cite1†Datatypes C Bindings Previous: cite0†C Bindings L44: 
+L45: * * *
+L46: 
+L47: Return to cite2†MPI-2.2 Standard Index L48: Return to cite3†MPI Forum Home Page L49: 
+L50: * * *
+L51: 
+L52: (Unofficial) MPI-2.2 of September 4, 2009
+L53: HTML Generated on September 10, 2009

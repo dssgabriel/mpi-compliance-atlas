@@ -1,0 +1,68 @@
+I/O C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node392.htm)
+citeturn103view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node392.htm","lineno":0}); Total lines: 72
+L0: * * *
+L1: ## 347. I/O C Bindings
+L2: 
+L3: cite5†Image cite6†Image cite7†Image L4: Up: cite0† C Bindings Next: cite1† Language Bindings C Bindings Previous: cite2† External Interfaces C Bindings L5: ` int MPI_File_close(MPI_File *fh)
+L6: ` ` int MPI_File_delete(char *filename, MPI_Info info)
+L7: ` ` int MPI_File_get_amode(MPI_File fh, int *amode)
+L8: ` ` int MPI_File_get_atomicity(MPI_File fh, int *flag)
+L9: ` ` int MPI_File_get_byte_offset(MPI_File fh, MPI_Offset offset, MPI_Offset *disp)
+L10: ` ` int MPI_File_get_group(MPI_File fh, MPI_Group *group)
+L11: ` ` int MPI_File_get_info(MPI_File fh, MPI_Info *info_used)
+L12: ` ` int MPI_File_get_position(MPI_File fh, MPI_Offset *offset)
+L13: ` ` int MPI_File_get_position_shared(MPI_File fh, MPI_Offset *offset)
+L14: ` ` int MPI_File_get_size(MPI_File fh, MPI_Offset *size)
+L15: ` ` int MPI_File_get_type_extent(MPI_File fh, MPI_Datatype datatype, MPI_Aint *extent)
+L16: ` ` int MPI_File_get_view(MPI_File fh, MPI_Offset *disp, MPI_Datatype *etype, MPI_Datatype *filetype, char *datarep)
+L17: ` ` int MPI_File_iread(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Request *request)
+L18: ` ` int MPI_File_iread_at(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype, MPI_Request *request)
+L19: ` ` int MPI_File_iread_shared(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Request *request)
+L20: ` ` int MPI_File_iwrite(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Request *request)
+L21: ` ` int MPI_File_iwrite_at(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype, MPI_Request *request)
+L22: ` ` int MPI_File_iwrite_shared(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Request *request)
+L23: ` ` int MPI_File_open(MPI_Comm comm, char *filename, int amode, MPI_Info info, MPI_File *fh)
+L24: ` ` int MPI_File_preallocate(MPI_File fh, MPI_Offset size)
+L25: ` ` int MPI_File_read(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L26: ` ` int MPI_File_read_all(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L27: ` ` int MPI_File_read_all_begin(MPI_File fh, void *buf, int count, MPI_Datatype datatype)
+L28: ` ` int MPI_File_read_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L29: ` ` int MPI_File_read_at(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L30: ` ` int MPI_File_read_at_all(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L31: ` ` int MPI_File_read_at_all_begin(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype)
+L32: ` ` int MPI_File_read_at_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L33: ` ` int MPI_File_read_ordered(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L34: ` ` int MPI_File_read_ordered_begin(MPI_File fh, void *buf, int count, MPI_Datatype datatype)
+L35: ` ` int MPI_File_read_ordered_end(MPI_File fh, void *buf, MPI_Status *status)
+L36: ` ` int MPI_File_read_shared(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L37: ` ` int MPI_File_seek(MPI_File fh, MPI_Offset offset, int whence)
+L38: ` ` int MPI_File_seek_shared(MPI_File fh, MPI_Offset offset, int whence)
+L39: ` ` int MPI_File_set_atomicity(MPI_File fh, int flag)
+L40: ` ` int MPI_File_set_info(MPI_File fh, MPI_Info info)
+L41: ` ` int MPI_File_set_size(MPI_File fh, MPI_Offset size)
+L42: ` ` int MPI_File_set_view(MPI_File fh, MPI_Offset disp, MPI_Datatype etype, MPI_Datatype filetype, char *datarep, MPI_Info info)
+L43: ` ` int MPI_File_sync(MPI_File fh)
+L44: ` ` int MPI_File_write(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L45: ` ` int MPI_File_write_all(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L46: ` ` int MPI_File_write_all_begin(MPI_File fh, void *buf, int count, MPI_Datatype datatype)
+L47: ` ` int MPI_File_write_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L48: ` ` int MPI_File_write_at(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L49: ` ` int MPI_File_write_at_all(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L50: ` ` int MPI_File_write_at_all_begin(MPI_File fh, MPI_Offset offset, void *buf, int count, MPI_Datatype datatype)
+L51: ` ` int MPI_File_write_at_all_end(MPI_File fh, void *buf, MPI_Status *status)
+L52: ` ` int MPI_File_write_ordered(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L53: ` ` int MPI_File_write_ordered_begin(MPI_File fh, void *buf, int count, MPI_Datatype datatype)
+L54: ` ` int MPI_File_write_ordered_end(MPI_File fh, void *buf, MPI_Status *status)
+L55: ` ` int MPI_File_write_shared(MPI_File fh, void *buf, int count, MPI_Datatype datatype, MPI_Status *status)
+L56: ` ` int MPI_Register_datarep(char *datarep, MPI_Datarep_conversion_function *read_conversion_fn, MPI_Datarep_conversion_function *write_conversion_fn, MPI_Datarep_extent_function *dtype_file_extent_fn, void *extra_state)
+L57: `
+L58: * * *
+L59: 
+L60: cite8†Image cite9†Image cite10†Image L61: Up: cite0† C Bindings Next: cite1† Language Bindings C Bindings Previous: cite2† External Interfaces C Bindings L62: 
+L63: * * *
+L64: 
+L65: Return to cite3†MPI-2.2 Standard Index L66: Return to cite4†MPI Forum Home Page L67: 
+L68: * * *
+L69: 
+L70: (Unofficial) MPI-2.2 of September 4, 2009
+L71: HTML Generated on September 10, 2009

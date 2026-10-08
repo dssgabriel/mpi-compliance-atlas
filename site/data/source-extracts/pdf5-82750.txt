@@ -1,0 +1,531 @@
+MPI: A Message-Passing Interface Standard (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report.pdf)
+citeturn133view0 [wordlim: 200] Crawled: yesterday; Content type: application/pdf; Number of pages: 1189; Source: open({"ref_id":"turn121view0","lineno":82750}); Total lines: 105180
+L82576@P965: int MPI_Graphdims_get(MPI_Comm comm, int *nnodes, int *nedges)
+L82577@P965: int MPI_Ineighbor_allgather_c(const void *sendbuf, MPI_Count sendcount,
+L82578@P965: MPI_Datatype sendtype, void *recvbuf, MPI_Count recvcount,
+L82579@P965: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82580@P965: 1
+L82581@P965: 2
+L82582@P965: 3
+L82583@P965: 4
+L82584@P965: 5
+L82585@P965: 6
+L82586@P965: 7
+L82587@P965: 8
+L82588@P965: 9
+L82589@P965: 10
+L82590@P965: 11
+L82591@P965: 12
+L82592@P965: 13
+L82593@P965: 14
+L82594@P965: 15
+L82595@P965: 16
+L82596@P965: 17
+L82597@P965: 18
+L82598@P965: 19
+L82599@P965: 20
+L82600@P965: 21
+L82601@P965: 22
+L82602@P965: 23
+L82603@P965: 24
+L82604@P965: 25
+L82605@P965: 26
+L82606@P965: 27
+L82607@P965: 28
+L82608@P965: 29
+L82609@P965: 30
+L82610@P965: 31
+L82611@P965: 32
+L82612@P965: 33
+L82613@P965: 34
+L82614@P965: 35
+L82615@P965: 36
+L82616@P965: 37
+L82617@P965: 38
+L82618@P965: 39
+L82619@P965: 40
+L82620@P965: 41
+L82621@P965: 42
+L82622@P965: 43
+L82623@P965: 44
+L82624@P965: 45
+L82625@P965: 46
+L82626@P965: 47
+L82627@P965-966: 48915 A.3 C Bindings
+L82628@P966: int MPI_Ineighbor_allgatherv_c(const void *sendbuf, MPI_Count sendcount,
+L82629@P966: MPI_Datatype sendtype, void *recvbuf,
+L82630@P966: const MPI_Count recvcounts[], const MPI_Aint displs[],
+L82631@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82632@P966: int MPI_Ineighbor_allgatherv(const void *sendbuf, int sendcount,
+L82633@P966: MPI_Datatype sendtype, void *recvbuf, const int recvcounts[],
+L82634@P966: const int displs[], MPI_Datatype recvtype, MPI_Comm comm,
+L82635@P966: MPI_Request *request)
+L82636@P966: int MPI_Ineighbor_allgather(const void *sendbuf, int sendcount,
+L82637@P966: MPI_Datatype sendtype, void *recvbuf, int recvcount,
+L82638@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82639@P966: int MPI_Ineighbor_alltoall_c(const void *sendbuf, MPI_Count sendcount,
+L82640@P966: MPI_Datatype sendtype, void *recvbuf, MPI_Count recvcount,
+L82641@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82642@P966: int MPI_Ineighbor_alltoallv_c(const void *sendbuf,
+L82643@P966: const MPI_Count sendcounts[], const MPI_Aint sdispls[],
+L82644@P966: MPI_Datatype sendtype, void *recvbuf,
+L82645@P966: const MPI_Count recvcounts[], const MPI_Aint rdispls[],
+L82646@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82647@P966: int MPI_Ineighbor_alltoallv(const void *sendbuf, const int sendcounts[],
+L82648@P966: const int sdispls[], MPI_Datatype sendtype, void *recvbuf,
+L82649@P966: const int recvcounts[], const int rdispls[],
+L82650@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82651@P966: int MPI_Ineighbor_alltoallw_c(const void *sendbuf,
+L82652@P966: const MPI_Count sendcounts[], const MPI_Aint sdispls[],
+L82653@P966: const MPI_Datatype sendtypes[], void *recvbuf,
+L82654@P966: const MPI_Count recvcounts[], const MPI_Aint rdispls[],
+L82655@P966: const MPI_Datatype recvtypes[], MPI_Comm comm,
+L82656@P966: MPI_Request *request)
+L82657@P966: int MPI_Ineighbor_alltoallw(const void *sendbuf, const int sendcounts[],
+L82658@P966: const MPI_Aint sdispls[], const MPI_Datatype sendtypes[],
+L82659@P966: void *recvbuf, const int recvcounts[], const MPI_Aint rdispls[],
+L82660@P966: const MPI_Datatype recvtypes[], MPI_Comm comm,
+L82661@P966: MPI_Request *request)
+L82662@P966: int MPI_Ineighbor_alltoall(const void *sendbuf, int sendcount,
+L82663@P966: MPI_Datatype sendtype, void *recvbuf, int recvcount,
+L82664@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L82665@P966: int MPI_Neighbor_allgather_c(const void *sendbuf, MPI_Count sendcount,
+L82666@P966: MPI_Datatype sendtype, void *recvbuf, MPI_Count recvcount,
+L82667@P966: MPI_Datatype recvtype, MPI_Comm comm)
+L82668@P966: int MPI_Neighbor_allgather_init_c(const void *sendbuf, MPI_Count sendcount,
+L82669@P966: MPI_Datatype sendtype, void *recvbuf, MPI_Count recvcount,
+L82670@P966: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82671@P966: MPI_Request *request)
+L82672@P966: 1
+L82673@P966: 2
+L82674@P966: 3
+L82675@P966: 4
+L82676@P966: 5
+L82677@P966: 6
+L82678@P966: 7
+L82679@P966: 8
+L82680@P966: 9
+L82681@P966: 10
+L82682@P966: 11
+L82683@P966: 12
+L82684@P966: 13
+L82685@P966: 14
+L82686@P966: 15
+L82687@P966: 16
+L82688@P966: 17
+L82689@P966: 18
+L82690@P966: 19
+L82691@P966: 20
+L82692@P966: 21
+L82693@P966: 22
+L82694@P966: 23
+L82695@P966: 24
+L82696@P966: 25
+L82697@P966: 26
+L82698@P966: 27
+L82699@P966: 28
+L82700@P966: 29
+L82701@P966: 30
+L82702@P966: 31
+L82703@P966: 32
+L82704@P966: 33
+L82705@P966: 34
+L82706@P966: 35
+L82707@P966: 36
+L82708@P966: 37
+L82709@P966: 38
+L82710@P966: 39
+L82711@P966: 40
+L82712@P966: 41
+L82713@P966: 42
+L82714@P966: 43
+L82715@P966: 44
+L82716@P966: 45
+L82717@P966: 46
+L82718@P966: 47
+L82719@P966-967: 48Appendix A Language Bindings Summary 916
+L82720@P967: int MPI_Neighbor_allgather_init(const void *sendbuf, int sendcount,
+L82721@P967: MPI_Datatype sendtype, void *recvbuf, int recvcount,
+L82722@P967: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82723@P967: MPI_Request *request)
+L82724@P967: int MPI_Neighbor_allgatherv_c(const void *sendbuf, MPI_Count sendcount,
+L82725@P967: MPI_Datatype sendtype, void *recvbuf,
+L82726@P967: const MPI_Count recvcounts[], const MPI_Aint displs[],
+L82727@P967: MPI_Datatype recvtype, MPI_Comm comm)
+L82728@P967: int MPI_Neighbor_allgatherv_init_c(const void *sendbuf, MPI_Count sendcount,
+L82729@P967: MPI_Datatype sendtype, void *recvbuf,
+L82730@P967: const MPI_Count recvcounts[], const MPI_Aint displs[],
+L82731@P967: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82732@P967: MPI_Request *request)
+L82733@P967: int MPI_Neighbor_allgatherv_init(const void *sendbuf, int sendcount,
+L82734@P967: MPI_Datatype sendtype, void *recvbuf, const int recvcounts[],
+L82735@P967: const int displs[], MPI_Datatype recvtype, MPI_Comm comm,
+L82736@P967: MPI_Info info, MPI_Request *request)
+L82737@P967: int MPI_Neighbor_allgatherv(const void *sendbuf, int sendcount,
+L82738@P967: MPI_Datatype sendtype, void *recvbuf, const int recvcounts[],
+L82739@P967: const int displs[], MPI_Datatype recvtype, MPI_Comm comm)
+L82740@P967: int MPI_Neighbor_allgather(const void *sendbuf, int sendcount,
+L82741@P967: MPI_Datatype sendtype, void *recvbuf, int recvcount,
+L82742@P967: MPI_Datatype recvtype, MPI_Comm comm)
+L82743@P967: int MPI_Neighbor_alltoall_c(const void *sendbuf, MPI_Count sendcount,
+L82744@P967: MPI_Datatype sendtype, void *recvbuf, MPI_Count recvcount,
+L82745@P967: MPI_Datatype recvtype, MPI_Comm comm)
+L82746@P967: int MPI_Neighbor_alltoall_init_c(const void *sendbuf, MPI_Count sendcount,
+L82747@P967: MPI_Datatype sendtype, void *recvbuf, MPI_Count recvcount,
+L82748@P967: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82749@P967: MPI_Request *request)
+L82750@P967: int MPI_Neighbor_alltoall_init(const void *sendbuf, int sendcount,
+L82751@P967: MPI_Datatype sendtype, void *recvbuf, int recvcount,
+L82752@P967: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82753@P967: MPI_Request *request)
+L82754@P967: int MPI_Neighbor_alltoallv_c(const void *sendbuf, const MPI_Count sendcounts[],
+L82755@P967: const MPI_Aint sdispls[], MPI_Datatype sendtype, void *recvbuf,
+L82756@P967: const MPI_Count recvcounts[], const MPI_Aint rdispls[],
+L82757@P967: MPI_Datatype recvtype, MPI_Comm comm)
+L82758@P967: int MPI_Neighbor_alltoallv_init_c(const void *sendbuf,
+L82759@P967: const MPI_Count sendcounts[], const MPI_Aint sdispls[],
+L82760@P967: MPI_Datatype sendtype, void *recvbuf,
+L82761@P967: const MPI_Count recvcounts[], const MPI_Aint rdispls[],
+L82762@P967: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82763@P967: MPI_Request *request)
+L82764@P967: 1
+L82765@P967: 2
+L82766@P967: 3
+L82767@P967: 4
+L82768@P967: 5
+L82769@P967: 6
+L82770@P967: 7
+L82771@P967: 8
+L82772@P967: 9
+L82773@P967: 10
+L82774@P967: 11
+L82775@P967: 12
+L82776@P967: 13
+L82777@P967: 14
+L82778@P967: 15
+L82779@P967: 16
+L82780@P967: 17
+L82781@P967: 18
+L82782@P967: 19
+L82783@P967: 20
+L82784@P967: 21
+L82785@P967: 22
+L82786@P967: 23
+L82787@P967: 24
+L82788@P967: 25
+L82789@P967: 26
+L82790@P967: 27
+L82791@P967: 28
+L82792@P967: 29
+L82793@P967: 30
+L82794@P967: 31
+L82795@P967: 32
+L82796@P967: 33
+L82797@P967: 34
+L82798@P967: 35
+L82799@P967: 36
+L82800@P967: 37
+L82801@P967: 38
+L82802@P967: 39
+L82803@P967: 40
+L82804@P967: 41
+L82805@P967: 42
+L82806@P967: 43
+L82807@P967: 44
+L82808@P967: 45
+L82809@P967: 46
+L82810@P967: 47
+L82811@P967-968: 48917 A.3 C Bindings
+L82812@P968: int MPI_Neighbor_alltoallv_init(const void *sendbuf, const int sendcounts[],
+L82813@P968: const int sdispls[], MPI_Datatype sendtype, void *recvbuf,
+L82814@P968: const int recvcounts[], const int rdispls[],
+L82815@P968: MPI_Datatype recvtype, MPI_Comm comm, MPI_Info info,
+L82816@P968: MPI_Request *request)
+L82817@P968: int MPI_Neighbor_alltoallv(const void *sendbuf, const int sendcounts[],
+L82818@P968: const int sdispls[], MPI_Datatype sendtype, void *recvbuf,
+L82819@P968: const int recvcounts[], const int rdispls[],
+L82820@P968: MPI_Datatype recvtype, MPI_Comm comm)
+L82821@P968: int MPI_Neighbor_alltoallw_c(const void *sendbuf, const MPI_Count sendcounts[],
+L82822@P968: const MPI_Aint sdispls[], const MPI_Datatype sendtypes[],
+L82823@P968: void *recvbuf, const MPI_Count recvcounts[],
+L82824@P968: const MPI_Aint rdispls[], const MPI_Datatype recvtypes[],
+L82825@P968: MPI_Comm comm)
+L82826@P968: int MPI_Neighbor_alltoallw_init_c(const void *sendbuf,
+L82827@P968: const MPI_Count sendcounts[], const MPI_Aint sdispls[],
+L82828@P968: const MPI_Datatype sendtypes[], void *recvbuf,
+L82829@P968: const MPI_Count recvcounts[], const MPI_Aint rdispls[],
+L82830@P968: const MPI_Datatype recvtypes[], MPI_Comm comm, MPI_Info info,
+L82831@P968: MPI_Request *request)
+L82832@P968: int MPI_Neighbor_alltoallw_init(const void *sendbuf, const int sendcounts[],
+L82833@P968: const MPI_Aint sdispls[], const MPI_Datatype sendtypes[],
+L82834@P968: void *recvbuf, const int recvcounts[], const MPI_Aint rdispls[],
+L82835@P968: const MPI_Datatype recvtypes[], MPI_Comm comm, MPI_Info info,
+L82836@P968: MPI_Request *request)
+L82837@P968: int MPI_Neighbor_alltoallw(const void *sendbuf, const int sendcounts[],
+L82838@P968: const MPI_Aint sdispls[], const MPI_Datatype sendtypes[],
+L82839@P968: void *recvbuf, const int recvcounts[], const MPI_Aint rdispls[],
+L82840@P968: const MPI_Datatype recvtypes[], MPI_Comm comm)
+L82841@P968: int MPI_Neighbor_alltoall(const void *sendbuf, int sendcount,
+L82842@P968: MPI_Datatype sendtype, void *recvbuf, int recvcount,
+L82843@P968: MPI_Datatype recvtype, MPI_Comm comm)
+L82844@P968: int MPI_Topo_test(MPI_Comm comm, int *status)
+L82845@P968: A.3.7 MPI Environmental Management C Bindings
+L82846@P968: int MPI_Add_error_class(int *errorclass)
+L82847@P968: int MPI_Add_error_code(int errorclass, int *errorcode)
+L82848@P968: int MPI_Add_error_string(int errorcode, const char *string)
+L82849@P968: int MPI_Alloc_mem(MPI_Aint size, MPI_Info info, void *baseptr)
+L82850@P968: int MPI_Comm_call_errhandler(MPI_Comm comm, int errorcode)
+L82851@P968: int MPI_Comm_create_errhandler(
+L82852@P968: MPI_Comm_errhandler_function *comm_errhandler_fn,
+L82853@P968: MPI_Errhandler *errhandler)
+L82854@P968: 1
+L82855@P968: 2
+L82856@P968: 3
+L82857@P968: 4
+L82858@P968: 5
+L82859@P968: 6
+L82860@P968: 7
+L82861@P968: 8
+L82862@P968: 9
+L82863@P968: 10
+L82864@P968: 11
+L82865@P968: 12
+L82866@P968: 13
+L82867@P968: 14
+L82868@P968: 15
+L82869@P968: 16
+L82870@P968: 17
+L82871@P968: 18
+L82872@P968: 19
+L82873@P968: 20
+L82874@P968: 21
+L82875@P968: 22
+L82876@P968: 23
+L82877@P968: 24
+L82878@P968: 25
+L82879@P968: 26
+L82880@P968: 27
+L82881@P968: 28
+L82882@P968: 29
+L82883@P968: 30
+L82884@P968: 31
+L82885@P968: 32
+L82886@P968: 33
+L82887@P968: 34
+L82888@P968: 35
+L82889@P968: 36
+L82890@P968: 37
+L82891@P968: 38
+L82892@P968: 39
+L82893@P968: 40
+L82894@P968: 41
+L82895@P968: 42
+L82896@P968: 43
+L82897@P968: 44
+L82898@P968: 45
+L82899@P968: 46
+L82900@P968: 47
+L82901@P968-969: 48Appendix A Language Bindings Summary 918
+L82902@P969: int MPI_Comm_get_errhandler(MPI_Comm comm, MPI_Errhandler *errhandler)
+L82903@P969: int MPI_Comm_set_errhandler(MPI_Comm comm, MPI_Errhandler errhandler)
+L82904@P969: int MPI_Errhandler_free(MPI_Errhandler *errhandler)
+L82905@P969: int MPI_Error_class(int errorcode, int *errorclass)
+L82906@P969: int MPI_Error_string(int errorcode, char *string, int *resultlen)
+L82907@P969: int MPI_File_call_errhandler(MPI_File fh, int errorcode)
+L82908@P969: int MPI_File_create_errhandler(
+L82909@P969: MPI_File_errhandler_function *file_errhandler_fn,
+L82910@P969: MPI_Errhandler *errhandler)
+L82911@P969: int MPI_File_get_errhandler(MPI_File file, MPI_Errhandler *errhandler)
+L82912@P969: int MPI_File_set_errhandler(MPI_File file, MPI_Errhandler errhandler)
+L82913@P969: int MPI_Free_mem(void *base)
+L82914@P969: int MPI_Get_hw_resource_info(MPI_Info *hw_info)
+L82915@P969: int MPI_Get_library_version(char *version, int *resultlen)
+L82916@P969: int MPI_Get_processor_name(char *name, int *resultlen)
+L82917@P969: int MPI_Get_version(int *version, int *subversion)
+L82918@P969: int MPI_Remove_error_class(int errorclass)
+L82919@P969: int MPI_Remove_error_code(int errorcode)
+L82920@P969: int MPI_Remove_error_string(int errorcode)
+L82921@P969: int MPI_Session_call_errhandler(MPI_Session session, int errorcode)
+L82922@P969: int MPI_Session_create_errhandler(
+L82923@P969: MPI_Session_errhandler_function *session_errhandler_fn,
+L82924@P969: MPI_Errhandler *errhandler)
+L82925@P969: int MPI_Session_get_errhandler(MPI_Session session, MPI_Errhandler *errhandler)
+L82926@P969: int MPI_Session_set_errhandler(MPI_Session session, MPI_Errhandler errhandler)
+L82927@P969: int MPI_Win_call_errhandler(MPI_Win win, int errorcode)
+L82928@P969: int MPI_Win_create_errhandler(MPI_Win_errhandler_function *win_errhandler_fn,
+L82929@P969: MPI_Errhandler *errhandler)
+L82930@P969: int MPI_Win_get_errhandler(MPI_Win win, MPI_Errhandler *errhandler)
+L82931@P969: int MPI_Win_set_errhandler(MPI_Win win, MPI_Errhandler errhandler)
+L82932@P969: A.3.8 The Info Object C Bindings
+L82933@P969: int MPI_Info_create_env(int argc, char *argv[], MPI_Info *info)
+L82934@P969: int MPI_Info_create(MPI_Info *info)
+L82935@P969: int MPI_Info_delete(MPI_Info info, const char *key)
+L82936@P969: 1
+L82937@P969: 2
+L82938@P969: 3
+L82939@P969: 4
+L82940@P969: 5
+L82941@P969: 6
+L82942@P969: 7
+L82943@P969: 8
+L82944@P969: 9
+L82945@P969: 10
+L82946@P969: 11
+L82947@P969: 12
+L82948@P969: 13
+L82949@P969: 14
+L82950@P969: 15
+L82951@P969: 16
+L82952@P969: 17
+L82953@P969: 18
+L82954@P969: 19
+L82955@P969: 20
+L82956@P969: 21
+L82957@P969: 22
+L82958@P969: 23
+L82959@P969: 24
+L82960@P969: 25
+L82961@P969: 26
+L82962@P969: 27
+L82963@P969: 28
+L82964@P969: 29
+L82965@P969: 30
+L82966@P969: 31
+L82967@P969: 32
+L82968@P969: 33
+L82969@P969: 34
+L82970@P969: 35
+L82971@P969: 36
+L82972@P969: 37
+L82973@P969: 38
+L82974@P969: 39
+L82975@P969: 40
+L82976@P969: 41
+L82977@P969: 42
+L82978@P969: 43
+L82979@P969: 44
+L82980@P969: 45
+L82981@P969: 46
+L82982@P969: 47
+L82983@P969-970: 48919 A.3 C Bindings
+L82984@P970: int MPI_Info_dup(MPI_Info info, MPI_Info *newinfo)
+L82985@P970: int MPI_Info_free(MPI_Info *info)
+L82986@P970: int MPI_Info_get_nkeys(MPI_Info info, int *nkeys)
+L82987@P970: int MPI_Info_get_nthkey(MPI_Info info, int n, char *key)
+L82988@P970: int MPI_Info_get_string(MPI_Info info, const char *key, int *buflen,
+L82989@P970: char *value, int *flag)
+L82990@P970: int MPI_Info_set(MPI_Info info, const char *key, const char *value)
+L82991@P970: A.3.9 Process Creation and Management C Bindings
+L82992@P970: int MPI_Abort(MPI_Comm comm, int errorcode)
+L82993@P970: int MPI_Close_port(const char *port_name)
+L82994@P970: int MPI_Comm_accept(const char *port_name, MPI_Info info, int root,
+L82995@P970: MPI_Comm comm, MPI_Comm *newcomm)
+L82996@P970: int MPI_Comm_connect(const char *port_name, MPI_Info info, int root,
+L82997@P970: MPI_Comm comm, MPI_Comm *newcomm)
+L82998@P970: int MPI_Comm_disconnect(MPI_Comm *comm)
+L82999@P970: int MPI_Comm_get_parent(MPI_Comm *parent)
+L83000@P970: int MPI_Comm_join(int fd, MPI_Comm *intercomm)
+L83001@P970: int MPI_Comm_spawn_multiple(int count, char *array_of_commands[],
+L83002@P970: char **array_of_argv[], const int array_of_maxprocs[],
+L83003@P970: const MPI_Info array_of_info[], int root, MPI_Comm comm,
+L83004@P970: MPI_Comm *intercomm, int array_of_errcodes[])
+L83005@P970: int MPI_Comm_spawn(const char *command, char *argv[], int maxprocs,
+L83006@P970: MPI_Info info, int root, MPI_Comm comm, MPI_Comm *intercomm,
+L83007@P970: int array_of_errcodes[])
+L83008@P970: int MPI_Finalized(int *flag)
+L83009@P970: int MPI_Finalize(void)
+L83010@P970: int MPI_Init_thread(int *argc, char ***argv, int required, int *provided)
+L83011@P970: int MPI_Initialized(int *flag)
+L83012@P970: int MPI_Init(int *argc, char ***argv)
+L83013@P970: int MPI_Is_thread_main(int *flag)
+L83014@P970: int MPI_Lookup_name(const char *service_name, MPI_Info info, char *port_name)
+L83015@P970: int MPI_Open_port(MPI_Info info, char *port_name)
+L83016@P970: int MPI_Publish_name(const char *service_name, MPI_Info info,
+L83017@P970: const char *port_name)
+L83018@P970: int MPI_Query_thread(int *provided)
+L83019@P970: int MPI_Session_finalize(MPI_Session *session)
+L83020@P970: 1
+L83021@P970: 2
+L83022@P970: 3
+L83023@P970: 4
+L83024@P970: 5
+L83025@P970: 6
+L83026@P970: 7
+L83027@P970: 8
+L83028@P970: 9
+L83029@P970: 10
+L83030@P970: 11
+L83031@P970: 12
+L83032@P970: 13
+L83033@P970: 14
+L83034@P970: 15
+L83035@P970: 16
+L83036@P970: 17
+L83037@P970: 18
+L83038@P970: 19
+L83039@P970: 20
+L83040@P970: 21
+L83041@P970: 22
+L83042@P970: 23
+L83043@P970: 24
+L83044@P970: 25
+L83045@P970: 26
+L83046@P970: 27
+L83047@P970: 28
+L83048@P970: 29
+L83049@P970: 30
+L83050@P970: 31
+L83051@P970: 32
+L83052@P970: 33
+L83053@P970: 34
+L83054@P970: 35
+L83055@P970: 36
+L83056@P970: 37
+L83057@P970: 38
+L83058@P970: 39
+L83059@P970: 40
+L83060@P970: 41
+L83061@P970: 42
+L83062@P970: 43
+L83063@P970: 44
+L83064@P970: 45
+L83065@P970: 46
+L83066@P970: 47
+L83067@P970-971: 48Appendix A Language Bindings Summary 920
+L83068@P971: int MPI_Session_get_info(MPI_Session session, MPI_Info *info_used)
+L83069@P971: int MPI_Session_get_nth_pset(MPI_Session session, MPI_Info info, int n,
+L83070@P971: int *pset_len, char *pset_name)
+L83071@P971: int MPI_Session_get_num_psets(MPI_Session session, MPI_Info info,
+L83072@P971: int *npset_names)
+L83073@P971: int MPI_Session_get_pset_info(MPI_Session session, const char *pset_name,
+L83074@P971: MPI_Info *info)
+L83075@P971: int MPI_Session_init(MPI_Info info, MPI_Errhandler errhandler,
+L83076@P971: MPI_Session *session)
+L83077@P971: int MPI_Unpublish_name(const char *service_name, MPI_Info info,
+L83078@P971: const char *port_name)
+L83079@P971: A.3.10 One-Sided Communications C Bindings
+L83080@P971: int MPI_Accumulate_c(const void *origin_addr, MPI_Count origin_count,
+L83081@P971: MPI_Datatype origin_datatype, int target_rank,
+L83082@P971: MPI_Aint target_disp, MPI_Count target_count,
+L83083@P971: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+L83084@P971: int MPI_Accumulate(const void *origin_addr, int origin_count,
+L83085@P971: MPI_Datatype origin_datatype, int target_rank,
+L83086@P971: MPI_Aint target_disp, int target_count,
+L83087@P971: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+L83088@P971: int MPI_Compare_and_swap(const void *origin_addr, const void *compare_addr,
+L83089@P971: void *result_addr, MPI_Datatype datatype, int target_rank,
+L83090@P971: MPI_Aint target_disp, MPI_Win win)
+L83091@P971: int MPI_Fetch_and_op(const void *origin_addr, void *result_addr,
+L83092@P971: MPI_Datatype datatype, int target_rank, MPI_Aint target_disp,
+L83093@P971: MPI_Op op, MPI_Win win)
+L83094@P971: int MPI_Get_accumulate_c(const void *origin_addr, MPI_Count origin_count,
+L83095@P971: MPI_Datatype origin_datatype, void *result_addr,
+L83096@P971: MPI_Count result_count, MPI_Datatype result_datatype,
+L83097@P971: int target_rank, MPI_Aint target_disp, MPI_Count target_count,
+L83098@P971: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+L83099@P971: int MPI_Get_accumulate(const void *origin_addr, int origin_count,
+L83100@P971: MPI_Datatype origin_datatype, void *result_addr,
+L83101@P971: int result_count, MPI_Datatype result_datatype, int target_rank,
+L83102@P971: MPI_Aint target_disp, int target_count,
+L83103@P971: MPI_Datatype target_datatype, MPI_Op op, MPI_Win win)
+

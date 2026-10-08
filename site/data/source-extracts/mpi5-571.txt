@@ -1,0 +1,19 @@
+Tools / Profiling Interface C Bindings (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node571.htm)
+citeturn18view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node571.htm","lineno":null}); Total lines: 22
+L0: * * *
+L1: ## 22.3.15. Tools / Profiling Interface C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† Tools / MPI Tool Information Interface C Bindings Previous: cite2† Application Binary Interface (ABI) C Bindings L5: 
+L6: ` int MPI_Pcontrol(const int level, ...)
+L7: `
+L8: 
+L9: * * *
+L10: 
+L11: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L12: Up: cite0† C Bindings Next: cite1† Tools / MPI Tool Information Interface C Bindings Previous: cite2† Application Binary Interface (ABI) C Bindings L13: 
+L14: * * *
+L15: Return to cite3†MPI-5.0 Standard Index L16: Return to cite4†MPI Forum Home Page L17: 
+L18: * * *
+L19: 
+L20: (Unofficial) MPI-5.0 of June 9, 2025
+L21: HTML Generated on March 2, 2025
+

@@ -1,0 +1,32 @@
+Deprecated C Bindings (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node573.htm)
+citeturn21view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node573.htm","lineno":null}); Total lines: 33
+L0: * * *
+L1: ## 22.3.17. Deprecated C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†Fortran 2008 Bindings with the `mpi_f08` Module Previous: cite2†Tools / MPI Tool Information Interface C Bindings L4: ` int MPI_Attr_delete(MPI_Comm comm, int keyval)
+L5: ` ` int MPI_Attr_get(MPI_Comm comm, int keyval, void *attribute_val, int *flag)
+L6: ` ` int MPI_Attr_put(MPI_Comm comm, int keyval, void *attribute_val)
+L7: ` ` int MPI_DUP_FN(MPI_Comm oldcomm, int keyval, void *extra_state, void *attribute_val_in, void *attribute_val_out, int *flag)
+L8: ` ` int MPI_Get_elements_x(const MPI_Status *status, MPI_Datatype datatype, MPI_Count *count)
+L9: ` ` int MPI_Info_get_valuelen(MPI_Info info, const char *key, int *valuelen, int *flag)
+L10: ` ` int MPI_Info_get(MPI_Info info, const char *key, int valuelen, char *value, int *flag)
+L11: ` ` int MPI_Keyval_create(MPI_Copy_function *copy_fn, MPI_Delete_function *delete_fn, int *keyval, void *extra_state)
+L12: ` ` int MPI_Keyval_free(int *keyval)
+L13: ` ` int MPI_NULL_COPY_FN(MPI_Comm oldcomm, int keyval, void *extra_state, void *attribute_val_in, void *attribute_val_out, int *flag)
+L14: ` ` int MPI_NULL_DELETE_FN(MPI_Comm comm, int keyval, void *attribute_val, void *extra_state)
+L15: ` ` int MPI_Status_set_elements_x(MPI_Status *status, MPI_Datatype datatype, MPI_Count count)
+L16: ` ` int MPI_Type_get_extent_x(MPI_Datatype datatype, MPI_Count *lb, MPI_Count *extent)
+L17: ` ` int MPI_Type_get_true_extent_x(MPI_Datatype datatype, MPI_Count *true_lb, MPI_Count *true_extent)
+L18: ` ` int MPI_Type_size_x(MPI_Datatype datatype, MPI_Count *size)
+L19: `
+L20: * * *
+L21: 
+L22: Up: cite0†C Bindings Next: cite1†Fortran 2008 Bindings with the `mpi_f08` Module Previous: cite2†Tools / MPI Tool Information Interface C Bindings L23: 
+L24: * * *
+L25: 
+L26: Return to cite3†MPI-5.0 Standard Index L27: Return to cite4†MPI Forum Home Page L28: 
+L29: * * *
+L30: 
+L31: (Unofficial) MPI-5.0 of June 9, 2025
+L32: HTML Generated on March 2, 2025
+

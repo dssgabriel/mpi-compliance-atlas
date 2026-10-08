@@ -1,0 +1,87 @@
+Changes in <font face="sans-serif"> MPI-4.1</font> (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node614.htm)
+citeturn29view0 [wordlim: 200] Crawled: last week; Content type: text/html; Source: open({"ref_id":"turn6view4","lineno":0}); Total lines: 89
+L0: * * *
+L1: ## 23.2.2. Changes in MPI-4.1
+L2: 
+L3: Up: cite0†Changes from Version 4.0 to Version 4.1 Next: cite1†Changes from Version 3.1 to Version 4.0 Previous: cite2†Fixes to Errata in Previous Versions of MPI L4: 
+L5: 1. Section cite3†Side-documents on page cite3†Side-documents .
+L6: Introduced the concept of side documents.
+L7: 
+L8: 2. Sections cite4†MPI Operations and cite5†MPI Procedures on pages cite4†MPI Operations and cite5†MPI Procedures .
+L9: Added the definition of the enabled operation state.
+L10: 3. Sections cite6†Choice , cite7†Fortran Binding Issues , and cite8†Support for Fortran on pages cite6†Choice , cite7†Fortran Binding Issues , and cite8†Support for Fortran .
+L11: The MPI standard now reflects that TS 29113 was superceded by Fortran 2018.
+L12: 4.
+L13: Sections cite9†Deprecated and Removed Interfaces , cite10†Address and Size Procedures , cite11†Extent and Bounds of Datatypes , cite12†True Extent of Datatypes , cite13†Use of General Datatypes in Communication , cite14†Associating Information with Status , and cite15†Deprecated since MPI-4.1 on pages cite9†Deprecated and Removed Interfaces , cite10†Address and Size Procedures , cite11†Extent and Bounds of Datatypes , cite12†True Extent of Datatypes , cite13†Use of General Datatypes in Communication , cite14†Associating Information with Status , and cite15†Deprecated since MPI-4.1 .
+L14: MPI_TYPE_SIZE_X, MPI_TYPE_GET_EXTENT_X,
+L15: MPI_TYPE_GET_TRUE_EXTENT_X, MPI_GET_ELEMENTS_X, and
+L16: MPI_STATUS_SET_ELEMENTS_X were deprecated and may be removed in a future version of the MPI specification.
+L17: 5. Sections cite9†Deprecated and Removed Interfaces , cite16†Predefined Intra-Communicators and cite17†Environmental Inquiries on pages cite9†Deprecated and Removed Interfaces , cite16†Predefined Intra-Communicators and cite17†Environmental Inquiries .
+L18: MPI_HOST has been deprecated, and a mention to host process has been removed.
+L19: 6. Sections cite9†Deprecated and Removed Interfaces , cite18†Overview , cite19†Fortran Support Through the `mpif.h` Include File , cite15†Deprecated since MPI-4.1 on pages cite9†Deprecated and Removed Interfaces , cite18†Overview , cite19†Fortran Support Through the `mpif.h` Include File , cite15†Deprecated since MPI-4.1 .
+L20: Deprecated the use of `mpif.h`.
+L21: 7. Section cite20†Functions and Macros on page cite20†Functions and Macros .
+L22: Removed the functions MPI_WTIME, PMPI_WTIME, MPI_WTICK, and PMPI_WTICK from the list of functions that may be implemented as a macro.
+L23: 
+L24: 8. Section cite20†Functions and Macros on page cite20†Functions and Macros and Section cite21†Transfer of Handles on page cite21†Transfer of Handles .
+L25: Removed the ability to implement MPI handle conversion functions as a macro.
+L26: 9. Sections cite22†Progress , cite23†Non-Destructive Test of status , cite24†General Active Target Synchronization , and Example cite25†Progress on pages cite22†Progress , cite23†Non-Destructive Test of status , cite24†General Active Target Synchronization , and cite25†Progress .
+L27: The progress rules were clarified in general and for MPI_REQUEST_GET_STATUS and MPI_WIN_TEST. The terms strong and weak progress were introduced. An example showing restrictions on the use of MPI shared memory for synchronizing purposes was introduced.
+L28: 10. Sections cite26†Return Status and cite14†Associating Information with Status on pages cite26†Return Status and cite14†Associating Information with Status .
+L29: Added procedures MPI_STATUS_GET_SOURCE, MPI_STATUS_GET_TAG, and MPI_STATUS_GET_ERROR to query MPI status fields and procedures MPI_STATUS_SET_SOURCE, MPI_STATUS_SET_TAG, and MPI_STATUS_SET_ERROR to set MPI status fields. Direct access to these fields remains available.
+L30: 11. Section cite27†Buffer Allocation and Usage on page cite27†Buffer Allocation and Usage .
+L31: Automatic (unlimited) buffering is added, which can be enabled by using MPI_BUFFER_AUTOMATIC in any of the buffer attach procedures. New procedures MPI_COMM_ATTACH_BUFFER, MPI_SESSION_ATTACH_BUFFER, MPI_COMM_DETACH_BUFFER and MPI_SESSION_DETACH_BUFFER have been added. The buffers attached with the existing functions MPI_BUFFER_ATTACH and MPI_BUFFER_DETACH now only apply to communicators that have no buffer attached at the communicator or session level.
+L32: New procedures MPI_COMM_FLUSH_BUFFER, MPI_SESSION_FLUSH_BUFFER, and MPI_BUFFER_FLUSH were added as a combination of detach and attach, as well as the corresponding nonblocking variants MPI_COMM_IFLUSH_BUFFER, MPI_SESSION_IFLUSH_BUFFER, and MPI_BUFFER_IFLUSH.
+L33: 12. Subsection cite23†Non-Destructive Test of status on page cite23†Non-Destructive Test of status L34: Added new procedures MPI_REQUEST_GET_STATUS_ANY, MPI_REQUEST_GET_STATUS_SOME, and MPI_REQUEST_GET_STATUS_ALL to query the statuses of multiple requests without freeing them.
+L35: 13. Section cite28†Decoding a Datatype and cite29†MINLOC and MAXLOC on pages cite28†Decoding a Datatype and cite29†MINLOC and MAXLOC .
+L36: Added procedure MPI_TYPE_GET_VALUE_INDEX to query predefined datatype handles for pairs of value and index types to be usable in conjunction with MPI_MINLOC and MPI_MAXLOC. Added combiner MPI_COMBINER_VALUE_INDEX for unnamed type handles returned by MPI_TYPE_GET_VALUE_INDEX.
+L37: 14. Section cite30†Communicator Constructors on page cite30†Communicator Constructors .
+L38: MPI_COMM_TYPE_RESOURCE_GUIDED was added as a new possible value for the split_type parameter of the MPI_COMM_SPLIT_TYPE procedure, as well as a new info key mpi_pset_name.
+L39: 
+L40: 15. Section cite31†Communicator Destructors on page cite31†Communicator Destructors .
+L41: The definition of MPI_COMM_FREE was clarified.
+L42: 16. Section cite32†Communicator Info on page cite32†Communicator Info .
+L43: A new info key was added, namely mpi_assert_strict_persistent_collective_ordering.
+L44: 17. Sections cite32†Communicator Info , cite33†Starting MPI Processes , cite34†The Sessions Model , cite35†Memory Allocation Info , cite36†Reserved Keys , cite37†Window Creation , and cite38†File Info on pages cite32†Communicator Info , cite33†Starting MPI Processes , cite34†The Sessions Model , cite35†Memory Allocation Info , cite36†Reserved Keys , cite37†Window Creation , and cite38†File Info .
+L45: Added the ability to request support for, query support of, and assert usage of memory allocation kinds via two new info keys, mpi_memory_alloc_kinds and mpi_assert_memory_alloc_kinds.
+L46: 18. Section cite39†Naming Objects on page cite39†Naming Objects was amended to allow MPI_COMM_NULL, MPI_DATATYPE_NULL, and MPI_WIN_NULL to be passed to MPI_COMM_GET_NAME, MPI_TYPE_GET_NAME and MPI_WIN_GET_NAME, respectively.
+L47: 
+L48: 19. Section cite40†Inquire Hardware Resource Information on page cite40†Inquire Hardware Resource Information .
+L49: Added new procedure MPI_GET_HW_RESOURCE_INFO.
+L50: 
+L51: 20. Section cite41†Error Codes and Classes on page cite41†Error Codes and Classes .
+L52: Added new error class MPI_ERR_ERRHANDLER.
+L53: 21. Section cite42†Error Classes, Error Codes, and Error Handlers on page cite42†Error Classes, Error Codes, and Error Handlers .
+L54: Add procedures MPI_REMOVE_ERROR_CLASS, MPI_REMOVE_ERROR_CODE, MPI_REMOVE_ERROR_STRING to complement the procedures adding error classes/codes/strings.
+L55: 22. Section cite43†Initialization on page cite43†Initialization .
+L56: Relaxed the constraints on the windows for which shared memory can be queried using MPI_WIN_SHARED_QUERY to allow windows with flavor MPI_WIN_FLAVOR_CREATE and MPI_WIN_FLAVOR_ALLOCATE.
+L57: 
+L58: 23. Section cite37†Window Creation on page cite37†Window Creation .
+L59: Added new info key mpi_accumulate_granularity to specify a desired synchronization granularity of accumulate operations.
+L60: 24. Section cite44†Window Destruction on page cite44†Window Destruction .
+L61: Implementations may avoid synchronization of processes in MPI_WIN_FREE if the no_locks info key is set to true.
+L62: 25. Section cite24†General Active Target Synchronization on page cite24†General Active Target Synchronization .
+L63: In Example cite24†General Active Target Synchronization , MPI_PUT has been removed from the list of procedures that may delay their return waiting for the call to MPI_WIN_POST to occur at the target. MPI RMA communication procedures are generally not intended to delay their return waiting for synchronization procedure calls to occur at the target.
+L64: 26. Section cite45†Semantics and Correctness on page cite45†Semantics and Correctness and Section cite46†Examples on page cite46†Examples .
+L65: Clarified the use of MPI_WIN_SYNC for memory synchronization on shared memory.
+L66: 
+L67: 27. Section cite47†Binding MPI Tool Information Interface Variables to MPI Objects on page cite47†Binding MPI Tool Information Interface Variables to MPI Objects .
+L68: The text specifying when entities of the MPI Tool Information Interface can be bound to objects during the object's lifetime was clarified.
+L69: 28. Section cite48†Handling Dropped Events on page cite48†Handling Dropped Events and Section cite49†Category Member Query Functions on page cite49†Category Member Query Functions .
+L70: Behavior specified when the count of dropped events or category changes overflow, respectively.
+L71: 
+L72: 29. Section cite50†Initialization on page cite50†Initialization .
+L73: Language interoperability when using MPI_SESSION_INIT and MPI_SESSION_FINALIZE was clarified.
+L74: 30. Annex cite51†Summary of the Semantics of all Operation-Related MPI Procedures on page cite51†Summary of the Semantics of all Operation-Related MPI Procedures .
+L75: The annex has been completed with the operation-related MPI procedures for one-sided communication and some other rarely used scenarios. It is now integrated into the MPI standard.
+L76: 
+L77: * * *
+L78: 
+L79: Up: cite0†Changes from Version 4.0 to Version 4.1 Next: cite1†Changes from Version 3.1 to Version 4.0 Previous: cite2†Fixes to Errata in Previous Versions of MPI L80: 
+L81: * * *
+L82: Return to cite52†MPI-5.0 Standard Index L83: Return to cite53†MPI Forum Home Page L84: 
+L85: * * *
+L86: 
+L87: (Unofficial) MPI-5.0 of June 9, 2025
+L88: HTML Generated on March 2, 2025
+

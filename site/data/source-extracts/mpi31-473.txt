@@ -1,0 +1,46 @@
+Process Topologies C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node473.htm)
+citeturn76view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node473.htm","lineno":0}); Total lines: 48
+L0: * * *
+L1: ## 399. Process Topologies C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†MPI Environmental Management C Bindings Previous: cite2†Groups, Contexts, Communicators, and Caching C Bindings L4: ` int MPI_Cart_coords(MPI_Comm comm, int rank, int maxdims, int coords[])
+L5: ` ` int MPI_Cart_create(MPI_Comm comm_old, int ndims, const int dims[], const int periods[], int reorder, MPI_Comm *comm_cart)
+L6: ` ` int MPI_Cart_get(MPI_Comm comm, int maxdims, int dims[], int periods[], int coords[])
+L7: ` ` int MPI_Cart_map(MPI_Comm comm, int ndims, const int dims[], const int periods[], int *newrank)
+L8: ` ` int MPI_Cart_rank(MPI_Comm comm, const int coords[], int *rank)
+L9: ` ` int MPI_Cart_shift(MPI_Comm comm, int direction, int disp, int *rank_source, int *rank_dest)
+L10: ` ` int MPI_Cart_sub(MPI_Comm comm, const int remain_dims[], MPI_Comm *newcomm)
+L11: ` ` int MPI_Cartdim_get(MPI_Comm comm, int *ndims)
+L12: ` ` int MPI_Dims_create(int nnodes, int ndims, int dims[])
+L13: ` ` int MPI_Dist_graph_create(MPI_Comm comm_old, int n, const int sources[], const int degrees[], const int destinations[], const int weights[], MPI_Info info, int reorder, MPI_Comm *comm_dist_graph)
+L14: ` ` int MPI_Dist_graph_create_adjacent(MPI_Comm comm_old, int indegree, const int sources[], const int sourceweights[], int outdegree, const int destinations[], const int destweights[], MPI_Info info, int reorder, MPI_Comm *comm_dist_graph)
+L15: ` ` int MPI_Dist_graph_neighbors(MPI_Comm comm, int maxindegree, int sources[], int sourceweights[], int maxoutdegree, int destinations[], int destweights[])
+L16: ` ` int MPI_Dist_graph_neighbors_count(MPI_Comm comm, int *indegree, int *outdegree, int *weighted)
+L17: ` ` int MPI_Graph_create(MPI_Comm comm_old, int nnodes, const int index[], const int edges[], int reorder, MPI_Comm *comm_graph)
+L18: ` ` int MPI_Graph_get(MPI_Comm comm, int maxindex, int maxedges, int index[], int edges[])
+L19: ` ` int MPI_Graph_map(MPI_Comm comm, int nnodes, const int index[], const int edges[], int *newrank)
+L20: ` ` int MPI_Graph_neighbors(MPI_Comm comm, int rank, int maxneighbors, int neighbors[])
+L21: ` ` int MPI_Graph_neighbors_count(MPI_Comm comm, int rank, int *nneighbors)
+L22: ` ` int MPI_Graphdims_get(MPI_Comm comm, int *nnodes, int *nedges)
+L23: ` ` int MPI_Ineighbor_allgather(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L24: ` ` int MPI_Ineighbor_allgatherv(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, const int recvcounts[], const int displs[], MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L25: ` ` int MPI_Ineighbor_alltoall(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L26: ` ` int MPI_Ineighbor_alltoallv(const void* sendbuf, const int sendcounts[], const int sdispls[], MPI_Datatype sendtype, void* recvbuf, const int recvcounts[], const int rdispls[], MPI_Datatype recvtype, MPI_Comm comm, MPI_Request *request)
+L27: ` ` int MPI_Ineighbor_alltoallw(const void* sendbuf, const int sendcounts[], const MPI_Aint sdispls[], const MPI_Datatype sendtypes[], void* recvbuf, const int recvcounts[], const MPI_Aint rdispls[], const MPI_Datatype recvtypes[], MPI_Comm comm, MPI_Request *request)
+L28: ` ` int MPI_Neighbor_allgather(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, MPI_Comm comm)
+L29: ` ` int MPI_Neighbor_allgatherv(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, const int recvcounts[], const int displs[], MPI_Datatype recvtype, MPI_Comm comm)
+L30: ` ` int MPI_Neighbor_alltoall(const void* sendbuf, int sendcount, MPI_Datatype sendtype, void* recvbuf, int recvcount, MPI_Datatype recvtype, MPI_Comm comm)
+L31: ` ` int MPI_Neighbor_alltoallv(const void* sendbuf, const int sendcounts[], const int sdispls[], MPI_Datatype sendtype, void* recvbuf, const int recvcounts[], const int rdispls[], MPI_Datatype recvtype, MPI_Comm comm)
+L32: ` ` int MPI_Neighbor_alltoallw(const void* sendbuf, const int sendcounts[], const MPI_Aint sdispls[], const MPI_Datatype sendtypes[], void* recvbuf, const int recvcounts[], const MPI_Aint rdispls[], const MPI_Datatype recvtypes[], MPI_Comm comm)
+L33: ` ` int MPI_Topo_test(MPI_Comm comm, int *status)
+L34: `
+L35: * * *
+L36: 
+L37: Up: cite0†C Bindings Next: cite1†MPI Environmental Management C Bindings Previous: cite2†Groups, Contexts, Communicators, and Caching C Bindings L38: 
+L39: * * *
+L40: 
+L41: Return to cite3†MPI-3.1 Standard Index L42: Return to cite4†MPI Forum Home Page L43: 
+L44: * * *
+L45: 
+L46: (Unofficial) MPI-3.1 of June 4, 2015
+L47: HTML Generated on June 4, 2015

@@ -1,0 +1,35 @@
+Deprecated C Bindings (https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node395.htm)
+citeturn92view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-2.2/mpi22-report/node395.htm","lineno":0}); Total lines: 38
+L0: * * *
+L1: ## 350. Deprecated C Bindings
+L2: 
+L3: cite5†Image cite6†Image cite7†Image L4: Up: cite0† C Bindings Next: cite1† Fortran Bindings Previous: cite2† Profiling Interface C Bindings L5: ` int MPI_Address(void* location, MPI_Aint *address)
+L6: ` ` int MPI_Attr_delete(MPI_Comm comm, int keyval)
+L7: ` ` int MPI_Attr_get(MPI_Comm comm, int keyval, void *attribute_val, int *flag)
+L8: ` ` int MPI_Attr_put(MPI_Comm comm, int keyval, void* attribute_val)
+L9: ` ` int MPI_DUP_FN(MPI_Comm oldcomm, int keyval, void *extra_state, void *attribute_val_in, void *attribute_val_out, int *flag)
+L10: ` ` int MPI_Errhandler_create(MPI_Handler_function *function, MPI_Errhandler *errhandler)
+L11: ` ` int MPI_Errhandler_get(MPI_Comm comm, MPI_Errhandler *errhandler)
+L12: ` ` int MPI_Errhandler_set(MPI_Comm comm, MPI_Errhandler errhandler)
+L13: ` ` int MPI_Keyval_create(MPI_Copy_function *copy_fn, MPI_Delete_function *delete_fn, int *keyval, void* extra_state)
+L14: ` ` int MPI_Keyval_free(int *keyval)
+L15: ` ` int MPI_NULL_COPY_FN(MPI_Comm oldcomm, int keyval, void *extra_state, void *attribute_val_in, void *attribute_val_out, int *flag)
+L16: ` ` int MPI_NULL_DELETE_FN(MPI_Comm comm, int keyval, void *attribute_val, void *extra_state)
+L17: ` ` int MPI_Type_extent(MPI_Datatype datatype, MPI_Aint *extent)
+L18: ` ` int MPI_Type_hindexed(int count, int *array_of_blocklengths, MPI_Aint *array_of_displacements, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L19: ` ` int MPI_Type_hvector(int count, int blocklength, MPI_Aint stride, MPI_Datatype oldtype, MPI_Datatype *newtype)
+L20: ` ` int MPI_Type_lb(MPI_Datatype datatype, MPI_Aint* displacement)
+L21: ` ` int MPI_Type_struct(int count, int *array_of_blocklengths, MPI_Aint *array_of_displacements, MPI_Datatype *array_of_types, MPI_Datatype *newtype)
+L22: ` ` int MPI_Type_ub(MPI_Datatype datatype, MPI_Aint* displacement)
+L23: `
+L24: * * *
+L25: 
+L26: cite8†Image cite9†Image cite10†Image L27: Up: cite0† C Bindings Next: cite1† Fortran Bindings Previous: cite2† Profiling Interface C Bindings L28: 
+L29: * * *
+L30: 
+L31: Return to cite3†MPI-2.2 Standard Index L32: Return to cite4†MPI Forum Home Page L33: 
+L34: * * *
+L35: 
+L36: (Unofficial) MPI-2.2 of September 4, 2009
+L37: HTML Generated on September 10, 2009
+

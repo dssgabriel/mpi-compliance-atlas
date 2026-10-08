@@ -1,0 +1,46 @@
+Language Bindings C Bindings (https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node480.htm)
+citeturn105view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-3.1/mpi31-report/node480.htm","lineno":0}); Total lines: 50
+L0: * * *
+L1: ## 406. Language Bindings C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† Tools / Profiling Interface C Bindings Previous: cite2† I/O C Bindings L5: ` int MPI_Status_f082f(MPI_F08_status *f08_status, MPI_Fint *f_status)
+L6: ` ` int MPI_Status_f2f08(MPI_Fint *f_status, MPI_F08_status *f08_status)
+L7: ` ` int MPI_Type_create_f90_complex(int p, int r, MPI_Datatype *newtype)
+L8: ` ` int MPI_Type_create_f90_integer(int r, MPI_Datatype *newtype)
+L9: ` ` int MPI_Type_create_f90_real(int p, int r, MPI_Datatype *newtype)
+L10: ` ` int MPI_Type_match_size(int typeclass, int size, MPI_Datatype *datatype)
+L11: ` ` MPI_Fint MPI_Comm_c2f(MPI_Comm comm)
+L12: ` ` MPI_Comm MPI_Comm_f2c(MPI_Fint comm)
+L13: ` ` MPI_Fint MPI_Errhandler_c2f(MPI_Errhandler errhandler)
+L14: ` ` MPI_Errhandler MPI_Errhandler_f2c(MPI_Fint errhandler)
+L15: ` ` MPI_Fint MPI_File_c2f(MPI_File file)
+L16: ` ` MPI_File MPI_File_f2c(MPI_Fint file)
+L17: ` ` MPI_Fint MPI_Group_c2f(MPI_Group group)
+L18: ` ` MPI_Group MPI_Group_f2c(MPI_Fint group)
+L19: ` ` MPI_Fint MPI_Info_c2f(MPI_Info info)
+L20: ` ` MPI_Info MPI_Info_f2c(MPI_Fint info)
+L21: ` ` MPI_Fint MPI_Message_c2f(MPI_Message message)
+L22: ` ` MPI_Message MPI_Message_f2c(MPI_Fint message)
+L23: ` ` MPI_Fint MPI_Op_c2f(MPI_Op op)
+L24: ` ` MPI_Op MPI_Op_f2c(MPI_Fint op)
+L25: ` ` MPI_Fint MPI_Request_c2f(MPI_Request request)
+L26: ` ` MPI_Request MPI_Request_f2c(MPI_Fint request)
+L27: ` ` int MPI_Status_c2f(const MPI_Status *c_status, MPI_Fint *f_status)
+L28: ` ` int MPI_Status_c2f08(const MPI_Status *c_status, MPI_F08_status *f08_status)
+L29: ` ` int MPI_Status_f082c(const MPI_F08_status *f08_status, MPI_Status *c_status)
+L30: ` ` int MPI_Status_f2c(const MPI_Fint *f_status, MPI_Status *c_status)
+L31: ` ` MPI_Fint MPI_Type_c2f(MPI_Datatype datatype)
+L32: ` ` MPI_Datatype MPI_Type_f2c(MPI_Fint datatype)
+L33: ` ` MPI_Fint MPI_Win_c2f(MPI_Win win)
+L34: ` ` MPI_Win MPI_Win_f2c(MPI_Fint win)
+L35: `
+L36: * * *
+L37: 
+L38: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L39: Up: cite0† C Bindings Next: cite1† Tools / Profiling Interface C Bindings Previous: cite2† I/O C Bindings L40: 
+L41: * * *
+L42: 
+L43: Return to cite3†MPI-3.1 Standard Index L44: Return to cite4†MPI Forum Home Page L45: 
+L46: * * *
+L47: 
+L48: (Unofficial) MPI-3.1 of June 4, 2015
+L49: HTML Generated on June 4, 2015

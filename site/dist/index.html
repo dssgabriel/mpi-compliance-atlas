@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MPI Compliance Atlas — Implementation register</title>
+  <meta name="description" content="A source-backed register of MPI C APIs: introduction revisions, taxonomy and implementation evidence for Open MPI, MPICH and MPC.">
+  <link rel="icon" type="image/svg+xml" href="assets/mpi-forum-logo.svg">
+  <link rel="stylesheet" href="style.css?v=d760a04c817b"><script src="app.js?v=92a02e8ef7e3" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#search">Skip to catalogue controls</a>
+  <header class="masthead">
+    <div class="identity"><img class="mpi-logo" src="assets/mpi-forum-logo.svg" alt="MPI Forum logo" width="64" height="64"><div><h1>MPI Compliance Atlas</h1><p>STANDARD / IMPLEMENTATION REGISTER</p></div></div>
+    <nav aria-label="Document navigation"><a href="#catalogue">API register</a><a href="#detail">Source inspector</a><a href="#methodology">Method &amp; provenance</a><a href="apis.json" download>Catalogue JSON ↓</a></nav>
+  </header>
+  <main>
+    <div class="document-state"><p>REFERENCE STANDARD <strong>MPI 5.0</strong> · C BINDINGS / MPI_T / LARGE COUNT</p><p id="checked">Sources checked 6 October 2026</p></div>
+    <div class="summary" id="summary" aria-label="Catalogue inventory"></div>
+    <section id="catalogue" aria-label="API catalogue">
+      <div class="section-title"><h2>API register</h2><span>ORDER: CHAPTER → SECTION → OPERATION FORM → API NAME</span></div>
+      <div class="toolbar">
+        <label class="search">Search name / classification<input id="search" type="search" placeholder="MPI_Allreduce, sessions, datatypes…" autocomplete="off" aria-describedby="filter-state"></label>
+        <label>Introduced in<select id="revision"><option value="">All revisions</option></select></label>
+        <label>Standard lifecycle<select id="lifecycle"><option value="">All lifecycles</option><option value="current">Current</option><option value="deprecated">Deprecated</option><option value="removed">Removed</option></select></label>
+        <label>Count binding<select id="count"><option value="">All count bindings</option><option value="normal">Standard count</option><option value="large">Large count (_c)</option></select></label>
+        <button id="reset" class="reset-button">Reset filters</button>
+      </div>
+      <nav class="kinds" id="kinds" aria-label="Filter by standard chapter"></nav>
+      <div class="state-line"><p id="filter-state">FILTER STATE: loading</p><p id="results" role="status" aria-live="polite">Loading catalogue…</p></div>
+      <div class="legend" aria-label="Support interpretation"><span><b class="status-symbol supported">+</b> Supported: implementation / macro / documentation</span><span><b class="status-symbol unsupported">−</b> Unsupported: absent / aborting / no-op stub</span><span><b class="status-symbol unknown">?</b> Unknown: unresolved source conflict</span></div>
+      <div class="workspace">
+        <div class="register-surface">
+          <div class="table-scroll" tabindex="0" aria-label="API register; scroll vertically through APIs">
+            <table>
+              <colgroup>
+                <col style="width:22%"><col style="width:15%"><col style="width:17%"><col style="width:10%">
+                <col style="width:9%"><col style="width:9%"><col style="width:9%"><col style="width:9%">
+              </colgroup>
+              <caption class="sr-only">MPI C APIs ordered by chapter, section and operation form. Select an API name to inspect its source evidence.</caption>
+              <thead><tr><th scope="col" class="api-column">API<span>count / lifecycle</span></th><th scope="col">Chapter</th><th scope="col">Section</th><th scope="col">Operation form</th><th scope="col">Introduced</th><th scope="col">Open MPI <span id="version-openmpi">5.0.10</span></th><th scope="col">MPICH <span id="version-mpich">5.0.2</span></th><th scope="col">MPC MPI <span id="version-mpc">4.3.1</span></th></tr></thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+          <div id="empty" hidden><strong>0 MATCHING APIs</strong><p>No records satisfy the current filter state. Change a filter or reset all filters.</p></div>
+          <div id="load-error" hidden><strong>CATALOGUE LOAD FAILED</strong><p>Open standalone.html for the self-contained catalogue, or serve index.html over HTTP so its JSON file can be loaded.</p></div>
+          <div class="register-note"><span id="selection-state" role="status" aria-live="polite">SELECTED API: none</span><a href="#detail">Inspect selected API →</a></div>
+          <div class="support-totals" id="support-totals" aria-label="Support totals for filtered APIs"></div>
+        </div>
+        <aside id="detail" class="inspector" aria-labelledby="inspector-title">
+          <div class="section-title"><h2 id="inspector-title">Source inspector</h2><button id="close">Clear selection</button></div>
+          <div id="detail-content"><p class="no-selection">No API selected.</p></div>
+        </aside>
+      </div>
+    </section>
+    <section id="methodology" class="methodology" aria-labelledby="method-title">
+      <div class="section-title"><h2 id="method-title">Method &amp; provenance</h2><span>SOURCE REVIEW / NO RUNTIME CONFORMANCE TESTS</span></div>
+      <div class="method-grid">
+        <div><h3>Support decision rules</h3><dl class="decision-rules"><dt>Supported</dt><dd>C definition, implementing macro, valid predefined callback, or exact API documentation. The inspector identifies the evidence.</dd><dt>Unsupported</dt><dd>Missing from the release sources, an aborting unimplemented body, or a success-only stub that produces no required output or state. Source contradictions override documentation.</dd><dt>Unknown</dt><dd>Conflicting source definitions whose exposed symbol cannot be resolved without a build/linkage check.</dd></dl><p>Header declarations and exported symbol names alone do not establish implementation. Valid null callbacks and permitted no-ops are supported.</p><p>Support is positive source evidence, not a guarantee of every backend, platform, argument combination or build configuration. MPI-I/O requires the I/O component; Open MPI’s removed MPI-1 declarations require <code>--enable-mpi1-compatibility</code>.</p></div>
+        <div><h3>Catalogue boundaries</h3><p>714 entries: the final MPI 5.0 PDF’s C binding summary, plus MPI_Aint_add / MPI_Aint_diff, MPI_Wtime / MPI_Wtick and ten removed legacy routines. Predefined callbacks and null conversion sentinels are included. The released MPI 5.0 vault independently confirms all 704 standard C entries; ten removed legacy routines are retained separately.</p><p>Other constants, callback typedefs, Fortran-specific procedures, MPIX extensions and duplicate PMPI profiling aliases are excluded.</p><h3>Standard organization</h3><p>Chapters and sections follow MPI 5.0. Blocking, nonblocking and persistent operation forms are separate from communication mode, scope and procedure blocking semantics. The inspector shows the complete section path and applicable attributes.</p><p id="standard-audit-state"></p><h3>Introduction revision</h3><p>Historical binding summaries and explicit change logs determine introduction. MPI-1 routines map to 1.0 using the archived 1.1 summaries. The revision describes the API name, not every later semantic change.</p><p><a href="https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report.pdf" target="_blank" rel="noopener noreferrer">Final MPI 5.0 PDF ↗</a> · <a href="https://www.mpi-forum.org/docs/" target="_blank" rel="noopener noreferrer">Standards archive ↗</a></p></div>
+        <div><h3>Audit procedure &amp; unresolved case</h3><p>Official release archives are scanned for C implementations, declarations and binding generators. Tests and examples are excluded. Candidate stubs, macros and callback aliases are reviewed against the same release.</p><p>MPICH’s generated C locations refer to the release archive. Where available, evidence links point to the versioned generator template.</p><p><strong>MPC MPI_Register_datarep:</strong> the core aborting stub conflicts with a bundled ROMIO implementation. Build/linkage resolution remains outstanding. Select that API to compare both sources.</p><p id="audit-state"></p></div>
+      </div>
+      <div class="section-title ledger-title"><h2>Release source ledger</h2><span>EXACT RELEASE / ARCHIVE SHA-256 / PRODUCTION FILE COUNT</span></div>
+      <div class="source-ledger" id="source-ledger"></div>
+    </section>
+    <footer><span>MPI Compliance Atlas · Source-backed snapshot · All 714 records available in the JSON catalogue</span><a href="NOTICE.md">Source attribution</a><a href="#catalogue">Return to register ↑</a></footer>
+  </main>
+</body>
+</html>

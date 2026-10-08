@@ -1,0 +1,43 @@
+Process Creation and Management C Bindings (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node565.htm)
+citeturn20view0 [wordlim: 200] Crawled: 2 months ago; Content type: text/html; Source: open({"ref_id":"https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report/node565.htm","lineno":null}); Total lines: 46
+L0: * * *
+L1: ## 22.3.9. Process Creation and Management C Bindings
+L2: 
+L3: cite5†Image: Previous cite6†Image: Up cite7†Image: Next L4: Up: cite0† C Bindings Next: cite1† One-Sided Communications C Bindings Previous: cite2† The Info Object C Bindings L5: ` int MPI_Abort(MPI_Comm comm, int errorcode)
+L6: ` ` int MPI_Close_port(const char *port_name)
+L7: ` ` int MPI_Comm_accept(const char *port_name, MPI_Info info, int root, MPI_Comm comm, MPI_Comm *newcomm)
+L8: ` ` int MPI_Comm_connect(const char *port_name, MPI_Info info, int root, MPI_Comm comm, MPI_Comm *newcomm)
+L9: ` ` int MPI_Comm_disconnect(MPI_Comm *comm)
+L10: ` ` int MPI_Comm_get_parent(MPI_Comm *parent)
+L11: ` ` int MPI_Comm_join(int fd, MPI_Comm *intercomm)
+L12: ` ` int MPI_Comm_spawn_multiple(int count, char *array_of_commands[], char **array_of_argv[], const int array_of_maxprocs[], const MPI_Info array_of_info[], int root, MPI_Comm comm, MPI_Comm *intercomm, int array_of_errcodes[])
+L13: ` ` int MPI_Comm_spawn(const char *command, char *argv[], int maxprocs, MPI_Info info, int root, MPI_Comm comm, MPI_Comm *intercomm, int array_of_errcodes[])
+L14: ` ` int MPI_Finalized(int *flag)
+L15: ` ` int MPI_Finalize(void)
+L16: ` ` int MPI_Init_thread(int *argc, char ***argv, int required, int *provided)
+L17: ` ` int MPI_Initialized(int *flag)
+L18: ` ` int MPI_Init(int *argc, char ***argv)
+L19: ` ` int MPI_Is_thread_main(int *flag)
+L20: ` ` int MPI_Lookup_name(const char *service_name, MPI_Info info, char *port_name)
+L21: ` ` int MPI_Open_port(MPI_Info info, char *port_name)
+L22: ` ` int MPI_Publish_name(const char *service_name, MPI_Info info, const char *port_name)
+L23: ` ` int MPI_Query_thread(int *provided)
+L24: ` ` int MPI_Session_finalize(MPI_Session *session)
+L25: ` ` int MPI_Session_get_info(MPI_Session session, MPI_Info *info_used)
+L26: ` ` int MPI_Session_get_nth_pset(MPI_Session session, MPI_Info info, int n, int *pset_len, char *pset_name)
+L27: ` ` int MPI_Session_get_num_psets(MPI_Session session, MPI_Info info, int *npset_names)
+L28: ` ` int MPI_Session_get_pset_info(MPI_Session session, const char *pset_name, MPI_Info *info)
+L29: ` ` int MPI_Session_init(MPI_Info info, MPI_Errhandler errhandler, MPI_Session *session)
+L30: ` ` int MPI_Unpublish_name(const char *service_name, MPI_Info info, const char *port_name)
+L31: `
+L32: * * *
+L33: 
+L34: cite8†Image: Previous cite9†Image: Up cite10†Image: Next L35: Up: cite0† C Bindings Next: cite1† One-Sided Communications C Bindings Previous: cite2† The Info Object C Bindings L36: 
+L37: * * *
+L38: 
+L39: Return to cite3†MPI-5.0 Standard Index L40: Return to cite4†MPI Forum Home Page L41: 
+L42: * * *
+L43: 
+L44: (Unofficial) MPI-5.0 of June 9, 2025
+L45: HTML Generated on March 2, 2025
+

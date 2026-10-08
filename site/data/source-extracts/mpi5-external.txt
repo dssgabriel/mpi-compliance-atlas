@@ -1,0 +1,25 @@
+External Interfaces C Bindings (https://www.mpi-forum.org/docs/mpi-4.1/mpi41-report/node547.htm)
+citeturn118view0 [wordlim: 200] Crawled: last month; Content type: text/html; Source: click({"ref_id":"turn3view3","id":547}); Total lines: 26
+L0: * * *
+L1: ## 21.3.11. External Interfaces C Bindings
+L2: 
+L3: Up: cite0†C Bindings Next: cite1†I/O C Bindings Previous: cite2†One-Sided Communications C Bindings L4: ` int MPI_Grequest_complete(MPI_Request request)
+L5: ` ` int MPI_Grequest_start(MPI_Grequest_query_function *query_fn, MPI_Grequest_free_function *free_fn, MPI_Grequest_cancel_function *cancel_fn, void *extra_state, MPI_Request *request)
+L6: ` ` int MPI_Status_set_cancelled(MPI_Status *status, int flag)
+L7: ` ` int MPI_Status_set_elements(MPI_Status *status, MPI_Datatype datatype, int count)
+L8: ` ` int MPI_Status_set_elements_c(MPI_Status *status, MPI_Datatype datatype, MPI_Count count)
+L9: ` ` int MPI_Status_set_error(MPI_Status *status, int err)
+L10: ` ` int MPI_Status_set_source(MPI_Status *status, int source)
+L11: ` ` int MPI_Status_set_tag(MPI_Status *status, int tag)
+L12: `
+L13: * * *
+L14: 
+L15: Up: cite0†C Bindings Next: cite1†I/O C Bindings Previous: cite2†One-Sided Communications C Bindings L16: 
+L17: * * *
+L18: 
+L19: Return to cite3†MPI-4.1 Standard Index L20: Return to cite4†MPI Forum Home Page L21: 
+L22: * * *
+L23: 
+L24: (Unofficial) MPI-4.1 of November 2, 2023
+L25: HTML Generated on November 19, 2023
+

@@ -1,0 +1,528 @@
+MPI: A Message-Passing Interface Standard (https://www.mpi-forum.org/docs/mpi-5.0/mpi50-report.pdf)
+citeturn137view0 [wordlim: 200] Crawled: yesterday; Content type: application/pdf; Number of pages: 1189; Source: open({"ref_id":"turn121view0","lineno":80950}); Total lines: 105180
+L80713@P944: corresponding MPI_TEST returning flag=TRUE ----c-- c l p-op C W2 buf-addr & arr-args 5) 7) 9) 18)
+L80714@P944: corresponding MPI_WAIT ----c-- c nl p-op C W2 buffer address and array arguments cached on the request
+L80715@P944: handle 5) 7) 9) 18)
+L80716@P944: corresponding MPI_REQUEST_FREE ------f f l p-op
+L80717@P944: Chapter 11: Process Initialization, Creation, and Management
+L80718@P944: MPI_INIT, MPI_INIT_THREAD i-s-c-f c+f nl b b-op C sq W1 collective over
+L80719@P944: MPI_COMM_WORLD
+L80720@P944: MPI_FINALIZE i-s-c-f c+f nl b b-op C sq W1 collective over all connected processes
+L80721@P944: MPI_SESSION_INIT ------- l 2)
+L80722@P944: MPI_SESSION_FINALIZE i-s-c-f c+f nl b b-op C sq W1 collective over connected processes scoped by the session
+L80723@P944: MPI_COMM_SPAWN, . . . _MULTIPLE i-s-c-f c+f nl b b-op C sq W1 collective over comm 6)
+L80724@P944: MPI_COMM_ACCEPT, MPI_COMM_CONNECT i-s-c-f c+f nl b b-op C sq W1 collective over comm
+L80725@P944: 1
+L80726@P944: 2
+L80727@P944: 3
+L80728@P944: 4
+L80729@P944: 5
+L80730@P944: 6
+L80731@P944: 7
+L80732@P944: 8
+L80733@P944: 9
+L80734@P944: 10
+L80735@P944: 11
+L80736@P944: 12
+L80737@P944: 13
+L80738@P944: 14
+L80739@P944: 15
+L80740@P944: 16
+L80741@P944: 17
+L80742@P944: 18
+L80743@P944: 19
+L80744@P944: 20
+L80745@P944: 21
+L80746@P944: 22
+L80747@P944: 23
+L80748@P944: 24
+L80749@P944: 25
+L80750@P944: 26
+L80751@P944: 27
+L80752@P944: 28
+L80753@P944: 29
+L80754@P944: 30
+L80755@P944: 31
+L80756@P944: 32
+L80757@P944: 33
+L80758@P944: 34
+L80759@P944: 35
+L80760@P944: 36
+L80761@P944: 37
+L80762@P944: 38
+L80763@P944: 39
+L80764@P944: 40
+L80765@P944: 41
+L80766@P944: 42
+L80767@P944: 43
+L80768@P944: 44
+L80769@P944: 45
+L80770@P944: 46
+L80771@P944: 47
+L80772@P944-945: 48Appendix A Language Bindings Summary 894
+L80773@P945: Procedure Stages Cpl Loc Blk Op Collective Blocked resources
+L80774@P945: C sq S/W and remarks
+L80775@P945: Chapter 12: One-Sided Communication
+L80776@P945: Window Allocation and Destruction
+L80777@P945: MPI_WIN_CREATE, MPI_WIN_ALLOCATE,
+L80778@P945: MPI_WIN_ALLOCATE_SHARED,
+L80779@P945: MPI_WIN_CREATE_DYNAMIC
+L80780@P945: i------ nl C sq W1 window buffer address 36) 40)
+L80781@P945: MPI_WIN_SET_INFO i------ nl C sq W1 window buffer address 40)
+L80782@P945: MPI_WIN_FREE ------f f nl C sq W1 36) 40)
+L80783@P945: With Fence Synchronization in the Role of an Origin Process
+L80784@P945: MPI_WIN_FENCE i------ - nl C sq W1 30) 38)
+L80785@P945: MPI_PUT, MPI_GET, MPI_ACCUMULATE,
+L80786@P945: MPI_GET_ACCUMULATE,
+L80787@P945: MPI_COMPARE_AND_SWAP,
+L80788@P945: MPI_FETCH_AND_OP
+L80789@P945: i-s---- ic l nb nb-op - argument buffer 14) 30)
+L80790@P945: MPI_WIN_FENCE ----c-f c+f nl C sq W1 31) 38)
+L80791@P945: With Fence Synchronization in the Role of a Target Process
+L80792@P945: MPI_WIN_FENCE --s---- ic nl C sq W1 window buffer address+content 38)
+L80793@P945: MPI_WIN_FENCE ----c-- c nl C sq W1 window buffer address 32) 38)
+L80794@P945: With General Active Target Synchronization in the Role of an Origin Process
+L80795@P945: MPI_WIN_START i------ nl - 30) 34)
+L80796@P945: MPI_PUT, MPI_GET, MPI_ACCUMULATE,
+L80797@P945: MPI_GET_ACCUMULATE,
+L80798@P945: MPI_COMPARE_AND_SWAP,
+L80799@P945: MPI_FETCH_AND_OP
+L80800@P945: i-s---- ic l nb nb-op - argument buffer 14) 30) 34)
+L80801@P945: MPI_WIN_COMPLETE ----c-f c+f l - 31) 34)
+L80802@P945: With General Active Target Synchronization in the Role of a Target Process
+L80803@P945: MPI_WIN_POST --s---- ic l - window buffer address+content
+L80804@P945: MPI_WIN_TEST returning flag=FALSE ------- l -
+L80805@P945: MPI_WIN_TEST returning flag=TRUE ----c-- c l - window buffer address 32)
+L80806@P945: MPI_WIN_WAIT ----c-- c nl - window buffer address 32)
+L80807@P945: With Lock/Unlock Synchronization in the Role of an Origin Process
+L80808@P945: MPI_WIN_LOCK, MPI_WIN_LOCK_ALL i------ nl - 30) 35)
+L80809@P945: MPI_PUT, MPI_GET, MPI_ACCUMULATE,
+L80810@P945: MPI_GET_ACCUMULATE,
+L80811@P945: MPI_COMPARE_AND_SWAP,
+L80812@P945: MPI_FETCH_AND_OP
+L80813@P945: i-s---- ic l nb nb-op - argument buffer 14) 30) 35)
+L80814@P945: MPI_RPUT, MPI_RGET, MPI_RACCUMULATE,
+L80815@P945: MPI_RGET_ACCUMULATE
+L80816@P945: i-s---- ic l nb nb-op - argument buffer 14) 30) 35)
+L80817@P945: corresponding MPI_TEST returning flag=FALSE ------- l nb-op - argument buffer 7)
+L80818@P945: corresponding MPI_TEST returning flag=TRUE ----c-f c+f l nb-op - 30) 31)
+L80819@P945: corresponding MPI_WAIT ----c-f c+f l
+L80820@P945: ∗ nb-op - 30) 31) 35)
+L80821@P945: MPI_WIN_FLUSH_LOCAL,
+L80822@P945: MPI_WIN_FLUSH_LOCAL_ALL
+L80823@P945: i---c-f c+f l - 30) 31) 35) 37) 39)
+L80824@P945: MPI_WIN_FLUSH, MPI_WIN_FLUSH_ALL
+L80825@P945: i---c-f c+f l - 30) 33) 35) 37) 39)
+L80826@P945: MPI_WIN_UNLOCK, MPI_WIN_UNLOCK_ALL
+L80827@P945: ----c-f c+f l - 30) 33) 35) 37)
+L80828@P945: 1
+L80829@P945: 2
+L80830@P945: 3
+L80831@P945: 4
+L80832@P945: 5
+L80833@P945: 6
+L80834@P945: 7
+L80835@P945: 8
+L80836@P945: 9
+L80837@P945: 10
+L80838@P945: 11
+L80839@P945: 12
+L80840@P945: 13
+L80841@P945: 14
+L80842@P945: 15
+L80843@P945: 16
+L80844@P945: 17
+L80845@P945: 18
+L80846@P945: 19
+L80847@P945: 20
+L80848@P945: 21
+L80849@P945: 22
+L80850@P945: 23
+L80851@P945: 24
+L80852@P945: 25
+L80853@P945: 26
+L80854@P945: 27
+L80855@P945: 28
+L80856@P945: 29
+L80857@P945: 30
+L80858@P945: 31
+L80859@P945: 32
+L80860@P945: 33
+L80861@P945: 34
+L80862@P945: 35
+L80863@P945: 36
+L80864@P945: 37
+L80865@P945: 38
+L80866@P945: 39
+L80867@P945: 40
+L80868@P945: 41
+L80869@P945: 42
+L80870@P945: 43
+L80871@P945: 44
+L80872@P945: 45
+L80873@P945: 46
+L80874@P945: 47
+L80875@P945-946: 48895 A.2 Summary of the Semantics of all Op.-Related Routines
+L80876@P946: Procedure Stages Cpl Loc Blk Op Collective Blocked resources
+L80877@P946: C sq S/W and remarks
+L80878@P946: Chapter 14: I/O
+L80879@P946: MPI_FILE_READ/WRITE[_AT|_SHARED],
+L80880@P946: MPI_FILE_DELETE/SEEK/GET_VIEW
+L80881@P946: i-s-c-f c+f l
+L80882@P946: ∗ b b-op - 12)∗
+L80883@P946: MPI_FILE_READ/WRITE_AT_ALL,
+L80884@P946: MPI_FILE_READ/WRITE_ALL|ORDERED,
+L80885@P946: MPI_FILE_OPEN/CLOSE/SEEK_SHARED,
+L80886@P946: MPI_FILE_PREALLOCATE/SYNC,
+L80887@P946: MPI_FILE_SET_VIEW/SIZE/INFO/ATOMICITY
+L80888@P946: i-s-c-f c+f nl b b-op C sq W1
+L80889@P946: MPI_FILE_IREAD/IWRITE[_AT|_SHARED] i-s---- ic l nb nb-op - buffer 10a)
+L80890@P946: MPI_FILE_IREAD/IWRITE[_AT]_ALL i-s---- ic l nb nb-op C sq buffer 10b)
+L80891@P946: MPI_FILE_READ/WRITE[_AT]_ALL_BEGIN
+L80892@P946: MPI_FILE_READ/WRITE_ORDERED_BEGIN
+L80893@P946: i-s---- ic nl∗ b b-op C sq W1 buffer 8)
+L80894@P946: ∗
+L80895@P946: MPI_FILE_READ/WRITE[_AT]_ALL_END
+L80896@P946: MPI_FILE_READ/WRITE_ORDERED_END
+L80897@P946: ----c-f c+f nl b b-op C sq W1
+L80898@P946: 1
+L80899@P946: 2
+L80900@P946: 3
+L80901@P946: 4
+L80902@P946: 5
+L80903@P946: 6
+L80904@P946: 7
+L80905@P946: 8
+L80906@P946: 9
+L80907@P946: 10
+L80908@P946: 11
+L80909@P946: 12
+L80910@P946: 13
+L80911@P946: 14
+L80912@P946: 15
+L80913@P946: 16
+L80914@P946: 17
+L80915@P946: 18
+L80916@P946: 19
+L80917@P946: 20
+L80918@P946: 21
+L80919@P946: 22
+L80920@P946: 23
+L80921@P946: 24
+L80922@P946: 25
+L80923@P946: 26
+L80924@P946: 27
+L80925@P946: 28
+L80926@P946: 29
+L80927@P946: 30
+L80928@P946: 31
+L80929@P946: 32
+L80930@P946: 33
+L80931@P946: 34
+L80932@P946: 35
+L80933@P946: 36
+L80934@P946: 37
+L80935@P946: 38
+L80936@P946: 39
+L80937@P946: 40
+L80938@P946: 41
+L80939@P946: 42
+L80940@P946: 43
+L80941@P946: 44
+L80942@P946: 45
+L80943@P946: 46
+L80944@P946: 47
+L80945@P946-947: 48Appendix A Language Bindings Summary 896
+L80946@P947: A.3 C Bindings
+L80947@P947: A.3.1 Point-to-Point Communication C Bindings
+L80948@P947: int MPI_Bsend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L80949@P947: int dest, int tag, MPI_Comm comm)
+L80950@P947: int MPI_Bsend_init_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L80951@P947: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L80952@P947: int MPI_Bsend_init(const void *buf, int count, MPI_Datatype datatype, int dest,
+L80953@P947: int tag, MPI_Comm comm, MPI_Request *request)
+L80954@P947: int MPI_Bsend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L80955@P947: int tag, MPI_Comm comm)
+L80956@P947: int MPI_Buffer_attach_c(void *buffer, MPI_Count size)
+L80957@P947: int MPI_Buffer_attach(void *buffer, int size)
+L80958@P947: int MPI_Buffer_detach_c(void *buffer_addr, MPI_Count *size)
+L80959@P947: int MPI_Buffer_detach(void *buffer_addr, int *size)
+L80960@P947: int MPI_Buffer_flush(void)
+L80961@P947: int MPI_Buffer_iflush(MPI_Request *request)
+L80962@P947: int MPI_Cancel(MPI_Request *request)
+L80963@P947: int MPI_Comm_attach_buffer_c(MPI_Comm comm, void *buffer, MPI_Count size)
+L80964@P947: int MPI_Comm_attach_buffer(MPI_Comm comm, void *buffer, int size)
+L80965@P947: int MPI_Comm_detach_buffer_c(MPI_Comm comm, void *buffer_addr, MPI_Count *size)
+L80966@P947: int MPI_Comm_detach_buffer(MPI_Comm comm, void *buffer_addr, int *size)
+L80967@P947: int MPI_Comm_flush_buffer(MPI_Comm comm)
+L80968@P947: int MPI_Comm_iflush_buffer(MPI_Comm comm, MPI_Request *request)
+L80969@P947: int MPI_Get_count_c(const MPI_Status *status, MPI_Datatype datatype,
+L80970@P947: MPI_Count *count)
+L80971@P947: int MPI_Get_count(const MPI_Status *status, MPI_Datatype datatype, int *count)
+L80972@P947: int MPI_Ibsend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L80973@P947: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L80974@P947: int MPI_Ibsend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L80975@P947: int tag, MPI_Comm comm, MPI_Request *request)
+L80976@P947: int MPI_Improbe(int source, int tag, MPI_Comm comm, int *flag,
+L80977@P947: MPI_Message *message, MPI_Status *status)
+L80978@P947: int MPI_Imrecv_c(void *buf, MPI_Count count, MPI_Datatype datatype,
+L80979@P947: MPI_Message *message, MPI_Request *request)
+L80980@P947: int MPI_Imrecv(void *buf, int count, MPI_Datatype datatype,
+L80981@P947: MPI_Message *message, MPI_Request *request)
+L80982@P947: 1
+L80983@P947: 2
+L80984@P947: 3
+L80985@P947: 4
+L80986@P947: 5
+L80987@P947: 6
+L80988@P947: 7
+L80989@P947: 8
+L80990@P947: 9
+L80991@P947: 10
+L80992@P947: 11
+L80993@P947: 12
+L80994@P947: 13
+L80995@P947: 14
+L80996@P947: 15
+L80997@P947: 16
+L80998@P947: 17
+L80999@P947: 18
+L81000@P947: 19
+L81001@P947: 20
+L81002@P947: 21
+L81003@P947: 22
+L81004@P947: 23
+L81005@P947: 24
+L81006@P947: 25
+L81007@P947: 26
+L81008@P947: 27
+L81009@P947: 28
+L81010@P947: 29
+L81011@P947: 30
+L81012@P947: 31
+L81013@P947: 32
+L81014@P947: 33
+L81015@P947: 34
+L81016@P947: 35
+L81017@P947: 36
+L81018@P947: 37
+L81019@P947: 38
+L81020@P947: 39
+L81021@P947: 40
+L81022@P947: 41
+L81023@P947: 42
+L81024@P947: 43
+L81025@P947: 44
+L81026@P947: 45
+L81027@P947: 46
+L81028@P947: 47
+L81029@P947-948: 48897 A.3 C Bindings
+L81030@P948: int MPI_Iprobe(int source, int tag, MPI_Comm comm, int *flag,
+L81031@P948: MPI_Status *status)
+L81032@P948: int MPI_Irecv_c(void *buf, MPI_Count count, MPI_Datatype datatype, int source,
+L81033@P948: int tag, MPI_Comm comm, MPI_Request *request)
+L81034@P948: int MPI_Irecv(void *buf, int count, MPI_Datatype datatype, int source, int tag,
+L81035@P948: MPI_Comm comm, MPI_Request *request)
+L81036@P948: int MPI_Irsend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81037@P948: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L81038@P948: int MPI_Irsend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81039@P948: int tag, MPI_Comm comm, MPI_Request *request)
+L81040@P948: int MPI_Isend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81041@P948: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L81042@P948: int MPI_Isendrecv_c(const void *sendbuf, MPI_Count sendcount,
+L81043@P948: MPI_Datatype sendtype, int dest, int sendtag, void *recvbuf,
+L81044@P948: MPI_Count recvcount, MPI_Datatype recvtype, int source,
+L81045@P948: int recvtag, MPI_Comm comm, MPI_Request *request)
+L81046@P948: int MPI_Isendrecv_replace_c(void *buf, MPI_Count count, MPI_Datatype datatype,
+L81047@P948: int dest, int sendtag, int source, int recvtag, MPI_Comm comm,
+L81048@P948: MPI_Request *request)
+L81049@P948: int MPI_Isendrecv_replace(void *buf, int count, MPI_Datatype datatype,
+L81050@P948: int dest, int sendtag, int source, int recvtag, MPI_Comm comm,
+L81051@P948: MPI_Request *request)
+L81052@P948: int MPI_Isendrecv(const void *sendbuf, int sendcount, MPI_Datatype sendtype,
+L81053@P948: int dest, int sendtag, void *recvbuf, int recvcount,
+L81054@P948: MPI_Datatype recvtype, int source, int recvtag, MPI_Comm comm,
+L81055@P948: MPI_Request *request)
+L81056@P948: int MPI_Isend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81057@P948: int tag, MPI_Comm comm, MPI_Request *request)
+L81058@P948: int MPI_Issend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81059@P948: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L81060@P948: int MPI_Issend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81061@P948: int tag, MPI_Comm comm, MPI_Request *request)
+L81062@P948: int MPI_Mprobe(int source, int tag, MPI_Comm comm, MPI_Message *message,
+L81063@P948: MPI_Status *status)
+L81064@P948: int MPI_Mrecv_c(void *buf, MPI_Count count, MPI_Datatype datatype,
+L81065@P948: MPI_Message *message, MPI_Status *status)
+L81066@P948: int MPI_Mrecv(void *buf, int count, MPI_Datatype datatype,
+L81067@P948: MPI_Message *message, MPI_Status *status)
+L81068@P948: int MPI_Probe(int source, int tag, MPI_Comm comm, MPI_Status *status)
+L81069@P948: int MPI_Recv_c(void *buf, MPI_Count count, MPI_Datatype datatype, int source,
+L81070@P948: int tag, MPI_Comm comm, MPI_Status *status)
+L81071@P948: 1
+L81072@P948: 2
+L81073@P948: 3
+L81074@P948: 4
+L81075@P948: 5
+L81076@P948: 6
+L81077@P948: 7
+L81078@P948: 8
+L81079@P948: 9
+L81080@P948: 10
+L81081@P948: 11
+L81082@P948: 12
+L81083@P948: 13
+L81084@P948: 14
+L81085@P948: 15
+L81086@P948: 16
+L81087@P948: 17
+L81088@P948: 18
+L81089@P948: 19
+L81090@P948: 20
+L81091@P948: 21
+L81092@P948: 22
+L81093@P948: 23
+L81094@P948: 24
+L81095@P948: 25
+L81096@P948: 26
+L81097@P948: 27
+L81098@P948: 28
+L81099@P948: 29
+L81100@P948: 30
+L81101@P948: 31
+L81102@P948: 32
+L81103@P948: 33
+L81104@P948: 34
+L81105@P948: 35
+L81106@P948: 36
+L81107@P948: 37
+L81108@P948: 38
+L81109@P948: 39
+L81110@P948: 40
+L81111@P948: 41
+L81112@P948: 42
+L81113@P948: 43
+L81114@P948: 44
+L81115@P948: 45
+L81116@P948: 46
+L81117@P948: 47
+L81118@P948-949: 48Appendix A Language Bindings Summary 898
+L81119@P949: int MPI_Recv_init_c(void *buf, MPI_Count count, MPI_Datatype datatype,
+L81120@P949: int source, int tag, MPI_Comm comm, MPI_Request *request)
+L81121@P949: int MPI_Recv_init(void *buf, int count, MPI_Datatype datatype, int source,
+L81122@P949: int tag, MPI_Comm comm, MPI_Request *request)
+L81123@P949: int MPI_Recv(void *buf, int count, MPI_Datatype datatype, int source, int tag,
+L81124@P949: MPI_Comm comm, MPI_Status *status)
+L81125@P949: int MPI_Request_free(MPI_Request *request)
+L81126@P949: int MPI_Request_get_status_all(int count,
+L81127@P949: const MPI_Request array_of_requests[], int *flag,
+L81128@P949: MPI_Status array_of_statuses[])
+L81129@P949: int MPI_Request_get_status_any(int count,
+L81130@P949: const MPI_Request array_of_requests[], int *index, int *flag,
+L81131@P949: MPI_Status *status)
+L81132@P949: int MPI_Request_get_status_some(int incount,
+L81133@P949: const MPI_Request array_of_requests[], int *outcount,
+L81134@P949: int array_of_indices[], MPI_Status array_of_statuses[])
+L81135@P949: int MPI_Request_get_status(MPI_Request request, int *flag, MPI_Status *status)
+L81136@P949: int MPI_Rsend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81137@P949: int dest, int tag, MPI_Comm comm)
+L81138@P949: int MPI_Rsend_init_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81139@P949: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L81140@P949: int MPI_Rsend_init(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81141@P949: int tag, MPI_Comm comm, MPI_Request *request)
+L81142@P949: int MPI_Rsend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81143@P949: int tag, MPI_Comm comm)
+L81144@P949: int MPI_Send_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81145@P949: int dest, int tag, MPI_Comm comm)
+L81146@P949: int MPI_Send_init_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81147@P949: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L81148@P949: int MPI_Send_init(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81149@P949: int tag, MPI_Comm comm, MPI_Request *request)
+L81150@P949: int MPI_Sendrecv_c(const void *sendbuf, MPI_Count sendcount,
+L81151@P949: MPI_Datatype sendtype, int dest, int sendtag, void *recvbuf,
+L81152@P949: MPI_Count recvcount, MPI_Datatype recvtype, int source,
+L81153@P949: int recvtag, MPI_Comm comm, MPI_Status *status)
+L81154@P949: int MPI_Sendrecv_replace_c(void *buf, MPI_Count count, MPI_Datatype datatype,
+L81155@P949: int dest, int sendtag, int source, int recvtag, MPI_Comm comm,
+L81156@P949: MPI_Status *status)
+L81157@P949: int MPI_Sendrecv_replace(void *buf, int count, MPI_Datatype datatype, int dest,
+L81158@P949: int sendtag, int source, int recvtag, MPI_Comm comm,
+L81159@P949: MPI_Status *status)
+L81160@P949: 1
+L81161@P949: 2
+L81162@P949: 3
+L81163@P949: 4
+L81164@P949: 5
+L81165@P949: 6
+L81166@P949: 7
+L81167@P949: 8
+L81168@P949: 9
+L81169@P949: 10
+L81170@P949: 11
+L81171@P949: 12
+L81172@P949: 13
+L81173@P949: 14
+L81174@P949: 15
+L81175@P949: 16
+L81176@P949: 17
+L81177@P949: 18
+L81178@P949: 19
+L81179@P949: 20
+L81180@P949: 21
+L81181@P949: 22
+L81182@P949: 23
+L81183@P949: 24
+L81184@P949: 25
+L81185@P949: 26
+L81186@P949: 27
+L81187@P949: 28
+L81188@P949: 29
+L81189@P949: 30
+L81190@P949: 31
+L81191@P949: 32
+L81192@P949: 33
+L81193@P949: 34
+L81194@P949: 35
+L81195@P949: 36
+L81196@P949: 37
+L81197@P949: 38
+L81198@P949: 39
+L81199@P949: 40
+L81200@P949: 41
+L81201@P949: 42
+L81202@P949: 43
+L81203@P949: 44
+L81204@P949: 45
+L81205@P949: 46
+L81206@P949: 47
+L81207@P949-950: 48899 A.3 C Bindings
+L81208@P950: int MPI_Sendrecv(const void *sendbuf, int sendcount, MPI_Datatype sendtype,
+L81209@P950: int dest, int sendtag, void *recvbuf, int recvcount,
+L81210@P950: MPI_Datatype recvtype, int source, int recvtag, MPI_Comm comm,
+L81211@P950: MPI_Status *status)
+L81212@P950: int MPI_Send(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81213@P950: int tag, MPI_Comm comm)
+L81214@P950: int MPI_Session_attach_buffer_c(MPI_Session session, void *buffer,
+L81215@P950: MPI_Count size)
+L81216@P950: int MPI_Session_attach_buffer(MPI_Session session, void *buffer, int size)
+L81217@P950: int MPI_Session_detach_buffer_c(MPI_Session session, void *buffer_addr,
+L81218@P950: MPI_Count *size)
+L81219@P950: int MPI_Session_detach_buffer(MPI_Session session, void *buffer_addr,
+L81220@P950: int *size)
+L81221@P950: int MPI_Session_flush_buffer(MPI_Session session)
+L81222@P950: int MPI_Session_iflush_buffer(MPI_Session session, MPI_Request *request)
+L81223@P950: int MPI_Ssend_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81224@P950: int dest, int tag, MPI_Comm comm)
+L81225@P950: int MPI_Ssend_init_c(const void *buf, MPI_Count count, MPI_Datatype datatype,
+L81226@P950: int dest, int tag, MPI_Comm comm, MPI_Request *request)
+L81227@P950: int MPI_Ssend_init(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81228@P950: int tag, MPI_Comm comm, MPI_Request *request)
+L81229@P950: int MPI_Ssend(const void *buf, int count, MPI_Datatype datatype, int dest,
+L81230@P950: int tag, MPI_Comm comm)
+L81231@P950: int MPI_Startall(int count, MPI_Request array_of_requests[])
+L81232@P950: int MPI_Start(MPI_Request *request)
+L81233@P950: int MPI_Status_get_error(const MPI_Status *status, int *err)
+L81234@P950: int MPI_Status_get_source(const MPI_Status *status, int *source)
+L81235@P950: int MPI_Status_get_tag(const MPI_Status *status, int *tag)
+L81236@P950: int MPI_Test_cancelled(const MPI_Status *status, int *flag)
+L81237@P950: int MPI_Testall(int count, MPI_Request array_of_requests[], int *flag,
+
