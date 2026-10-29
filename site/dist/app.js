@@ -52,24 +52,24 @@ function buildFilters() {
 }
 function restoreFilters() {
   const params=new URLSearchParams(location.search);
-  el('search').value=params.get(urlKeys.search)??params.get('search')??'';
+  el('search').value=params.get(urlKeys.search)??'';
   for(const filter of classifications) {
-    const values=params.getAll(params.has(urlKeys[filter.id])?urlKeys[filter.id]:filter.id);
+    const values=(params.get(urlKeys[filter.id])||'').split(',');
     el(filter.id).querySelectorAll('input').forEach(input=>{input.checked=values.includes(input.value);});
   }
   rangeAnchors.clear();
 }
 function updateFilterURL() {
   const url=new URL(location.href);
-  url.searchParams.delete('search');
   url.searchParams.delete(urlKeys.search);
   if(el('search').value)url.searchParams.set(urlKeys.search,el('search').value);
   for(const filter of classifications) {
-    url.searchParams.delete(filter.id);
     url.searchParams.delete(urlKeys[filter.id]);
-    selectedValues(filter.id).forEach(value=>url.searchParams.append(urlKeys[filter.id],value));
+    const values=selectedValues(filter.id);
+    if(values.length)url.searchParams.set(urlKeys[filter.id],values.join(','));
   }
-  if(url.href!==location.href)history.replaceState(null,'',url.href);
+  const href=url.href.replace(/%2C/gi,',');
+  if(href!==location.href)history.replaceState(null,'',href);
 }
 window.addEventListener('popstate',()=>{if(data){restoreFilters();render();}});
 function filtered() {
