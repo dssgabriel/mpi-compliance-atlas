@@ -36,3 +36,5 @@ each standard is the PDF document published by the MPI Forum at
 The MPI Compliance Atlas uses structured standard extracts and an SVG recreation
 of the MPI Forum icon. Implementation source and documentation evidence belongs
 to the respective Open MPI, MPICH and MPC projects.
+
+The site loads Archivo, Inter, and Geist Mono through Google Fonts.
