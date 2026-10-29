@@ -31,17 +31,45 @@ function statusLabel(evidence,link=true) {
   const content='<span class="status-symbol" aria-hidden="true">'+symbols[evidence.status]+'</span>'+statuses[evidence.status];
   return link ? '<a class="badge '+evidence.status+'" href="'+escape(evidence.source)+'" target="_blank" rel="noopener noreferrer" title="'+escape(evidence.reason)+'">'+content+'</a>' : '<span class="badge '+evidence.status+'">'+content+'</span>';
 }
+function selectedRevisions() {
+  return [...el('revision').querySelectorAll('input:checked')].map(input=>input.value);
+}
+const urlFilters = ['search','lifecycle','count',...implementations.map(key=>'status-'+key)];
+function restoreFilters() {
+  const params=new URLSearchParams(location.search);
+  for(const id of urlFilters) {
+    const control=el(id), value=params.get(id)||'';
+    control.value=control.tagName==='SELECT' && ![...control.options].some(option=>option.value===value)?'':value;
+  }
+  const revisions=params.getAll('revision');
+  el('revision').querySelectorAll('input').forEach(input=>{input.checked=revisions.includes(input.value);});
+  const chapter=params.get('chapter');
+  selectedKind=Object.hasOwn(kinds,chapter)?chapter:'all';
+}
+function updateFilterURL() {
+  const url=new URL(location.href);
+  for(const id of urlFilters) {
+    url.searchParams.delete(id);
+    if(el(id).value)url.searchParams.set(id,el(id).value);
+  }
+  url.searchParams.delete('revision');
+  selectedRevisions().forEach(revision=>url.searchParams.append('revision',revision));
+  url.searchParams.delete('chapter');
+  if(selectedKind!=='all')url.searchParams.set('chapter',selectedKind);
+  if(url.href!==location.href)history.replaceState(null,'',url.href);
+}
+window.addEventListener('popstate',()=>{if(data){restoreFilters();render();}});
 function filtered() {
   const query=el('search').value.trim().toLowerCase();
-  const revision=el('revision').value, lifecycle=el('lifecycle').value, count=el('count').value;
-  return data.rows.filter(row=>(selectedKind==='all'||row.kind===selectedKind) && (!revision||row.introduced===revision) && (!lifecycle||row.lifecycle===lifecycle) && (!count||row.large_count===(count==='large')) && (!query||searchText.get(row.name).includes(query)));
+  const revisions=selectedRevisions(), lifecycle=el('lifecycle').value, count=el('count').value;
+  return data.rows.filter(row=>(selectedKind==='all'||row.kind===selectedKind) && (!revisions.length||revisions.includes(row.introduced)) && (!lifecycle||row.lifecycle===lifecycle) && (!count||row.large_count===(count==='large')) && implementations.every(key=>!el('status-'+key).value||row[key].status===el('status-'+key).value) && (!query||searchText.get(row.name).includes(query)));
 }
 function compare(a,b) {
   return rank.indexOf(a.kind)-rank.indexOf(b.kind) || ((families.indexOf(a.family)+1||99)-(families.indexOf(b.family)+1||99)) || a.family.localeCompare(b.family) || (a.variant===b.variant?0:a.variant==='normal'?-1:b.variant==='normal'?1:a.variant.localeCompare(b.variant)) || a.name.localeCompare(b.name);
 }
 function filterState() {
   const query=el('search').value.trim();
-  el('filter-state').textContent='FILTER STATE: query='+JSON.stringify(query)+' / chapter='+kinds[selectedKind]+' / revision='+(el('revision').value||'all')+' / lifecycle='+(el('lifecycle').value||'all')+' / count='+(el('count').value||'all');
+  el('filter-state').textContent='FILTER STATE: query='+JSON.stringify(query)+' / chapter='+kinds[selectedKind]+' / revision='+(selectedRevisions().join(', ')||'all')+' / lifecycle='+(el('lifecycle').value||'all')+' / count='+(el('count').value||'all')+implementations.map(key=>' / '+implementationNames[key]+'='+(el('status-'+key).value||'all')).join('');
 }
 function selectionState() {
   const visible=selectedAPI && visibleNames.has(selectedAPI);
@@ -61,7 +89,9 @@ function render() {
   visibleNames=new Set(rows.map(row=>row.name));
   el('results').textContent=rows.length.toLocaleString()+' of '+data.rows.length.toLocaleString()+' APIs';
   el('empty').hidden=rows.length>0;
+  el('revision-summary').textContent=selectedRevisions().map(revision=>'MPI '+revision).join(', ')||'All revisions';
   filterState();
+  updateFilterURL();
   let previous=null;
   const html=[];
   for(const row of rows) {
@@ -105,7 +135,7 @@ function sourceLedger() {
     return '<div class="source-record"><h3>'+implementationNames[key]+' / '+escape(source.version)+'</h3><p>PRODUCTION FILES SCANNED: '+source.files_scanned.toLocaleString()+'</p><p>UNRESOLVED APIs: '+(source.unresolved||[]).length+'</p><div class="record-links">'+external(source.archive,'Official release archive')+'</div><p class="checksum"><span>ARCHIVE SHA-256</span>'+escape(source.sha256)+'</p></div>';
   }).join('');
 }
-['search','revision','lifecycle','count'].forEach(id=>el(id).addEventListener(id==='search'?'input':'change',()=>{if(data)render();}));
+['search','revision','lifecycle','count',...implementations.map(key=>'status-'+key)].forEach(id=>el(id).addEventListener(id==='search'?'input':'change',()=>{if(data)render();}));
 el('kinds').addEventListener('click',event=>{
   const button=event.target.closest('[data-kind]');
   if(button&&data) {selectedKind=button.dataset.kind;render();}
@@ -117,7 +147,8 @@ el('rows').addEventListener('click',event=>{
   }
 });
 el('reset').addEventListener('click',()=>{
-  for(const id of ['search','revision','lifecycle','count'])el(id).value='';
+  for(const id of ['search','lifecycle','count',...implementations.map(key=>'status-'+key)])el(id).value='';
+  el('revision').querySelectorAll('input').forEach(input=>{input.checked=false;});
   selectedKind='all';
   if(data)render();
 });
@@ -142,10 +173,11 @@ fetch('apis.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).th
   el('audit-state').textContent=implementations.map(key=>implementationNames[key]+' '+data.implementations[key]+': '+data.audit[key]).join(' / ');
   el('summary').innerHTML=[[data.rows.length,'C entries'],[kindCounts.size,'standard chapters'],[new Set(data.rows.map(row=>row.introduced)).size,'introduction revisions'],[implementations.length,'release source trees']].map(([count,label])=>'<span class="inventory-item"><strong>'+count+'</strong> '+label+'</span>').join('');
   el('kinds').innerHTML=Object.entries(kinds).filter(([key])=>key==='all'||kindCounts.has(key)).map(([key,label])=>'<button data-kind="'+key+'" aria-pressed="'+(key==='all')+'">'+label+'<span class="count">'+(key==='all'?data.rows.length:kindCounts.get(key))+'</span></button>').join('');
-  [...new Set(data.rows.map(row=>row.introduced))].sort((a,b)=>parseFloat(a)-parseFloat(b)).forEach(revision=>el('revision').add(new Option('MPI '+revision,revision)));
+  [...new Set(data.rows.map(row=>row.introduced))].sort((a,b)=>parseFloat(a)-parseFloat(b)).forEach(revision=>el('revision').insertAdjacentHTML('beforeend','<label><input type="checkbox" value="'+escape(revision)+'"> MPI '+escape(revision)+'</label>'));
   const coverage=data.standard_audit.coverage;
   el('standard-audit-state').textContent='VAULT AUDIT: '+coverage.matched_standard_entries+' / '+coverage.standard_entries+' standard C entries matched; '+coverage.missing.length+' missing; '+coverage.unexpected_current_entries.length+' unexpected. '+coverage.retained_removed_entries.length+' removed MPI-1 entries retained. This checks catalogue coverage; implementation behavior requires runtime conformance tests.';
   sourceLedger();
+  restoreFilters();
   render();
   showDetail(data.rows[0].name);
 }).catch(()=>{

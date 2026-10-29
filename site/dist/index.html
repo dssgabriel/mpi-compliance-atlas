@@ -5,7 +5,7 @@
   <title>MPI Compliance Atlas — Implementation register</title>
   <meta name="description" content="A source-backed register of MPI C APIs: introduction revisions, taxonomy and implementation evidence for Open MPI, MPICH and MPC.">
   <link rel="icon" type="image/svg+xml" href="assets/mpi-forum-logo.svg">
-  <link rel="stylesheet" href="style.css?v=d760a04c817b"><script src="app.js?v=92a02e8ef7e3" defer></script>
+  <link rel="stylesheet" href="style.css?v=67b4b1bb6557"><script src="app.js?v=5703a1cbfc1f" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#search">Skip to catalogue controls</a>
@@ -20,9 +20,12 @@
       <div class="section-title"><h2>API register</h2><span>ORDER: CHAPTER → SECTION → OPERATION FORM → API NAME</span></div>
       <div class="toolbar">
         <label class="search">Search name / classification<input id="search" type="search" placeholder="MPI_Allreduce, sessions, datatypes…" autocomplete="off" aria-describedby="filter-state"></label>
-        <label>Introduced in<select id="revision"><option value="">All revisions</option></select></label>
+        <div class="revision-filter"><span id="revision-label">Introduced in</span><details id="revision-picker"><summary id="revision-summary">All revisions</summary><div id="revision" role="group" aria-labelledby="revision-label"></div></details></div>
         <label>Standard lifecycle<select id="lifecycle"><option value="">All lifecycles</option><option value="current">Current</option><option value="deprecated">Deprecated</option><option value="removed">Removed</option></select></label>
         <label>Count binding<select id="count"><option value="">All count bindings</option><option value="normal">Standard count</option><option value="large">Large count (_c)</option></select></label>
+        <label>Open MPI status<select id="status-openmpi"><option value="">All statuses</option><option value="supported">Supported</option><option value="unsupported">Unsupported</option><option value="unknown">Unknown</option></select></label>
+        <label>MPICH status<select id="status-mpich"><option value="">All statuses</option><option value="supported">Supported</option><option value="unsupported">Unsupported</option><option value="unknown">Unknown</option></select></label>
+        <label>MPC MPI status<select id="status-mpc"><option value="">All statuses</option><option value="supported">Supported</option><option value="unsupported">Unsupported</option><option value="unknown">Unknown</option></select></label>
         <button id="reset" class="reset-button">Reset filters</button>
       </div>
       <nav class="kinds" id="kinds" aria-label="Filter by standard chapter"></nav>
