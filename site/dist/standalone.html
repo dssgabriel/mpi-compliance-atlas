@@ -58107,6 +58107,7 @@ const classifications = [
   {id:'count',label:'Count binding',value:row=>row.large_count?'large':'normal',labelFor:value=>value==='large'?'Large count (_c)':'Standard count'},
   ...implementations.map(key=>({id:'status-'+key,label:implementationNames[key]+' status',value:row=>row[key].status,labelFor:value=>statuses[value]}))
 ];
+const urlKeys={search:'q',chapter:'ch',revision:'rev',lifecycle:'life',count:'cnt','status-openmpi':'ompi','status-mpich':'mpich','status-mpc':'mpc'};
 const rangeAnchors=new Map();
 function selectedValues(id) {
   return [...el(id).querySelectorAll('input:checked')].map(input=>input.value);
@@ -58121,9 +58122,9 @@ function buildFilters() {
 }
 function restoreFilters() {
   const params=new URLSearchParams(location.search);
-  el('search').value=params.get('search')||'';
+  el('search').value=params.get(urlKeys.search)??params.get('search')??'';
   for(const filter of classifications) {
-    const values=params.getAll(filter.id);
+    const values=params.getAll(params.has(urlKeys[filter.id])?urlKeys[filter.id]:filter.id);
     el(filter.id).querySelectorAll('input').forEach(input=>{input.checked=values.includes(input.value);});
   }
   rangeAnchors.clear();
@@ -58131,10 +58132,12 @@ function restoreFilters() {
 function updateFilterURL() {
   const url=new URL(location.href);
   url.searchParams.delete('search');
-  if(el('search').value)url.searchParams.set('search',el('search').value);
+  url.searchParams.delete(urlKeys.search);
+  if(el('search').value)url.searchParams.set(urlKeys.search,el('search').value);
   for(const filter of classifications) {
     url.searchParams.delete(filter.id);
-    selectedValues(filter.id).forEach(value=>url.searchParams.append(filter.id,value));
+    url.searchParams.delete(urlKeys[filter.id]);
+    selectedValues(filter.id).forEach(value=>url.searchParams.append(urlKeys[filter.id],value));
   }
   if(url.href!==location.href)history.replaceState(null,'',url.href);
 }
