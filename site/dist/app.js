@@ -6,9 +6,8 @@ const implementationNames = {openmpi:'Open MPI',mpich:'MPICH',mpc:'MPC MPI'};
 const implementations = Object.keys(implementationNames);
 const rank = [];
 const families = [];
-let data, selectedKind='all', selectedAPI=null, visibleNames=new Set();
+let data,  selectedAPI=null, visibleNames=new Set();
 const records = new Map();
-const searchText = new Map();
 const el = id => document.getElementById(id);
 const escape = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const external = (url,label) => '<a href="'+escape(url)+'" target="_blank" rel="noopener noreferrer">'+escape(label)+' ↗</a>';
@@ -31,45 +30,61 @@ function statusLabel(evidence,link=true) {
   const content='<span class="status-symbol" aria-hidden="true">'+symbols[evidence.status]+'</span>'+statuses[evidence.status];
   return link ? '<a class="badge '+evidence.status+'" href="'+escape(evidence.source)+'" target="_blank" rel="noopener noreferrer" title="'+escape(evidence.reason)+'">'+content+'</a>' : '<span class="badge '+evidence.status+'">'+content+'</span>';
 }
-function selectedRevisions() {
-  return [...el('revision').querySelectorAll('input:checked')].map(input=>input.value);
+const classifications = [
+  {id:'chapter',label:'Chapters',value:row=>row.kind,labelFor:value=>kinds[value]},
+  {id:'revision',label:'Introduced in',value:row=>row.introduced,labelFor:value=>'MPI '+value},
+  {id:'lifecycle',label:'Standard lifecycle',value:row=>row.lifecycle},
+  {id:'count',label:'Count binding',value:row=>row.large_count?'large':'normal',labelFor:value=>value==='large'?'Large count (_c)':'Standard count'},
+  ...implementations.map(key=>({id:'status-'+key,label:implementationNames[key]+' status',value:row=>row[key].status,labelFor:value=>statuses[value]}))
+];
+const rangeAnchors=new Map();
+function selectedValues(id) {
+  return [...el(id).querySelectorAll('input:checked')].map(input=>input.value);
 }
-const urlFilters = ['search','lifecycle','count',...implementations.map(key=>'status-'+key)];
+function buildFilters() {
+  el('classification-filters').innerHTML=classifications.map(filter=>{
+    const values=[...new Set(data.rows.map(filter.value))];
+    if(filter.id==='revision')values.sort((a,b)=>parseFloat(a)-parseFloat(b));
+    filter.options=values.map(value=>({value,label:filter.labelFor?filter.labelFor(value):value}));
+    return '<div class="classification-filter"><span id="'+filter.id+'-label">'+escape(filter.label)+'</span><details><summary id="'+filter.id+'-summary" aria-labelledby="'+filter.id+'-label '+filter.id+'-summary">All</summary><div class="checkbox-options" id="'+filter.id+'" role="group" aria-labelledby="'+filter.id+'-label" aria-describedby="classification-help">'+filter.options.map(option=>'<label><input type="checkbox" value="'+escape(option.value)+'">'+escape(option.label)+'</label>').join('')+'</div></details></div>';
+  }).join('');
+}
 function restoreFilters() {
   const params=new URLSearchParams(location.search);
-  for(const id of urlFilters) {
-    const control=el(id), value=params.get(id)||'';
-    control.value=control.tagName==='SELECT' && ![...control.options].some(option=>option.value===value)?'':value;
+  el('search').value=params.get('search')||'';
+  for(const filter of classifications) {
+    const values=params.getAll(filter.id);
+    el(filter.id).querySelectorAll('input').forEach(input=>{input.checked=values.includes(input.value);});
   }
-  const revisions=params.getAll('revision');
-  el('revision').querySelectorAll('input').forEach(input=>{input.checked=revisions.includes(input.value);});
-  const chapter=params.get('chapter');
-  selectedKind=Object.hasOwn(kinds,chapter)?chapter:'all';
+  rangeAnchors.clear();
 }
 function updateFilterURL() {
   const url=new URL(location.href);
-  for(const id of urlFilters) {
-    url.searchParams.delete(id);
-    if(el(id).value)url.searchParams.set(id,el(id).value);
+  url.searchParams.delete('search');
+  if(el('search').value)url.searchParams.set('search',el('search').value);
+  for(const filter of classifications) {
+    url.searchParams.delete(filter.id);
+    selectedValues(filter.id).forEach(value=>url.searchParams.append(filter.id,value));
   }
-  url.searchParams.delete('revision');
-  selectedRevisions().forEach(revision=>url.searchParams.append('revision',revision));
-  url.searchParams.delete('chapter');
-  if(selectedKind!=='all')url.searchParams.set('chapter',selectedKind);
   if(url.href!==location.href)history.replaceState(null,'',url.href);
 }
 window.addEventListener('popstate',()=>{if(data){restoreFilters();render();}});
 function filtered() {
   const query=el('search').value.trim().toLowerCase();
-  const revisions=selectedRevisions(), lifecycle=el('lifecycle').value, count=el('count').value;
-  return data.rows.filter(row=>(selectedKind==='all'||row.kind===selectedKind) && (!revisions.length||revisions.includes(row.introduced)) && (!lifecycle||row.lifecycle===lifecycle) && (!count||row.large_count===(count==='large')) && implementations.every(key=>!el('status-'+key).value||row[key].status===el('status-'+key).value) && (!query||searchText.get(row.name).includes(query)));
+  const filters=classifications.map(filter=>({filter,values:selectedValues(filter.id)}));
+  return data.rows.filter(row=>filters.every(({filter,values})=>!values.length||values.includes(filter.value(row))) && (!query||row.name.toLowerCase().includes(query)));
 }
 function compare(a,b) {
   return rank.indexOf(a.kind)-rank.indexOf(b.kind) || ((families.indexOf(a.family)+1||99)-(families.indexOf(b.family)+1||99)) || a.family.localeCompare(b.family) || (a.variant===b.variant?0:a.variant==='normal'?-1:b.variant==='normal'?1:a.variant.localeCompare(b.variant)) || a.name.localeCompare(b.name);
 }
 function filterState() {
-  const query=el('search').value.trim();
-  el('filter-state').textContent='FILTER STATE: query='+JSON.stringify(query)+' / chapter='+kinds[selectedKind]+' / revision='+(selectedRevisions().join(', ')||'all')+' / lifecycle='+(el('lifecycle').value||'all')+' / count='+(el('count').value||'all')+implementations.map(key=>' / '+implementationNames[key]+'='+(el('status-'+key).value||'all')).join('');
+  const descriptions=classifications.map(filter=>{
+    const values=selectedValues(filter.id);
+    const label=filter.options.filter(option=>values.includes(option.value)).map(option=>option.label).join(', ')||'All';
+    el(filter.id+'-summary').textContent=label;
+    return filter.label+'='+label;
+  });
+  el('filter-state').textContent='FILTER STATE: query='+JSON.stringify(el('search').value.trim())+' / '+descriptions.join(' / ');
 }
 function selectionState() {
   const visible=selectedAPI && visibleNames.has(selectedAPI);
@@ -89,7 +104,6 @@ function render() {
   visibleNames=new Set(rows.map(row=>row.name));
   el('results').textContent=rows.length.toLocaleString()+' of '+data.rows.length.toLocaleString()+' APIs';
   el('empty').hidden=rows.length>0;
-  el('revision-summary').textContent=selectedRevisions().map(revision=>'MPI '+revision).join(', ')||'All revisions';
   filterState();
   updateFilterURL();
   let previous=null;
@@ -101,7 +115,6 @@ function render() {
   }
   el('rows').innerHTML=html.join('');
   el('support-totals').innerHTML=totalsHTML(rows);
-  for(const button of el('kinds').children) button.setAttribute('aria-pressed',String(button.dataset.kind===selectedKind));
   selectionState();
 }
 function markSelection(name,selected) {
@@ -135,11 +148,19 @@ function sourceLedger() {
     return '<div class="source-record"><h3>'+implementationNames[key]+' / '+escape(source.version)+'</h3><p>PRODUCTION FILES SCANNED: '+source.files_scanned.toLocaleString()+'</p><p>UNRESOLVED APIs: '+(source.unresolved||[]).length+'</p><div class="record-links">'+external(source.archive,'Official release archive')+'</div><p class="checksum"><span>ARCHIVE SHA-256</span>'+escape(source.sha256)+'</p></div>';
   }).join('');
 }
-['search','revision','lifecycle','count',...implementations.map(key=>'status-'+key)].forEach(id=>el(id).addEventListener(id==='search'?'input':'change',()=>{if(data)render();}));
-el('kinds').addEventListener('click',event=>{
-  const button=event.target.closest('[data-kind]');
-  if(button&&data) {selectedKind=button.dataset.kind;render();}
+el('search').addEventListener('input',()=>{if(data)render();});
+el('classification-filters').addEventListener('click',event=>{
+  const input=event.target;
+  if(!input.matches('input[type="checkbox"]'))return;
+  const group=input.closest('.checkbox-options');
+  const inputs=[...group.querySelectorAll('input')];
+  const index=inputs.indexOf(input), anchor=rangeAnchors.get(group.id);
+  if(event.shiftKey && anchor!==undefined) {
+    for(let i=Math.min(anchor,index);i<=Math.max(anchor,index);i++)inputs[i].checked=input.checked;
+  }
+  rangeAnchors.set(group.id,index);
 });
+el('classification-filters').addEventListener('change',()=>{if(data)render();});
 el('rows').addEventListener('click',event=>{
   const button=event.target.closest('[data-api]');
   if(button) {
@@ -147,9 +168,8 @@ el('rows').addEventListener('click',event=>{
   }
 });
 el('reset').addEventListener('click',()=>{
-  for(const id of ['search','lifecycle','count',...implementations.map(key=>'status-'+key)])el(id).value='';
-  el('revision').querySelectorAll('input').forEach(input=>{input.checked=false;});
-  selectedKind='all';
+  el('classification-filters').querySelectorAll('input').forEach(input=>{input.checked=false;});
+  rangeAnchors.clear();
   if(data)render();
 });
 el('close').addEventListener('click',()=>{
@@ -165,15 +185,13 @@ fetch('apis.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).th
   const kindCounts=new Map();
   for(const row of data.rows) {
     records.set(row.name,row);
-    searchText.set(row.name,[row.name,row.kind,kinds[row.kind],row.family,row.variant,row.section,...(row.section_path||[]),row.communication_mode,row.collective_scope,row.io_positioning,row.io_coordination,row.procedure_role,row.entry_type].join(' ').toLowerCase());
     kindCounts.set(row.kind,(kindCounts.get(row.kind)||0)+1);
   }
   for(const key of implementations)el('version-'+key).textContent=data.implementations[key];
   el('checked').textContent='SOURCE SNAPSHOT '+data.checked;
   el('audit-state').textContent=implementations.map(key=>implementationNames[key]+' '+data.implementations[key]+': '+data.audit[key]).join(' / ');
   el('summary').innerHTML=[[data.rows.length,'C entries'],[kindCounts.size,'standard chapters'],[new Set(data.rows.map(row=>row.introduced)).size,'introduction revisions'],[implementations.length,'release source trees']].map(([count,label])=>'<span class="inventory-item"><strong>'+count+'</strong> '+label+'</span>').join('');
-  el('kinds').innerHTML=Object.entries(kinds).filter(([key])=>key==='all'||kindCounts.has(key)).map(([key,label])=>'<button data-kind="'+key+'" aria-pressed="'+(key==='all')+'">'+label+'<span class="count">'+(key==='all'?data.rows.length:kindCounts.get(key))+'</span></button>').join('');
-  [...new Set(data.rows.map(row=>row.introduced))].sort((a,b)=>parseFloat(a)-parseFloat(b)).forEach(revision=>el('revision').insertAdjacentHTML('beforeend','<label><input type="checkbox" value="'+escape(revision)+'"> MPI '+escape(revision)+'</label>'));
+  buildFilters();
   const coverage=data.standard_audit.coverage;
   el('standard-audit-state').textContent='VAULT AUDIT: '+coverage.matched_standard_entries+' / '+coverage.standard_entries+' standard C entries matched; '+coverage.missing.length+' missing; '+coverage.unexpected_current_entries.length+' unexpected. '+coverage.retained_removed_entries.length+' removed MPI-1 entries retained. This checks catalogue coverage; implementation behavior requires runtime conformance tests.';
   sourceLedger();
