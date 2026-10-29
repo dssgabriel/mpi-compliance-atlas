@@ -50,7 +50,7 @@ directly may block the JSON fetch.
 - [Open MPI 5.0.10](https://docs.open-mpi.org/en/v5.0.10/man-openmpi/man3/index.html)
   and [MPICH 5.0.2](https://www.mpich.org/static/docs/v5.0.2/) manual indexes supply
   per-name documentation evidence.
-- [MPC 4.3.1](https://github.com/cea-hpc/mpc/releases/tag/MPC_4.3.1) is the latest
+- [MPC 4.5.0](https://github.com/cea-hpc/mpc/releases/tag/MPC_4.5.0) is the latest
   release checked. Its general conformance statement is not used as per-function
   evidence. Its release sources are now included in the source review.
 
@@ -70,11 +70,11 @@ of candidate stubs, implementing macros and predefined callback aliases:
 | --- | ---: | ---: | ---: |
 | Open MPI 5.0.10 | 482 | 232 | 0 |
 | MPICH 5.0.2 | 714 | 0 | 0 |
-| MPC 4.3.1 | 441 | 272 | 1 |
+| MPC 4.5.0 | 441 | 273 | 0 |
 
-MPC's `MPI_Register_datarep` is the single unresolved case: a core aborting stub
-conflicts with a bundled ROMIO implementation. Resolving which symbol is exposed
-requires a built-library/linkage check. MPC status conversions documented in its
+MPC's `MPI_Register_datarep` is unsupported under the tested normal wrapper
+linkage: the core aborting stub takes precedence over the bundled ROMIO
+implementation. Other build configurations have not been verified. MPC status conversions documented in its
 manpages but lacking C implementations are unsupported. Error registration and
 MPI_T routines returning success without writing outputs are unsupported too.
 
@@ -83,7 +83,8 @@ conformance or absence of runtime bugs**. This review detects missing APIs and
 identified stubs; it does not exhaustively verify every backend, platform,
 algorithm, argument combination or build configuration. MPI-I/O requires the
 implementation's I/O component. Open MPI's removed MPI-1 declarations require
-`--enable-mpi1-compatibility`. No runtime conformance tests were performed.
+`--enable-mpi1-compatibility`. A focused MPC linkage check was performed; no general runtime conformance
+suite was run.
 
 Grouping follows MPI 5.0 chapters and section paths extracted from the released
 vault. Sessions belong to Process Initialization, Creation, and Management;
@@ -133,7 +134,8 @@ python3 site/scripts/build_standalone.py
 
 This establishes catalogue coverage and improves classification. It does not
 establish semantic or runtime conformance of Open MPI, MPICH or MPC; their
-existing release-source evidence and unresolved linkage case remain applicable.
+release-source evidence remains applicable; the MPC linkage check resolves its
+earlier unknown entry.
 
 ## Rebuild / refresh
 
@@ -153,9 +155,10 @@ python3 site/scripts/build_data.py
 
 The standards scraper requires Python 3 and Poppler's `pdftotext`. It caches
 sources and fails on missing/incomplete documents rather than discarding APIs.
-The shell cannot resolve download hosts in this environment; the documentation
-snapshot was retrieved through the web reader and the user downloaded the
-release archives. The complete cached-source inventory now runs successfully.
+The documentation snapshot was retrieved through the web reader and the user
+downloaded the release archives. MPC 4.5.0 was refreshed from its GitHub tag
+archive, with reviewed source links updated for the CMake build. Info handle
+conversions require `MPC_ENABLE_FORTRAN`. The complete cached-source inventory now runs successfully.
 
 Inventory the exact release source archives on a network-enabled machine:
 
@@ -189,7 +192,7 @@ evidence links point to their versioned generator templates when available.
 For an already downloaded official archive:
 
 ```sh
-python3 site/scripts/audit_sources.py --impl mpc --archive /path/to/mpc-MPC_4.3.1.tar.gz
+python3 site/scripts/audit_sources.py --impl mpc --archive /path/to/mpc-MPC_4.5.0.tar.gz
 ```
 
 The scanner and reviewed snapshot are verified by:

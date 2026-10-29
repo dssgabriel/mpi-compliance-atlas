@@ -317,116 +317,334 @@
   },
   "mpc": {
     "MPI_Add_error_class": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpc_mpi.c#L15970",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15961",
       "reason": "Returns MPI_SUCCESS without creating an error class/code or registering a string. Output/state is unchanged; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_Add_error_code": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpc_mpi.c#L15976",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15967",
       "reason": "Returns MPI_SUCCESS without creating an error class/code or registering a string. Output/state is unchanged; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_Add_error_string": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpc_mpi.c#L15982",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15973",
       "reason": "Returns MPI_SUCCESS without creating an error class/code or registering a string. Output/state is unchanged; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_T_event_callback_get_info": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpit.c#L1716",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpit.c#L1716",
       "reason": "Ignores every argument and returns MPI_SUCCESS. No output is produced or info state stored; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_T_event_callback_set_info": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpit.c#L1705",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpit.c#L1705",
       "reason": "Ignores every argument and returns MPI_SUCCESS. No output is produced or info state stored; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_T_event_handle_get_info": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpit.c#L1644",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpit.c#L1644",
       "reason": "Ignores every argument and returns MPI_SUCCESS. No output is produced or info state stored; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_T_event_handle_set_info": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpit.c#L1635",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpit.c#L1635",
       "reason": "Ignores every argument and returns MPI_SUCCESS. No output is produced or info state stored; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_T_event_get_source": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpit.c#L1848",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpit.c#L1848",
       "reason": "Ignores every argument and returns MPI_SUCCESS. No output is produced or info state stored; this is an unimplemented success stub.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_CONVERSION_FN_NULL": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/include/mpc_mpi.h#L801",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/include/mpc_mpi.h#L802",
       "reason": "Only declarations or profiling-name mappings exist. No C definition, implementing macro or generated C implementation was found in the release. Documentation does not establish implementation.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_Status_c2f": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_IO/src/romio/adio/include/mpipr.h#L330",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_Fortran/src/mpi_interface.json#L1219",
       "reason": "Only declarations or profiling-name mappings exist. No C definition, implementing macro or generated C implementation was found in the release. Documentation does not establish implementation.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_Status_f2c": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_IO/src/romio/adio/include/mpipr.h#L332",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_Fortran/src/mpi_interface.json#L1223",
       "reason": "Only declarations or profiling-name mappings exist. No C definition, implementing macro or generated C implementation was found in the release. Documentation does not establish implementation.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_T_source_get_timestamp": {
-      "version": "4.3.1",
+      "version": "4.5.0",
       "status": "unsupported",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpit.c#L1485",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpit.c#L1485",
       "reason": "Valid indices fall through to MPI_T_ERR_NOT_SUPPORTED. The timestamp output is never written; invalid-index checking does not implement this API.",
       "basis": "reviewed source",
       "review_required": false
     },
     "MPI_Register_datarep": {
-      "version": "4.3.1",
-      "status": "unknown",
-      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_MPI/src/mpc_mpi.c#L16716",
-      "reason": "Conflicting release definitions: the core PMPI_Register_datarep aborts through not_implemented(), while bundled ROMIO has a nontrivial implementation. Both appear in build source lists. Which definition is exposed depends on linkage/build configuration; a built-library link check is needed to resolve this conflict.",
-      "basis": "reviewed source",
+      "version": "4.5.0",
+      "status": "unsupported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L17136",
+      "reason": "The core PMPI_Register_datarep is an unconditional not_implemented() stub, with MPI_Register_datarep as its weak alias. The release compiler wrapper links the core MPI library before the I/O library, selecting this aborting definition. Bundled ROMIO also defines the API, but its implementation is not reached under the tested normal wrapper linkage. Other build configurations have not been verified.",
+      "basis": "reviewed source and linkage",
       "review_required": false,
       "additional_sources": [
         {
           "title": "Bundled ROMIO implementation",
-          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_IO/src/romio/mpi-io/register_datarep.c#L56"
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_IO/src/romio/mpi-io/register_datarep.c#L56"
         },
         {
-          "title": "ROMIO build source list",
-          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.3.1/src/MPC_IO/src/romio/Makefile.am#L158"
+          "title": "ROMIO CMake build source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_IO/src/romio/CMakeLists.txt#L63"
+        },
+        {
+          "title": "Core MPI CMake build source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        },
+        {
+          "title": "Core weak MPI-to-PMPI alias",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi_weak.h#L374"
+        }
+      ]
+    },
+    "MPI_Info_c2f": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/fortran.c#L461",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified. This implementation requires MPC_ENABLE_FORTRAN.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L29"
+        }
+      ]
+    },
+    "MPI_Info_create": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15720",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_delete": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15715",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_dup": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15705",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_f2c": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/fortran.c#L446",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified. This implementation requires MPC_ENABLE_FORTRAN.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L29"
+        }
+      ]
+    },
+    "MPI_Info_free": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15700",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_get": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15658",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_get_nkeys": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15725",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_get_nthkey": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15730",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_get_valuelen": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15735",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Info_set": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L15653",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Status_set_elements_x": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L10246",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Type_create_darray": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L11583",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Type_create_subarray": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L11638",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
+        }
+      ]
+    },
+    "MPI_Type_size_x": {
+      "version": "4.5.0",
+      "status": "supported",
+      "source": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/src/mpc_mpi.c#L11269",
+      "reason": "Core C API implementation selected by the MPC 4.5.0 CMake build. Bundled ROMIO fallback sources are not used as primary evidence. Static source evidence; runtime conformance has not been verified.",
+      "basis": "reviewed source",
+      "review_required": false,
+      "additional_sources": [
+        {
+          "title": "Core MPI CMake source list",
+          "url": "https://github.com/cea-hpc/mpc/blob/MPC_4.5.0/src/MPC_MPI/CMakeLists.txt#L25"
         }
       ]
     }

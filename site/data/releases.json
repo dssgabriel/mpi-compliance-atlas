@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-06",
+  "checked": "2026-10-29",
   "openmpi": {
     "version": "5.0.10",
     "tag": "v5.0.10",
@@ -19,11 +19,11 @@
     "manual": "https://www.mpich.org/static/docs/v5.0.2/"
   },
   "mpc": {
-    "version": "4.3.1",
-    "tag": "MPC_4.3.1",
+    "version": "4.5.0",
+    "tag": "MPC_4.5.0",
     "repository": "https://github.com/cea-hpc/mpc",
-    "release": "https://github.com/cea-hpc/mpc/releases/tag/MPC_4.3.1",
-    "archive": "https://github.com/cea-hpc/mpc/archive/refs/tags/MPC_4.3.1.tar.gz",
-    "archive_root": "mpc-MPC_4.3.1"
+    "release": "https://github.com/cea-hpc/mpc/releases/tag/MPC_4.5.0",
+    "archive": "https://github.com/cea-hpc/mpc/archive/refs/tags/MPC_4.5.0.tar.gz",
+    "archive_root": "mpc-MPC_4.5.0"
   }
 }
