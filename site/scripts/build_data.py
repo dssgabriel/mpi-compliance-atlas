@@ -39,9 +39,11 @@ refreshed = json.loads(refresh_path.read_text()) if refresh_path.exists() else N
 if refreshed:
     catalog = refreshed['standards']['5']
     old11, old22, old31 = (set(refreshed['standards'][v]) for v in ('11', '22', '31'))
-removed = {'MPI_Address', 'MPI_Errhandler_create', 'MPI_Errhandler_get', 'MPI_Errhandler_set', 'MPI_Type_extent', 'MPI_Type_hindexed', 'MPI_Type_hvector', 'MPI_Type_lb', 'MPI_Type_struct', 'MPI_Type_ub'}
-for name in removed:
-    catalog[name] = {'name': name, 'standard': 'https://www.mpi-forum.org/docs/mpi-1.1/mpi-11-html/mpi-report.html', 'section': 'Removed MPI-1 APIs'}
+removed = {'MPI_Address': 77, 'MPI_Errhandler_create': 203, 'MPI_Errhandler_get': 204,
+           'MPI_Errhandler_set': 204, 'MPI_Type_extent': 78, 'MPI_Type_hindexed': 75,
+           'MPI_Type_hvector': 73, 'MPI_Type_lb': 80, 'MPI_Type_struct': 76, 'MPI_Type_ub': 80}
+for name, page in removed.items():
+    catalog[name] = {'name': name, 'standard': f'https://www.mpi-forum.org/docs/mpi-1.1/mpi1-report.pdf#page={page}', 'section': 'Removed MPI-1 APIs'}
 for name in ['MPI_Aint_add', 'MPI_Aint_diff']:
     catalog[name] = {'name': name, 'standard': PDF+'#page=199', 'section': 'Address arithmetic'}
 for name, page in [('MPI_Wtime', 519), ('MPI_Wtick', 520)]:
@@ -70,10 +72,12 @@ if refreshed:
 
 
 vault_audit = json.loads((ROOT/'data/standard-vault-audit.json').read_text())
+html_links = json.loads((ROOT/'data/standard-html-links.json').read_text())
 rows=[]
 for n, row in sorted(catalog.items()):
     rev = '5.0' if n.startswith('MPI_Abi_') or n.endswith(('_fromint','_toint')) else '4.1' if n in new41 else '3.1' if n in new31 else '2.2' if n in new22 else '1.2' if n=='MPI_Get_version' else '1.0' if n in old11 or n in {'MPI_DUP_FN','MPI_NULL_COPY_FN','MPI_NULL_DELETE_FN'} else '2.0' if n in old22 else '3.0' if n in old31 else '4.0'
     row.update(introduced=rev, introduction_source=intro_sources[rev], large_count=n.lower().endswith('_c'), lifecycle='removed' if n in removed else 'deprecated' if 'Deprecated' in row['section'] else 'current')
+    row['standard_html'] = html_links[n]
     row.update(classify(n, row['section']))
     binding = vault_audit['bindings'].get(n)
     row['entry_type'] = 'callback sentinel' if n.startswith('MPI_CONVERSION_FN_NULL') else 'predefined callback' if n.isupper() else 'routine'

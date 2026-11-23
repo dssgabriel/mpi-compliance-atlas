@@ -3,7 +3,9 @@
 A static page comparing MPI C APIs across the standard, Open MPI, MPICH and MPC.
 The checked-in snapshot contains 714 C-callable entries in a flat register,
 ordered by **chapter → section → operation form**, with explicit classification columns,
-search, introduction revision, lifecycle and count binding filters. Every entry links to its C binding summary, chapter/section evidence and support evidence.
+search, introduction revision, lifecycle and count binding filters. The source
+inspector links each entry to its definition in the MPI Forum HTML rendering,
+with the PDF, available vault bindings, and implementation evidence alongside it.
 
 The interface uses square corners, compact monospaced typography and ruled
 tables. Filter state and filtered support totals are explicit. A persistent
@@ -113,6 +115,29 @@ signature SHA-256, exact prototypes, coverage and historical discrepancies.
 `site/data/standard-grouping.json` records chapter/heading evidence, and
 `site/data/standard-assessment.md` explains the result and limitations.
 The MPI Forum PDF remains normative; the vaults are derived renderings.
+
+## Standard section links
+
+`site/data/standard-html-links.json` maps entries to MPI 5.0 HTML section
+anchors, or to MPI 1.1 sections for removed interfaces. The extractor uses
+C binding blocks in the main text, not index mentions, with reviewed targets
+for predefined callbacks, conversion sentinels, and ambiguous bindings.
+The Forum's HTML is unofficial and its section numbering can differ from the
+normative PDF. For MPI 1.1, the archived PDF is also unofficial (the Forum's
+PostScript is the official edition).
+
+To regenerate the mapping, use the two edition directories from the
+[MPI Forum website source](https://github.com/mpi-forum/mpi-forum.github.io):
+
+```sh
+python3 site/scripts/build_standard_html_links.py \
+  ../mpi-forum.github.io/docs/mpi-5.0/mpi50-report \
+  ../mpi-forum.github.io/docs/mpi-1.1/mpi-11-html
+```
+
+The regular catalogue build uses the checked-in mapping and remains offline.
+
+## Historical introduction evidence
 
 One introduction correction follows explicit standard errata: the exact
 `MPI_Status_set_elements_c` binding first appears in the ratified MPI 4.1 text,

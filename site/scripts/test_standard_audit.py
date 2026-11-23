@@ -41,6 +41,29 @@ class StandardAuditTests(unittest.TestCase):
         self.assertEqual(rows['MPI_CONVERSION_FN_NULL']['introduced'], '3.0')
         self.assertEqual(rows['MPI_CONVERSION_FN_NULL_C']['entry_type'], 'callback sentinel')
 
+    def test_catalogue_links_to_definition_sections_and_keeps_evidence(self):
+        catalogue = json.loads((ROOT / 'dist/apis.json').read_text())
+        rows = {row['name']: row for row in catalogue['rows']}
+        for name, row in rows.items():
+            with self.subTest(name=name):
+                if row['lifecycle'] == 'removed':
+                    self.assertRegex(row['standard_html'], r'^https://www\.mpi-forum\.org/docs/mpi-1\.1/mpi-11-html/node\d+\.html#Node\d+$')
+                    self.assertIn('/mpi-1.1/mpi1-report.pdf#page=', row['standard'])
+                    self.assertNotIn('vault_source', row)
+                else:
+                    self.assertRegex(row['standard_html'], r'^https://www\.mpi-forum\.org/docs/mpi-5\.0/mpi50-report/node\d+\.htm#Node\d+$')
+                    self.assertIn('/mpi-5.0/mpi50-report.pdf#page=', row['standard'])
+                    self.assertIn('/vaults/vault-mpi-50/API/', row['vault_source'])
+
+        for name, definition in {
+            'MPI_Allreduce_c': 'node138.htm#Node138',
+            'MPI_Get_accumulate': 'node322.htm#Node324',
+            'MPI_Finalize': 'node270.htm#Node270',
+            'MPI_CONVERSION_FN_NULL_C': 'node380.htm#Node382',
+            'MPI_Errhandler_get': 'node148.html#Node148',
+        }.items():
+            self.assertEqual(rows[name]['standard_html'].rsplit('/', 1)[-1], definition)
+
 
 if __name__ == '__main__':
     unittest.main()
