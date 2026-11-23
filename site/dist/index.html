@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@115,700&amp;family=Geist+Mono:wght@400..700&amp;family=Inter:wght@400..700&amp;display=swap">
-  <link rel="stylesheet" href="style.css?v=f2d7729fde71"><script src="app.js?v=10faaa168df1" defer></script>
+  <link rel="stylesheet" href="style.css?v=500f8099a536"><script src="app.js?v=d6fa798d8f9b" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#search">Skip to catalogue controls</a>
@@ -21,13 +21,13 @@
     <div class="summary" id="summary" aria-label="Catalogue inventory"></div>
     <section id="catalogue" aria-label="API catalogue">
       <div class="section-title"><h2>API register</h2><span>ORDER: CHAPTER → SECTION → OPERATION FORM → API NAME</span></div>
-      <div class="name-search"><label for="search">Search routine name</label><input id="search" type="search" placeholder="MPI_Allreduce…" autocomplete="off" aria-describedby="filter-state"></div>
+      <div class="name-search"><label for="search">Search routine name</label><input id="search" type="search" placeholder="MPI_Allreduce…" autocomplete="off"></div>
       <fieldset class="classifications"><legend>Classification</legend><p id="classification-help">Select any values within a filter. Shift-click to toggle a range. No selection includes all values.</p><div class="classification-grid" id="classification-filters"></div><button id="reset" class="reset-button">Reset classifications</button></fieldset>
-      <div class="state-line"><p id="filter-state">FILTER STATE: loading</p><p id="results" role="status" aria-live="polite">Loading catalogue…</p></div>
+      <div class="state-line"><p id="filter-state"></p><p id="results" role="status" aria-live="polite">Loading catalogue…</p></div>
       <div class="legend" aria-label="Support interpretation"><span><b class="status-symbol supported">+</b> Supported: implementation / macro / documentation</span><span><b class="status-symbol unsupported">−</b> Unsupported: absent / aborting / no-op stub</span><span><b class="status-symbol unknown">?</b> Unknown: unresolved source conflict</span></div>
       <div class="workspace">
         <div class="register-surface">
-          <div class="table-scroll" tabindex="0" aria-label="API register; scroll horizontally and vertically through APIs">
+          <div id="register-table" class="table-scroll" role="region" tabindex="0" aria-label="API register; scroll horizontally and vertically through APIs" hidden>
             <table>
               <colgroup>
                 <col style="width:19%"><col style="width:12%"><col style="width:14%"><col style="width:10%">
@@ -38,13 +38,13 @@
               <tbody id="rows"></tbody>
             </table>
           </div>
-          <div id="empty" hidden><strong>0 MATCHING APIs</strong><p>No records satisfy the current filter state. Change a filter or reset all filters.</p></div>
-          <div id="load-error" hidden><strong>CATALOGUE LOAD FAILED</strong><p>Open standalone.html for the self-contained catalogue, or serve index.html over HTTP so its JSON file can be loaded.</p></div>
-          <div class="register-note"><span id="selection-state" role="status" aria-live="polite">SELECTED API: none</span><a href="#detail">Inspect selected API →</a></div>
-          <div class="support-totals" id="support-totals" aria-label="Support totals for filtered APIs"></div>
+          <div id="empty" hidden><strong>No matching APIs</strong><p>Try another search or change your filters.</p><button type="button" id="clear-filters">Clear search and filters</button></div>
+          <div id="load-error" hidden><strong>Catalogue load failed</strong><p>Open the <a href="standalone.html">self-contained catalogue</a>, or serve this page over HTTP so it can load its JSON data.</p></div>
+          <div class="register-note"><span id="selection-state" role="status" aria-live="polite">SELECTED API: none</span><a id="inspect-selection" href="#detail" hidden>Inspect selected API →</a></div>
+          <div class="support-totals" id="support-totals" aria-label="Support totals for filtered APIs" hidden></div>
         </div>
         <aside id="detail" class="inspector" aria-labelledby="inspector-title">
-          <div class="section-title"><h2 id="inspector-title">Source inspector</h2><button id="close">Clear selection</button></div>
+          <div class="section-title"><h2 id="inspector-title" tabindex="-1">Source inspector</h2><div class="inspector-actions"><button type="button" id="back-to-api" hidden>Back to selected API</button><button type="button" id="close" hidden>Clear selection</button></div></div>
           <div id="detail-content"><p class="no-selection">No API selected.</p></div>
         </aside>
       </div>

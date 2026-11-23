@@ -13,6 +13,10 @@ code,pre,kbd,samp,.api-name,.source-locations,.checksum,#selection-state,#search
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 @media print{table{min-width:0}body{font-size:9px;background:#fff}.masthead nav,.toolbar,.kinds,.inspector,.register-note,.skip-link{display:none}.workspace{display:block}.table-scroll{height:auto;min-height:0;overflow:visible;border:0}th{position:static}.api-row td{font-size:8px;padding:3px}.api-column{min-width:0}.api-name,.badge,.revision{font-size:8px}.support-basis,.api-annotations{font-size:7px}.class-cell{min-width:0}.support-cell{min-width:0}main,.masthead{margin:0}.methodology{break-before:page}.section-title{color:#000;background:#fff}.method-grid,.source-ledger{break-inside:avoid}}
 
+.inspector-actions{display:flex;flex-wrap:wrap;gap:6px}#back-to-api{display:none}
+@media(max-width:1450px){#back-to-api{display:block}}
+#inspector-title:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+#empty,#load-error{border-top:1px solid var(--rule)}#clear-filters{margin-top:8px}
 .prototype{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px;border:1px solid var(--rule);padding:8px;background:var(--surface)}
 
  .name-search{padding:12px 0}.name-search label{display:block;font-weight:700;margin-bottom:5px}.name-search input{max-width:none}.classifications{margin:0;border:1px solid var(--rule);background:var(--surface);padding:12px}.classifications legend{font-weight:700}.classifications p{margin:0 0 10px;font-size:11px;color:var(--muted)}.classification-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:10px}.classification-filter{min-width:0;font-size:11px}.classification-filter>span{display:block;font-weight:700;margin-bottom:4px}

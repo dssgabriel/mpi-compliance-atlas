@@ -81,17 +81,21 @@ function compare(a,b) {
   return rank.indexOf(a.kind)-rank.indexOf(b.kind) || ((families.indexOf(a.family)+1||99)-(families.indexOf(b.family)+1||99)) || a.family.localeCompare(b.family) || (a.variant===b.variant?0:a.variant==='normal'?-1:b.variant==='normal'?1:a.variant.localeCompare(b.variant)) || a.name.localeCompare(b.name);
 }
 function filterState() {
-  const descriptions=classifications.map(filter=>{
+  const active=[];
+  for(const filter of classifications) {
     const values=selectedValues(filter.id);
     const label=filter.options.filter(option=>values.includes(option.value)).map(option=>option.label).join(', ')||'All';
     el(filter.id+'-trigger').textContent=label;
-    return filter.label+'='+label;
-  });
-  el('filter-state').textContent='FILTER STATE: query='+JSON.stringify(el('search').value.trim())+' / '+descriptions.join(' / ');
+    if(values.length)active.push(filter.label);
+  }
+  el('filter-state').textContent=active.length?'Active filters: '+active.join(', '):'No classification filters applied';
 }
 function selectionState() {
   const visible=selectedAPI && visibleNames.has(selectedAPI);
   el('selection-state').textContent='SELECTED API: '+(selectedAPI||'none')+(selectedAPI&&!visible?' / outside current filters':'');
+  el('inspect-selection').hidden=!selectedAPI;
+  el('close').hidden=!selectedAPI;
+  el('back-to-api').hidden=!visible;
   const warning=el('selection-warning');
   if(warning) warning.hidden=!selectedAPI||visible;
 }
@@ -106,7 +110,9 @@ function render() {
   const rows=filtered();
   visibleNames=new Set(rows.map(row=>row.name));
   el('results').textContent=rows.length.toLocaleString()+' of '+data.rows.length.toLocaleString()+' APIs';
+  el('register-table').hidden=!rows.length;
   el('empty').hidden=rows.length>0;
+  el('support-totals').hidden=!rows.length;
   filterState();
   updateFilterURL();
   let previous=null;
@@ -168,18 +174,32 @@ el('rows').addEventListener('click',event=>{
   const button=event.target.closest('[data-api]');
   if(button) {
     showDetail(button.dataset.api);
+    if(matchMedia('(max-width:1450px)').matches) {
+      el('inspector-title').focus({preventScroll:true});
+      el('detail').scrollIntoView();
+    }
   }
 });
-el('reset').addEventListener('click',()=>{
+el('back-to-api').addEventListener('click',()=>{
+  el('rows').querySelector('.selected [data-api]').focus();
+});
+function resetClassifications() {
   el('classification-filters').querySelectorAll('input').forEach(input=>{input.checked=false;});
   rangeAnchors.clear();
   if(data)render();
+}
+el('reset').addEventListener('click',resetClassifications);
+el('clear-filters').addEventListener('click',()=>{
+  el('search').value='';
+  resetClassifications();
+  el('search').focus();
 });
 el('close').addEventListener('click',()=>{
   markSelection(selectedAPI,false);
   selectedAPI=null;
   el('detail-content').innerHTML='<p class="no-selection">No API selected. API names in the register select a record for source inspection.</p>';
   selectionState();
+  el('inspector-title').focus();
 });
 fetch('apis.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(catalogue=>{
   data=catalogue;
@@ -200,9 +220,8 @@ fetch('apis.json').then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).th
   sourceLedger();
   restoreFilters();
   render();
-  showDetail(data.rows[0].name);
+  if(visibleNames.size)showDetail(visibleNames.values().next().value);
 }).catch(()=>{
   el('results').textContent='Catalogue unavailable';
-  el('filter-state').textContent='FILTER STATE: no catalogue loaded';
   el('load-error').hidden=false;
 });
