@@ -47,7 +47,7 @@ function buildFilters() {
     const values=[...new Set(data.rows.map(filter.value))];
     if(filter.id==='revision')values.sort((a,b)=>parseFloat(a)-parseFloat(b));
     filter.options=values.map(value=>({value,label:filter.labelFor?filter.labelFor(value):value}));
-    return '<div class="classification-filter"><span id="'+filter.id+'-label">'+escape(filter.label)+'</span><details><summary id="'+filter.id+'-summary" aria-labelledby="'+filter.id+'-label '+filter.id+'-summary">All</summary><div class="checkbox-options" id="'+filter.id+'" role="group" aria-labelledby="'+filter.id+'-label" aria-describedby="classification-help">'+filter.options.map(option=>'<label><input type="checkbox" value="'+escape(option.value)+'">'+escape(option.label)+'</label>').join('')+'</div></details></div>';
+    return '<div class="classification-filter"><span id="'+filter.id+'-label">'+escape(filter.label)+'</span><button type="button" popovertarget="'+filter.id+'" id="'+filter.id+'-trigger" aria-labelledby="'+filter.id+'-label '+filter.id+'-trigger">All</button><div popover="auto" class="checkbox-options" id="'+filter.id+'" role="group" aria-labelledby="'+filter.id+'-label" aria-describedby="classification-help">'+filter.options.map(option=>'<label><input type="checkbox" value="'+escape(option.value)+'">'+escape(option.label)+'</label>').join('')+'</div></div>';
   }).join('');
 }
 function restoreFilters() {
@@ -84,7 +84,7 @@ function filterState() {
   const descriptions=classifications.map(filter=>{
     const values=selectedValues(filter.id);
     const label=filter.options.filter(option=>values.includes(option.value)).map(option=>option.label).join(', ')||'All';
-    el(filter.id+'-summary').textContent=label;
+    el(filter.id+'-trigger').textContent=label;
     return filter.label+'='+label;
   });
   el('filter-state').textContent='FILTER STATE: query='+JSON.stringify(el('search').value.trim())+' / '+descriptions.join(' / ');
